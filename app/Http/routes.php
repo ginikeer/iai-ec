@@ -11,9 +11,13 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', 'Client\MainController@index');
+Route::get('ECRequire', 'Client\EcRequireController@index');
+Route::get('ECRequire/rod', 'Client\EcRequireRodController@index');
+Route::get('ECRequire/slider', 'Client\EcRequireSliderController@index');
 
 Route::get('home', 'HomeController@index');
+
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
