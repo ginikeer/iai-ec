@@ -10,21 +10,17 @@
 	<meta name="_token" content="{{ csrf_token() }}"/>
 	<link href="{{ asset('favicon.ico') }}" rel="SHORTCUT ICON">
 	
-	<link rel="stylesheet" href="{{ asset('') }}"/>
+	<link rel="stylesheet" href="{{ asset('css/client/style.css') }}"/>
 	
 	@section('style')
     @show
 </head>
 <body>
 	
-	
-	
 	@yield('content')
 	
-	
-	
-
-	<script src="{{ asset('') }}"></script>
+	<script src="{{ asset('js/client/jquery-1.11.2.min.js') }}"></script>
+	<script src="{{ asset('js/client/common.js') }}"></script>
 	
 	@section('script')
     @show

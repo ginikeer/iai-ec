@@ -1,7 +1,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	    <title>エレシリンダー機種選定</title>
+	    <title>e电缸机种选定</title>
 	    <link rel="stylesheet" href="{{ asset('css/client/style.css') }}"/>
 	</head>
 	<body class="child-body" style="">
@@ -89,14 +89,13 @@
 		        </div>
 		    </div>
 		    <script src="{{ asset('js/client/jquery-1.11.2.min.js') }}"></script>
-						<script src="{{ asset('js/client/common.js') }}"></script>
-						<script src="{{ asset('js/client/ECRequirementSelection.js') }}"></script>
-						<script src="{{ asset('js/client/ECRequirementLoadSlider.js') }}"></script>
+			<script src="{{ asset('js/client/common.js') }}"></script>
+			<script src="{{ asset('js/client/ECRequirementSelection.js') }}"></script>
+			<script src="{{ asset('js/client/ECRequirementLoadSlider.js') }}"></script>
 		    <script type="text/javascript">
 		        window.onload = function () {
 		            var elm = window.parent.document.getElementById("ifr");
-		            // 子要素のコンテンツサイズに合わせて調整
-		            elm.style.height = (document.body.scrollHeight + 100) + "px";
+		            elm.style.height = ($('#form1').height() + 30) + "px";
 		        };
 		
 		        function procCheckLoadSlider(WorkLoadingState) {
@@ -113,8 +112,6 @@
 		            GrvCntrPosition = ctrGrvCntrPosition.value;
 		
 		            if ((WorkLoadingState == null || WorkLoadingState != null) || (ctrLoad.value.length == 0 || ctrLoad.value == 0) || (GrvCntrPosition.length == 0 || GrvCntrPosition.value == 0)) {
-		
-		                // セッションに値の設定
 		
 		                if (WorkLoadingState == null) {
 		                    document.getElementById("ContentPlaceHolder1_lblError1").innerHTML = "ワーク積載状態を選択してください。";
@@ -156,7 +153,6 @@
 				}
 				#dvConditionLoadEntry2{
 				    float:right;
-				    /*margin-right:5px;*/
 				}
 				
 				#imgdvConditionLoad{

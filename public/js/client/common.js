@@ -102,24 +102,30 @@ var ssResemble_Stroke = "Resemble_Stroke"
 // 子画面で取り扱うセッション（セッションの先頭に文字連結して使用）
 var ssTemp = "Temp";
 
-// 画面IDの定義(JavaScriptにて使用)
-//var gcECRequirementLinearGuideRod       = "ECRequirementLinearGuideRod.aspx";
-//var gcECRequirementLoadSlider           = "ECRequirementLoadSlider.aspx";
+// ifream请求页面
+//2.形状 
 var gcECRequirementLinearGuideRod       = "http://iaiecsys.eigyo.com.cn/public/ECRequire/rod";
+//5.输入负载 
 var gcECRequirementLoadSlider           = "http://iaiecsys.eigyo.com.cn/public/ECRequire/slider";
-var gcECRequirementLoadRod              = "ECRequirementLoadRod.aspx";
+var gcECRequirementLoadRod              = "http://iaiecsys.eigyo.com.cn/public/index.php/ECRequire/loadRod";
 var gcECRequirementPressRod             = "ECRequirementPressRod.aspx";
-var gcECRequirementCycleTimeSlider      = "ECRequirementCycleTimeSlider.aspx";
-var gcECRequirementCycleTimeRod         = "ECRequirementCycleTimeRod.aspx";
-var gcECRequirementCycleTimeSmall       = "ECRequirementCycleTimeSmall.aspx";
-var gcECRequirementRunningTime          = "ECRequirementRunningTime.aspx";
-var gcECSpec                            = "ECSpec.aspx";
-var gcECTypeSelection                   = "ECTypeSelection.aspx";
+//6.输入周期时间 
+var gcECRequirementCycleTimeSlider      = "http://iaiecsys.eigyo.com.cn/public/index.php/ECRequire/time";
+var gcECRequirementCycleTimeRod         = "http://iaiecsys.eigyo.com.cn/public/index.php/ECRequire/cycleTimeRod";
+var gcECRequirementCycleTimeSmall       = "http://iaiecsys.eigyo.com.cn/public/index.php/ECRequire/cycleTimeSmall";
+//7.输入设备运行时间
+var gcECRequirementRunningTime          = "http://iaiecsys.eigyo.com.cn/public/index.php/ECRequire/life";
+//详细页
+var gcECSpec                            = "http://iaiecsys.eigyo.com.cn/public/index.php/ECSpec";
+//e电缸在线选型
+var gcECTypeSelection                   = "http://iaiecsys.eigyo.com.cn/public/index.php/ECType";
 var gcECResembleSelection               = "ECResembleSelection.aspx";
 var gcECRequirementSelection            = "ECRequirementSelection.aspx";
-var gcECRequirementLoadRodLinerGuide    = "ECRequirementLoadRodLinerGuide.aspx";
-var gcECRequirementLoadSmall            = "ECRequirementLoadSmall.aspx";
-var gcECRequirementPressingSmall        = "ECRequirementPressingSmall.aspx";
+var gcECRequirementLoadRodLinerGuide    = "http://iaiecsys.eigyo.com.cn/public/index.php/ECRequire/loadRodLinerGuide";
+//5.输入负载 
+var gcECRequirementLoadSmall            = "http://iaiecsys.eigyo.com.cn/public/index.php/ECRequire/loadSmall";
+//5.输入负载 
+var gcECRequirementPressingSmall        = "http://iaiecsys.eigyo.com.cn/public/index.php/ECRequire/pressingSmall";
 
 // 計算区分
 var clcMoment = "Moment";

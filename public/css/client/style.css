@@ -156,6 +156,7 @@ input:disabled {
 
 .require-right{
 	display: table-cell;
+    padding-left: 10px;
 }
 .require-result{
 	background: #af2d4a;
@@ -344,6 +345,56 @@ input:disabled {
     vertical-align:top;
 }
 
+#h-box{
+	line-height: 1.7;
+}
+
+#h-box-price-head{
+    float:left;
+}
+
+#h-box-price{
+    float:right;
+}
+
+#h-box-cycle-head{
+    float:left;
+    clear:both;
+}
+
+#h-box-cycle{
+    float:right;
+}
+
+#h-box-life-head{
+    float:left;
+    clear:both;
+}
+
+#h-box-life{
+    float:right;
+}
+
+#h-box-btn-area{
+    text-align:center;
+    clear:both;
+    padding-top: 30px;
+}
+
+#h-box-distance-head{
+    float:left;
+    clear:both;
+}
+
+#h-box-distance{
+    float:right;
+}
+
+#h-box-errMsg{
+    float:left;
+    clear:both;
+}
+
 #dvIfrArea{
     text-align:center;
 }
@@ -354,4 +405,274 @@ input:disabled {
 
 #dvChildBtnArea {
     text-align: center;
+}
+input.number{
+    background-color: #ffffff;
+    border-color: #606060;
+    border-width: 1px;
+    border-style: Solid;
+    height: 25px;
+    width: 80px;
+    text-align: right;
+    padding-right: 1px;
+    font-size: 18px;
+}
+input.text{
+    background-color: #ffffff;
+    border-color: #606060;
+    border-width: 1px;
+    border-style: Solid;
+    height: 25px;
+    width: 150px;
+    font-size: 18px;
+}
+#dvCycleTimeEntry {
+    text-align: right;
+    margin-right: 20px;
+}
+#dvCycleTimeDisp {
+    text-align: right;
+}
+#f-box-input input[type="text"] {
+    width: 120px;
+}
+#f-box-input input[type="text"] {
+    text-align: right;
+    vertical-align: top;
+}
+#dvRoundTripEntry {
+    text-align: right;
+    margin-right: 20px;
+    height: 40px;
+}
+#dvRoundTripError {
+    height: 30px;
+    text-align: right;
+    margin-right: 20px;
+}
+#dvOperatingTimeEntry {
+    height: 40px;
+    text-align: right;
+}
+#dvOperatingTimeError {
+    height: 30px;
+    text-align: right;
+    margin-right: 20px;
+}
+#dvOperatingDayEntry {
+    text-align: right;
+    margin-right: 20px;
+    height: 40px;
+}
+#dvOperatingDayError {
+    height: 30px;
+    text-align: right;
+    margin-right: 20px;
+}
+input {
+    vertical-align: top;
+}
+#child-site-box {
+    width: 800px;
+    border: 1px solid transparent;
+    display: table;
+}
+
+#dvLoadRodEntry {
+    text-align: right;
+    margin-right: 70px;
+}
+
+.imgButtonPosition {
+    padding: 15px;
+    text-align: center;
+}
+
+table.Grid{
+    margin: 0px;
+    border-collapse: separate !important;
+    border-spacing: 1px 1px;
+    border:0px #FFCC66 solid;
+    font-size: 18px;
+}
+ 
+table.Grid th,
+table.Grid td {
+    padding-left:1px;
+    border:0px #FFE4C4 solid;
+}
+ 
+table.Grid th {
+    background:  #FFCC99;
+    vertical-align: middle;
+    text-align: left;
+    overflow: visible;
+    position: relative;
+    color: black;
+    font-weight: normal;
+    font-size: 18px;
+    height: 29px;
+}
+ 
+table.Grid th:after {
+    left: 100%;
+    top: 50%;
+    border: solid #FFEFD5;
+    content: " ";
+    height: 0;
+    width: 1.5px;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(136, 183, 213, 0);
+    border-width: 0px;
+    margin-top: -10px;
+}
+@-moz-document url-prefix() {
+    table.Grid th::after {
+        float: right;
+        padding: 0;
+        left: 30px;
+        top: 10px;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: relative;
+        pointer-events: none;
+        border: 10px solid transparent;
+        border-left: #295890 10px solid;
+        margin-top: -10px;
+    }
+}
+ 
+table.Grid td {
+    background:#FFEFD5;
+}
+
+table.tblEstimateNo{
+    margin-left:50px;
+    height:30px;
+    vertical-align:baseline;
+}
+
+.tblEstimateTdLeft{
+    background-color:#FFCC99;
+    width:150px;
+    color:black;
+    font-size:18px;
+}
+
+.tblEstimateTdRight{
+    background-color:#FFEFD5;
+    width:200px;
+    font-size:13pt;
+}
+
+.tdRowMagin{
+    height:15px;
+}
+
+.TableInp {
+    border:1px solid #AF1F39;
+    border-collapse:collapse;
+    font-size:12.5px;
+}
+
+.TableInp td
+{
+    padding:0.3em;
+    border:1px solid #AF1F39;
+    color:Black;
+    width:8em;
+}
+
+.TableInp th
+{
+    padding:0.3em;
+    background-color:#AF1F39;
+    text-align:left;
+    font-weight:normal;
+}
+
+
+.TableInp .tdHD
+{
+    background-color:#E7BBC3;
+}
+
+.clear { clear:both; }  
+
+
+table td { vertical-align: baseline; }
+.header td { vertical-align: middle; }
+
+table.Peripheral {
+    width: 950px;
+    margin: 0px;
+    border-collapse: collapse;
+    border-spacing: 1px 1px;
+    font-size: 18px;
+}
+ 
+table.Peripheral th,
+table.Peripheral td {
+    border:1.5px #ADD8E6 solid;
+    text-align:center;
+    vertical-align:middle;
+}
+ 
+table.Peripheral th {
+    background: #6494ED ;
+    vertical-align: middle;
+    text-align: center;
+    width: 230px;
+    overflow: visible;
+    position: relative;
+    color: #fff;
+    font-weight: normal;
+    font-size: 18px;
+
+}
+ 
+table.Peripheral th:after {
+    left: 100%;
+    top: 50%;
+    border: solid #191970;
+    content: " ";
+    height: 0;
+    width: 1.5px;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(136, 183, 213, 0);
+    border-width: 0px;
+    margin-top: -10px;
+}
+/* firefox */
+@-moz-document url-prefix() {
+    table.Peripheral th::after {
+        float: right;
+        padding: 0;
+        left: 30px;
+        top: 10px;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: relative;
+        pointer-events: none;
+        border: 10px solid transparent;
+        border-left: #295890 10px solid;
+        margin-top: -10px;
+    }
+}
+ 
+table.Peripheral td {
+    background: #f8f8f8;
+    width: 700px;
+}
+
+.imgPeripheral {
+    width: auto;
+    height: auto;
+    max-height: 100px;
+    max-width: 150px;
+    margin: 10px;
 }

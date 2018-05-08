@@ -60,8 +60,8 @@
 				<script type="text/javascript">
 					window.onload = function() {
 						var elm = window.parent.document.getElementById("ifr");
-						// 子要素のコンテンツサイズに合わせて調整
-						elm.style.height = (document.body.scrollHeight + 50) + "px";
+//						elm.style.height = (document.body.scrollHeight + 30) + "px";
+						elm.style.height = ($('#form1').height() + 30) + "px";
 					};
 				</script>
 
