@@ -18,10 +18,8 @@
 <body>
 	
 	@yield('content')
-	
 	<script src="{{ asset('js/client/jquery-1.11.2.min.js') }}"></script>
 	<script src="{{ asset('js/client/common.js') }}"></script>
-	
 	@section('script')
     @show
     
