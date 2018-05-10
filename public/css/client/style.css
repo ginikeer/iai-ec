@@ -31,7 +31,7 @@ input:disabled {
 	line-height: 30px;
 	color: #fff;
 	font-size: 24px;
-	padding: 5px 130px;
+	padding: 5px 30px;
 }
 .header-btn{
 	text-align: right;
@@ -675,4 +675,9 @@ table.Peripheral td {
     max-height: 100px;
     max-width: 150px;
     margin: 10px;
+}
+
+.AttentionMsg {
+    color: red;
+    font-size: 18px;
 }

@@ -14,7 +14,8 @@
 
 @extends('master/client')
 @section('content')
-		<form method="post" action="" onkeypress="javascript:return WebForm_FireDefaultButton(event, 'DummySubmitButton')" id="form1" class="h-adr">
+		<!--<form method="post" id="form1" class="h-adr">
+			<input type="hidden" name="_token" value="{{ csrf_token() }}" />-->
 			<div class="aspNetHidden">
 				<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
 				<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
@@ -22,7 +23,6 @@
 			</div>
 
 			<span class="p-country-name" style="display:none;">Japan</span>
-			<!-- ヘッダ -->
 			<div id="d_header">
 
 				<input type="submit" name="ctl00$DummySubmitButton" value="Button" onclick="return false;" id="DummySubmitButton" style="display:none">
@@ -149,14 +149,16 @@
 				<br>
 				<div class="imgButtonPosition">
 					<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnBack" id="ContentPlaceHolder1_imgbtnBack" class="imgButton" src="{{ asset('i/client/EcRequire/btnBack.png') }}" onclick="javaScript:history.go(-1);">
-					<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnNext" id="ContentPlaceHolder1_imgbtnNext" class="imgButton" src="{{ asset('i/client/EcRequire/btnNext.png') }}" onclick="javascript:window.location.href= '{{url("ECRequire")}}' ">
+					<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnNext" id="ContentPlaceHolder1_imgbtnNext" class="imgButton" src="{{ asset('i/client/EcRequire/btnNext.png') }}" onclick="javascript:window.location.href= '{{url("EC/productestimate")}}' ">
 				</div>
 
 			</div>
 
 			
-		</form>
+		<!--</form>-->
 @section('script')
+	<script src="{{ asset('js/client/WebResource.js') }}"></script>
+	<script src="{{ asset('js/client/WebResource2.js') }}"></script>
 	<script type="text/javascript">
 		window.onload = function() {
 			if(typeof contentPageLoad == 'function') contentPageLoad();

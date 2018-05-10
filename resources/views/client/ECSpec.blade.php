@@ -66,7 +66,7 @@
 		<table id="ContentPlaceHolder1_tblMain" width="100%">
 			<tbody>
 				<tr>
-					<td><iframe src="http://iaiecsys.eigyo.com.cn/public/ECSpec/sub?idx=0" id="ContentPlaceHolder1_ifDraw_0" style="height: 3072px; width: 100%;" frameborder="0" scrolling="no"></iframe></td>
+					<td><iframe src="http://iaiecsys.eigyo.com.cn/public/EC/specsub?idx=0" id="ContentPlaceHolder1_ifDraw_0" style="height: 3072px; width: 100%;" frameborder="0" scrolling="no"></iframe></td>
 				</tr>
 			</tbody>
 		</table>

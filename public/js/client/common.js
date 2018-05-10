@@ -107,25 +107,25 @@ var ssTemp = "Temp";
 var gcECRequirementLinearGuideRod       = "http://iaiecsys.eigyo.com.cn/public/ECRequire/rod";
 //5.输入负载 
 var gcECRequirementLoadSlider           = "http://iaiecsys.eigyo.com.cn/public/ECRequire/slider";
-var gcECRequirementLoadRod              = "http://iaiecsys.eigyo.com.cn/public/index.php/ECRequire/loadRod";
+var gcECRequirementLoadRod              = "http://iaiecsys.eigyo.com.cn/public/ECRequire/loadrod";
 var gcECRequirementPressRod             = "ECRequirementPressRod.aspx";
 //6.输入周期时间 
-var gcECRequirementCycleTimeSlider      = "http://iaiecsys.eigyo.com.cn/public/index.php/ECRequire/time";
-var gcECRequirementCycleTimeRod         = "http://iaiecsys.eigyo.com.cn/public/index.php/ECRequire/cycleTimeRod";
-var gcECRequirementCycleTimeSmall       = "http://iaiecsys.eigyo.com.cn/public/index.php/ECRequire/cycleTimeSmall";
+var gcECRequirementCycleTimeSlider      = "http://iaiecsys.eigyo.com.cn/public/ECRequire/time";
+var gcECRequirementCycleTimeRod         = "http://iaiecsys.eigyo.com.cn/public/ECRequire/cycletimerod";
+var gcECRequirementCycleTimeSmall       = "http://iaiecsys.eigyo.com.cn/public/ECRequire/cycletimesmall";
 //7.输入设备运行时间
-var gcECRequirementRunningTime          = "http://iaiecsys.eigyo.com.cn/public/index.php/ECRequire/life";
+var gcECRequirementRunningTime          = "http://iaiecsys.eigyo.com.cn/public/ECRequire/life";
 //详细页
-var gcECSpec                            = "http://iaiecsys.eigyo.com.cn/public/index.php/ECSpec";
+var gcECSpec                            = "http://iaiecsys.eigyo.com.cn/public/EC/spec";
 //e电缸在线选型
-var gcECTypeSelection                   = "http://iaiecsys.eigyo.com.cn/public/index.php/ECType";
+var gcECTypeSelection                   = "http://iaiecsys.eigyo.com.cn/public/EC/type";
 var gcECResembleSelection               = "ECResembleSelection.aspx";
-var gcECRequirementSelection            = "ECRequirementSelection.aspx";
-var gcECRequirementLoadRodLinerGuide    = "http://iaiecsys.eigyo.com.cn/public/index.php/ECRequire/loadRodLinerGuide";
+var gcECRequirementSelection            = "http://iaiecsys.eigyo.com.cn/public/ECRequire";
+var gcECRequirementLoadRodLinerGuide    = "http://iaiecsys.eigyo.com.cn/public/ECRequire/loadrodlinerguide";
 //5.输入负载 
-var gcECRequirementLoadSmall            = "http://iaiecsys.eigyo.com.cn/public/index.php/ECRequire/loadSmall";
+var gcECRequirementLoadSmall            = "http://iaiecsys.eigyo.com.cn/public/ECRequire/loadsmall";
 //5.输入负载 
-var gcECRequirementPressingSmall        = "http://iaiecsys.eigyo.com.cn/public/index.php/ECRequire/pressingSmall";
+var gcECRequirementPressingSmall        = "http://iaiecsys.eigyo.com.cn/public/ECRequire/pressingsmall";
 
 // 計算区分
 var clcMoment = "Moment";

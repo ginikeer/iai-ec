@@ -109,7 +109,7 @@
 			            	<div class="n-box-head" id="n-box-head">
 			            		<img id="ContentPlaceHolder1_imgNo5_PST" class="imgNum" src="{{ asset('i/client/EcRequire/No5.png') }}">
 			            		<img id="ContentPlaceHolder1_imgHead5_PST" class="imgHead1" src="{{ asset('i/client/EcRequire/Head5_P.png') }}">
-			            		<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnPressST" id="ContentPlaceHolder1_imgbtnPressST" class="imgbtnConditions modal-open" onkeydown="return KeyDownButton(this)" src="{{ asset('i/client/EcRequire/btnConditionsEntry.png') }}" onclick="return setFormName(&quot;http://iaiecsys.eigyo.com.cn/public/index.php/ECRequire/pressingSmall&quot;);">
+			            		<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnPressST" id="ContentPlaceHolder1_imgbtnPressST" class="imgbtnConditions modal-open" onkeydown="return KeyDownButton(this)" src="{{ asset('i/client/EcRequire/btnConditionsEntry.png') }}" onclick="return setFormName(&quot;http://iaiecsys.eigyo.com.cn/public/index.php/ECRequire/pressingsmall&quot;);">
 			            	</div>
 			            	<div class="n-box-load" id="n-box-load">
 			            		<input name="ctl00$ContentPlaceHolder1$txtPressST" type="text" maxlength="4" id="ContentPlaceHolder1_txtPressST" class="text" style="border: none;" readonly="">
@@ -121,7 +121,7 @@
 			            	<div class="k-box-head" id="k-box-head">
 			            		<img id="ContentPlaceHolder1_imgNo5_LR" class="imgNum" src="{{ asset('i/client/EcRequire/No5.png') }}">
 			            		<img id="ContentPlaceHolder1_imgHead_LR" class="imgHead1" src="{{ asset('i/client/EcRequire/Head5_LR.png') }}">
-			            		<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnLoad_LR" id="ContentPlaceHolder1_imgbtnLoad_LR" class="imgbtnConditions modal-open" onkeydown="return KeyDownButton(this)" src="{{ asset('i/client/EcRequire/btnConditionsEntry.png') }}" onclick="return setFormName(&quot;http://iaiecsys.eigyo.com.cn/public/index.php/ECRequire/loadRod&quot;);">
+			            		<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnLoad_LR" id="ContentPlaceHolder1_imgbtnLoad_LR" class="imgbtnConditions modal-open" onkeydown="return KeyDownButton(this)" src="{{ asset('i/client/EcRequire/btnConditionsEntry.png') }}" onclick="return setFormName(&quot;http://iaiecsys.eigyo.com.cn/public/index.php/ECRequire/loadrod&quot;);">
 			            	</div>
 			            	<div class="k-box-load" id="k-box-load">
 			            		<img id="ContentPlaceHolder1_Image1" class="imgbtnConditions">
@@ -134,7 +134,7 @@
 			            	<div class="l-box-head" id="l-box-head">
 			            		<img id="ContentPlaceHolder1_imgNo5_LRL" class="imgNum" src="{{ asset('i/client/EcRequire/No5.png') }}">
 			            		<img id="ContentPlaceHolder1_imgHead_LRL" class="imgHead1" src="{{ asset('i/client/EcRequire/Head5_LR.png') }}">
-			            		<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnLoad_LRL" id="ContentPlaceHolder1_imgbtnLoad_LRL" class="imgbtnConditions modal-open" onkeydown="return KeyDownButton(this)" src="{{ asset('i/client/EcRequire/btnConditionsEntry.png') }}" onclick="return setFormName(&quot;http://iaiecsys.eigyo.com.cn/public/index.php/ECRequire/loadRodLinerGuide&quot;);">
+			            		<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnLoad_LRL" id="ContentPlaceHolder1_imgbtnLoad_LRL" class="imgbtnConditions modal-open" onkeydown="return KeyDownButton(this)" src="{{ asset('i/client/EcRequire/btnConditionsEntry.png') }}" onclick="return setFormName(&quot;http://iaiecsys.eigyo.com.cn/public/index.php/ECRequire/loadrodlinerguide&quot;);">
 			            	</div>
 			            	<div class="l-box-load" id="l-box-load">
 			            		<img id="ContentPlaceHolder1_Image2" class="imgbtnConditions">
@@ -147,7 +147,7 @@
 			            	<div class="m-box-head" id="m-box-head">
 			            		<img id="ContentPlaceHolder1_imgNo5_LST" class="imgNum" src="{{ asset('i/client/EcRequire/No5.png') }}">
 			            		<img id="ContentPlaceHolder1_imgHead_LST" class="imgHead1" src="{{ asset('i/client/EcRequire/Head5_LR.png') }}">
-			            		<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnLoad_LST" id="ContentPlaceHolder1_imgbtnLoad_LST" class="imgbtnConditions modal-open" onkeydown="return KeyDownButton(this)" src="{{ asset('i/client/EcRequire/btnConditionsEntry.png') }}" onclick="return setFormName(&quot;http://iaiecsys.eigyo.com.cn/public/index.php/ECRequire/loadSmall&quot;);">
+			            		<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnLoad_LST" id="ContentPlaceHolder1_imgbtnLoad_LST" class="imgbtnConditions modal-open" onkeydown="return KeyDownButton(this)" src="{{ asset('i/client/EcRequire/btnConditionsEntry.png') }}" onclick="return setFormName(&quot;http://iaiecsys.eigyo.com.cn/public/index.php/ECRequire/loadsmall&quot;);">
 			            	</div>
 			            	<div class="m-box-load" id="m-box-load">
 			            		<img id="ContentPlaceHolder1_imglblLoadST" class="imgbtnConditions" src="{{ asset('i/client/EcRequire/imgLabelLoad.png') }}" style="text-align:right; vertical-align:top; margin-top:15px; margin-right:10px;">
@@ -168,7 +168,7 @@
 			            		<img id="ContentPlaceHolder1_imgHead6" class="imgHead1" src="{{ asset('i/client/EcRequire/Head6.png') }}">
 			            	</div>
 			            	<div class="f-box-select" id="f-box-select">
-			            		<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnCycleTime" id="ContentPlaceHolder1_imgbtnCycleTime" class="modal-open" src="{{ asset('i/client/EcRequire/imgbtnHopeTime_Off.png') }}" onclick="if(document.getElementById(&quot;ContentPlaceHolder1_txtHdnSlider&quot;).value == &quot;1&quot;){setFormName(&quot;http://iaiecsys.eigyo.com.cn/public/index.php/ECRequire/time&quot;);}else if(document.getElementById(&quot;ContentPlaceHolder1_txtHdnRod&quot;).value == &quot;1&quot;){setFormName(&quot;http://iaiecsys.eigyo.com.cn/public/index.php/ECRequire/cycleTimeRod&quot;);}else if(document.getElementById(&quot;ContentPlaceHolder1_txtHdnSmallType&quot;).value == &quot;1&quot;){setFormName(&quot;http://iaiecsys.eigyo.com.cn/public/index.php/ECRequire/cycleTimeSmall&quot;);}else{setFormName(&quot;http://iaiecsys.eigyo.com.cn/public/index.php/ECRequire/time&quot;);}imgbtnCycleTime_onclick(this);return false;">
+			            		<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnCycleTime" id="ContentPlaceHolder1_imgbtnCycleTime" class="modal-open" src="{{ asset('i/client/EcRequire/imgbtnHopeTime_Off.png') }}" onclick="if(document.getElementById(&quot;ContentPlaceHolder1_txtHdnSlider&quot;).value == &quot;1&quot;){setFormName(&quot;http://iaiecsys.eigyo.com.cn/public/index.php/ECRequire/time&quot;);}else if(document.getElementById(&quot;ContentPlaceHolder1_txtHdnRod&quot;).value == &quot;1&quot;){setFormName(&quot;http://iaiecsys.eigyo.com.cn/public/index.php/ECRequire/cycletimerod&quot;);}else if(document.getElementById(&quot;ContentPlaceHolder1_txtHdnSmallType&quot;).value == &quot;1&quot;){setFormName(&quot;http://iaiecsys.eigyo.com.cn/public/index.php/ECRequire/cycletimesmall&quot;);}else{setFormName(&quot;http://iaiecsys.eigyo.com.cn/public/index.php/ECRequire/time&quot;);}imgbtnCycleTime_onclick(this);return false;">
 			            		<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnFastest" id="ContentPlaceHolder1_imgbtnFastest" src="{{ asset('i/client/EcRequire/imgbtnFastest_Off.png') }}" onclick="return imgbtnFastest_onclick(this);">
 			            	</div>
 			            	<div class="f-box-input" id="f-box-input">

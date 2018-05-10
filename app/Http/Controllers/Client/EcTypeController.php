@@ -32,10 +32,58 @@ class EcTypeController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function getType(Request $request)
 	{
+		
 		return view('client/ECTypeSelection');
 	}
 	
+	public function getSpec(Request $request)
+	{
+		
+		return view('client/ECSpec');
+	}
+	
+	public function getSpecsub(Request $request)
+	{
+		
+		return view('client/ECSpecSub');
+	}
+	
+	public function getPeripheral(Request $request)
+	{
+		
+		return view('client/ECPeripheral');
+	}
+	
+	public function getProductestimate(Request $request)
+	{
+		
+		return view('client/ECProductEstimate');
+	}
+	
+	public function getEstimate(Request $request)
+	{
+		
+		return view('client/ECEstimate');
+	}
+	
+	public function getProductestimateconfirm(Request $request)
+	{
+		
+		return view('client/ECProductEstimateConfirm');
+	}
+	
+	public function getTerms(Request $request)
+	{
+		
+		return view('client/ECTerms');
+	}
+	
+	public function getCustomerinfo(Request $request)
+	{
+		
+		return view('client/ECCustomerInfo');
+	}
 	
 }
