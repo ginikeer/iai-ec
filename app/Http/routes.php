@@ -12,9 +12,15 @@
 */
 
 Route::get('/', 'Client\MainController@index');
-Route::get('ECRequire', 'Client\EcRequireController@index');
-Route::get('ECRequire/rod', 'Client\EcRequireRodController@index');
-Route::get('ECRequire/slider', 'Client\EcRequireSliderController@index');
+Route::controller('ECRequire', 'Client\EcRequireController');
+Route::controller('EC', 'Client\EcTypeController');
+//Route::get('ECSpec', 'Client\EcSpecController@index');
+//Route::get('ECSpec/sub', 'Client\EcSpecSubController@index');
+//Route::get('ECPeripheral', 'Client\EcPeripheralController@index');
+//Route::get('ECProductEstimate', 'Client\EcProductEstimateController@index');
+//Route::get('ECEstimate', 'Client\EcEstimateController@index');
+//Route::get('ECProductEstimateConfirm', 'Client\EcProductEstimateConfirmController@index');
+//Route::get('ECTerms', 'Client\EcTermsController@index');
 
 Route::get('home', 'HomeController@index');
 

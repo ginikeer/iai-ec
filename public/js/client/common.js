@@ -41,7 +41,6 @@ var ssImgName       = "ImgName"　 //画像名
 var ssFullName      = "FullName"  //機種名
 
 
-// 機種選定画面
 var ssTransport = "Transport";
 var ssPressing = "Presssing";
 var ssSlider = "Slider";
@@ -51,7 +50,6 @@ var ssHorizontal = "Horizontal";
 var ssVertical = "Vertical";
 var ssPressingForce = "PressingForce"
 
-// 機種選定結果
 var ssSelectSeries = "SelectSeries";        // シリーズ
 var ssSelectType = "SelectType";            // 型式
 var ssSelectStroke = "SelectStroke";        // ストローク
@@ -60,7 +58,6 @@ var ssCalcLife = "CalcLife";            // 寿命予測計算
 var ssCalcDistance= "CalcDistance";        // 走行寿命計算
 var ssCalcMoment = "CalcMoment";        // モーメント
 
-// 機種選定結果 - ワンランク下
 var ssDownSeries = "DownSeries"
 var ssDownType = "DownType"
 var ssDownStroke =  "DownStroke"
@@ -82,7 +79,6 @@ var ssDownCalcMoment = "DownCalcMoment"
 var ssDownCalcDistance = "DownCalcDistance"
 var ssDownCalcLife = "DownCalcLife"
 
-// 機種選定画面－エアシリンダ
 var ssResemble_Bore1 = "Resemble_Bore1";
 var ssResemble_Bore2 = "Resemble_Bore2";
 var ssResemble_Bore3 = "Resemble_Bore3";
@@ -99,27 +95,32 @@ var ssResemble_Horizontal = "Resemble_Horizontal";
 var ssResemble_Vertical = "Resemble_Vertical";
 var ssResemble_Stroke = "Resemble_Stroke"
 
-// 子画面で取り扱うセッション（セッションの先頭に文字連結して使用）
 var ssTemp = "Temp";
 
-// 画面IDの定義(JavaScriptにて使用)
-//var gcECRequirementLinearGuideRod       = "ECRequirementLinearGuideRod.aspx";
-//var gcECRequirementLoadSlider           = "ECRequirementLoadSlider.aspx";
+// ifream请求页面
+//2.形状 
 var gcECRequirementLinearGuideRod       = "http://iaiecsys.eigyo.com.cn/public/ECRequire/rod";
+//5.输入负载 
 var gcECRequirementLoadSlider           = "http://iaiecsys.eigyo.com.cn/public/ECRequire/slider";
-var gcECRequirementLoadRod              = "ECRequirementLoadRod.aspx";
+var gcECRequirementLoadRod              = "http://iaiecsys.eigyo.com.cn/public/ECRequire/loadrod";
 var gcECRequirementPressRod             = "ECRequirementPressRod.aspx";
-var gcECRequirementCycleTimeSlider      = "ECRequirementCycleTimeSlider.aspx";
-var gcECRequirementCycleTimeRod         = "ECRequirementCycleTimeRod.aspx";
-var gcECRequirementCycleTimeSmall       = "ECRequirementCycleTimeSmall.aspx";
-var gcECRequirementRunningTime          = "ECRequirementRunningTime.aspx";
-var gcECSpec                            = "ECSpec.aspx";
-var gcECTypeSelection                   = "ECTypeSelection.aspx";
+//6.输入周期时间 
+var gcECRequirementCycleTimeSlider      = "http://iaiecsys.eigyo.com.cn/public/ECRequire/time";
+var gcECRequirementCycleTimeRod         = "http://iaiecsys.eigyo.com.cn/public/ECRequire/cycletimerod";
+var gcECRequirementCycleTimeSmall       = "http://iaiecsys.eigyo.com.cn/public/ECRequire/cycletimesmall";
+//7.输入设备运行时间
+var gcECRequirementRunningTime          = "http://iaiecsys.eigyo.com.cn/public/ECRequire/life";
+//详细页
+var gcECSpec                            = "http://iaiecsys.eigyo.com.cn/public/EC/spec";
+//e电缸在线选型
+var gcECTypeSelection                   = "http://iaiecsys.eigyo.com.cn/public/EC/type";
 var gcECResembleSelection               = "ECResembleSelection.aspx";
-var gcECRequirementSelection            = "ECRequirementSelection.aspx";
-var gcECRequirementLoadRodLinerGuide    = "ECRequirementLoadRodLinerGuide.aspx";
-var gcECRequirementLoadSmall            = "ECRequirementLoadSmall.aspx";
-var gcECRequirementPressingSmall        = "ECRequirementPressingSmall.aspx";
+var gcECRequirementSelection            = "http://iaiecsys.eigyo.com.cn/public/ECRequire";
+var gcECRequirementLoadRodLinerGuide    = "http://iaiecsys.eigyo.com.cn/public/ECRequire/loadrodlinerguide";
+//5.输入负载 
+var gcECRequirementLoadSmall            = "http://iaiecsys.eigyo.com.cn/public/ECRequire/loadsmall";
+//5.输入负载 
+var gcECRequirementPressingSmall        = "http://iaiecsys.eigyo.com.cn/public/ECRequire/pressingsmall";
 
 // 計算区分
 var clcMoment = "Moment";
@@ -982,4 +983,31 @@ function CalcLife(calcKbn           // 計算区分
 function SessionClear() {
     // すべて消去
     sessionStorage.clear();
+}
+
+//判断所有必选项是否都填写
+function checkNullAll() {
+	$(".ErrorFont").hide();
+	var flag = true;
+	
+	$(".required-item").each(function() {
+	 	if( $(this).val() == "" ) {
+	 		$(this).parents('td').siblings('.lblError').find('.ErrorFont').show().text('此项目为必填项');
+	 		flag = false;
+	 	}
+	});
+	
+	return flag;
+}
+
+//判断两次输入是否一致
+function checkSame(text, again, _error) {
+	$(_error).hide();
+	
+	if(pwd != again){
+		$(_error).show();
+		return false;
+	} else {
+		return true;
+	}
 }
