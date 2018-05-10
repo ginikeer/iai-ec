@@ -79,20 +79,8 @@
 						</table>
 					</div>
 				</div>
-				<div style="margin-left:20px;">
-					<div>
-						<p>
-							ご購入をご希望される方は、
-							<a id="ContentPlaceHolder1_lnkTerms" href="{{url('/ECTerms')}}" target="_blank">こちらの利用規約</a>をご確認の上、「利用規約に同意する」にチェックを入れて<br> 次へお進みください
-						</p>
-					</div>
-					<div style="margin-top:20px;">
-						<input id="chkConsent" type="checkbox" style="height: 20px;width: 20px;margin-right: 5px;">利用規約に同意する
-					</div>
-				</div>
 				<div class="imgButtonPosition">
 					<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnBack" id="ContentPlaceHolder1_imgbtnBack" class="imgButton" src="{{ asset('i/client/EcRequire/btnBack.png') }}" onclick="javaScript:history.go(-1);">
-					<!--<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnOrder" id="ContentPlaceHolder1_imgbtnOrder" class="imgButton" src="{{ asset('i/client/EcRequire/btnNext.png') }}" onclick="return CheckConsent();">-->
 					<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnOrder" id="ContentPlaceHolder1_imgbtnOrder" class="imgButton" src="{{ asset('i/client/EcRequire/btnNext.png') }}" onclick="javascript:window.location.href= '{{url("EC/customerinfo")}}';">
 				</div>
 

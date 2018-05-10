@@ -79,9 +79,7 @@
 								<tr>
 									<th scope="col" style="width:50px;">NO</th>
 									<th scope="col">商品名</th>
-									<th align="right" scope="col" style="width:150px;">単価(円)</th>
 									<th align="right" scope="col" style="width:100px;">数量</th>
-									<!--<th align="right" scope="col" style="width:150px;">金額(円)</th>-->
 								</tr>
 								<tr>
 									<td style="width:50px;">
@@ -90,60 +88,22 @@
 									<td>
 										<span id="ContentPlaceHolder1_grdView_lblProductName_0" class="ctlLabel">EC-S7LH-250-0</span>
 									</td>
-									<td align="right" style="width:150px;">
-										<!-- <span id="ContentPlaceHolder1_grdView_lblUnitPrice_0" class="ctlLabel"></span>-->
-										<input name="ctl00$ContentPlaceHolder1$grdView$ctl02$numUnitPrice" type="text" value="60,800" id="ContentPlaceHolder1_grdView_numUnitPrice_0" tabindex="-1" class="ReadOnlyDecimal" readonly="true" onkeydown="javascript:return numOnly(document.getElementById('ContentPlaceHolder1_grdView_numUnitPrice_0'),0,false);return true;" onblur="javascript:serKetaKugiri(document.getElementById('ContentPlaceHolder1_grdView_numUnitPrice_0'),12,true,9,0);return true;" onfocus="javascript:serKetaKugiri(document.getElementById('ContentPlaceHolder1_grdView_numUnitPrice_0'),9,false,9,0);return true;" style="border-style:None;ime-mode:disabled;">
-									</td>
 									<td align="right" style="width:100px;">
-										<input name="ctl00$ContentPlaceHolder1$grdView$ctl02$numSuryo" type="text" value="1" maxlength="4" id="ContentPlaceHolder1_grdView_numSuryo_0" class="number" onchange="calc(this)" onkeydown="javascript:return numOnly(document.getElementById('ContentPlaceHolder1_grdView_numSuryo_0'),0,false);return true;" onblur="javascript:serKetaKugiri(document.getElementById('ContentPlaceHolder1_grdView_numSuryo_0'),4,true,3,0);return true;" onfocus="javascript:serKetaKugiri(document.getElementById('ContentPlaceHolder1_grdView_numSuryo_0'),3,false,3,0);return true;" style="ime-mode:disabled;">
+										<!--<input name="ctl00$ContentPlaceHolder1$grdView$ctl02$numSuryo" type="number" value="1" maxlength="4" id="ContentPlaceHolder1_grdView_numSuryo_0" class="number" onchange="calc(this)" onkeydown="javascript:return numOnly(document.getElementById('ContentPlaceHolder1_grdView_numSuryo_0'),0,false);return true;" onblur="javascript:serKetaKugiri(document.getElementById('ContentPlaceHolder1_grdView_numSuryo_0'),4,true,3,0);return true;" onfocus="javascript:serKetaKugiri(document.getElementById('ContentPlaceHolder1_grdView_numSuryo_0'),3,false,3,0);return true;" style="ime-mode:disabled;">-->
+										<input name="ctl00$ContentPlaceHolder1$grdView$ctl02$numSuryo" type="number" value="1" maxlength="4" id="ContentPlaceHolder1_grdView_numSuryo_0" class="number" onkeydown="javascript:return numOnly(document.getElementById('ContentPlaceHolder1_grdView_numSuryo_0'),0,false);return true;" onblur="javascript:serKetaKugiri(document.getElementById('ContentPlaceHolder1_grdView_numSuryo_0'),4,true,3,0);return true;" onfocus="javascript:serKetaKugiri(document.getElementById('ContentPlaceHolder1_grdView_numSuryo_0'),3,false,3,0);return true;" style="ime-mode:disabled;">
 									</td>
-									<!--<td align="right" style="width:150px;">
-										<input name="ctl00$ContentPlaceHolder1$grdView$ctl02$numPriceTotal" type="text" value="60,800" id="ContentPlaceHolder1_grdView_numPriceTotal_0" tabindex="-1" class="ReadOnlyDecimal" readonly="true" onkeydown="javascript:return numOnly(document.getElementById('ContentPlaceHolder1_grdView_numPriceTotal_0'),0,false);return true;" onblur="javascript:serKetaKugiri(document.getElementById('ContentPlaceHolder1_grdView_numPriceTotal_0'),12,true,9,0);return true;" onfocus="javascript:serKetaKugiri(document.getElementById('ContentPlaceHolder1_grdView_numPriceTotal_0'),9,false,9,0);return true;" style="border-style:None;ime-mode:disabled;">
-									</td>-->
 								</tr>
-								<!--<tr>
-									<td style="width:50px;">
-										<span id="ContentPlaceHolder1_grdView_lblNo_1" class="ctlLabel">2</span>
-									</td>
-									<td>
-										<span id="ContentPlaceHolder1_grdView_lblProductName_1" class="ctlLabel">消費税(8%)</span>
-									</td>
-									<td align="right" style="width:150px;">
-
-									</td>
-									<td align="right" style="width:100px;">
-
-									</td>
-									<td align="right" style="width:150px;">
-										<input name="ctl00$ContentPlaceHolder1$grdView$ctl03$numPriceTotal" type="text" value="4,864" id="ContentPlaceHolder1_grdView_numPriceTotal_1" tabindex="-1" class="ReadOnlyDecimal" readonly="true" onkeydown="javascript:return numOnly(document.getElementById('ContentPlaceHolder1_grdView_numPriceTotal_1'),0,false);return true;" onblur="javascript:serKetaKugiri(document.getElementById('ContentPlaceHolder1_grdView_numPriceTotal_1'),12,true,9,0);return true;" onfocus="javascript:serKetaKugiri(document.getElementById('ContentPlaceHolder1_grdView_numPriceTotal_1'),9,false,9,0);return true;" style="border-style:None;ime-mode:disabled;">
-									</td>
-								</tr>-->
-								<!--<tr>
-									<td colspan="4" style="width:50px;text-indent:100px;border-top:double 2px #FFAA56;">
-										<span id="ContentPlaceHolder1_grdView_lblNo_2" class="ctlLabel">合計</span>
-									</td>
-									<td align="right" style="width:150px;border-top:double 2px #FFAA56;">
-										<input name="ctl00$ContentPlaceHolder1$grdView$ctl04$numPriceTotal" type="text" value="65,664" id="ContentPlaceHolder1_grdView_numPriceTotal_2" tabindex="-1" class="ReadOnlyDecimal" readonly="true" onkeydown="javascript:return numOnly(document.getElementById('ContentPlaceHolder1_grdView_numPriceTotal_2'),0,false);return true;" onblur="javascript:serKetaKugiri(document.getElementById('ContentPlaceHolder1_grdView_numPriceTotal_2'),12,true,9,0);return true;" onfocus="javascript:serKetaKugiri(document.getElementById('ContentPlaceHolder1_grdView_numPriceTotal_2'),9,false,9,0);return true;" style="border-style:None;ime-mode:disabled;">
-									</td>
-								</tr>-->
 							</tbody>
 						</table>
 					</div>
 					<span id="ContentPlaceHolder1_lblGridError" class="ErrorFont"></span>
 					<br><br>
-					<p>
-						<span id="ContentPlaceHolder1_lblWord2" class="ctlLabel">仕様書・図面・見積書をご確認ください。</span>
-					</p>
-					<p>
-						<span id="ContentPlaceHolder1_lblWord3" class="ctlLabel">ご購入手続きへ進む場合は、「次へ」をクリックしてください。</span>
-					</p>
 				</div>
 
 				<div class="imgButtonPosition">
 					<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnBack" id="ContentPlaceHolder1_imgbtnBack" class="imgButton" src="{{ asset('i/client/EcRequire/btnBack.png') }}" onclick="javaScript:history.go(-1);">
 					<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnSpec" id="ContentPlaceHolder1_imgbtnSpec" class="imgButton" src="{{ asset('i/client/EcRequire/btnSpec.png') }}" onclick="javascript:window.location.href= '{{url("EC/spec")}}' ">
-					<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnEstimate" id="ContentPlaceHolder1_imgbtnEstimate" class="imgButton" src="{{ asset('i/client/EcRequire/btnEstimate.png') }}" onclick="javascript:window.location.href= '{{url("EC/estimate")}}' ">
-					<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnNext" id="ContentPlaceHolder1_imgbtnNext" class="imgButton" src="{{ asset('i/client/EcRequire/btnNext.png') }}" onclick="javascript:window.location.href= '{{url("EC/estimate")}}' ">
+					<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnNext" id="ContentPlaceHolder1_imgbtnNext" class="imgButton" src="{{ asset('i/client/EcRequire/btnNext.png') }}" onclick="javascript:window.location.href= '{{url("EC/productestimateconfirm")}}' ">
 				</div>
 			</div>
 
@@ -152,30 +112,5 @@
 @section('script')
 	<script src="{{ asset('js/client/WebResource.js') }}"></script>
 	<script src="{{ asset('js/client/WebResource2.js') }}"></script>
-	<script src="{{ asset('js/client/ProductEstimate.js') }}"></script>
-	<script type="text/javascript">
-//		window.onload = function() {
-//			if(typeof contentPageLoad == 'function') contentPageLoad();
-//		}
-//		
-//		intRowTax = 2;
-//		intRowTotal = 3;
-//		taxrate = 0.080;
-//		
-//		var theForm = document.forms['form1'];
-//		if(!theForm) {
-//			theForm = document.form1;
-//		}
-//
-//		function __doPostBack(eventTarget, eventArgument) {
-//			if(!theForm.onsubmit || (theForm.onsubmit() != false)) {
-//				theForm.__EVENTTARGET.value = eventTarget;
-//				theForm.__EVENTARGUMENT.value = eventArgument;
-//				theForm.submit();
-//			}
-//		}
-//		
-//		WebForm_AutoFocus('ContentPlaceHolder1_grdView_numSuryo_0'); 
-		
-	</script>
+	<!--<script src="{{ asset('js/client/ProductEstimate.js') }}"></script>-->
 @stop
