@@ -16,7 +16,7 @@
 			<h2 class="home-title">请选择e电缸机种</h2>
 			<div class="ec-type">
 				<a href="{{url('/ECRequire')}}"><img src="{{ asset('i/client/home/home.png') }}" /></a>
-				<a href="{{url('/ECRequire')}}"><img src="{{ asset('i/client/home/ResembleSelection.png') }}" /></a>
+				<a href="{{url('/ECResemble')}}"><img src="{{ asset('i/client/home/ResembleSelection.png') }}" /></a>
 			</div>
 		</div>
 	</div>

@@ -4,7 +4,6 @@
 	</head>
 	<body>
 		<script type="text/javascript">
-			// 読み込みが完了してから処理を行う
 			window.onload = function() {
 				var arg = new Object;
 				var pair = location.search.substring(1).split('&');
@@ -13,9 +12,7 @@
 					arg[kv[0]] = kv[1];
 				}
 
-				// 親画面のiframe要素
 				var elm = window.parent.document.getElementById("ContentPlaceHolder1_ifDraw_" + arg.idx);
-				// 子要素のコンテンツサイズに合わせて調整
 				elm.style.height = (document.body.scrollHeight + 100) + "px";
 			};
 		</script>
@@ -115,10 +112,10 @@
 													<tbody>
 														<tr>
 															<td class="spec-tbl-td1">
-																<span id="ctlSpec_lblBunruiTitle" class="ctlLabel">分類</span>
+																<span id="ctlSpec_lblBunruiTitle" class="ctlLabel">分类</span>
 															</td>
 															<td class="spec-tbl-td2">
-																<span id="ctlSpec_lblTypeTitle" class="ctlLabel">型式</span>
+																<span id="ctlSpec_lblTypeTitle" class="ctlLabel">型号</span>
 															</td>
 															<td class="spec-tbl-td3">
 																<span id="ctlSpec_lblNumTitle" class="ctlLabel">数量</span>
@@ -126,7 +123,7 @@
 														</tr>
 														<tr>
 															<td style="background-color: rgb(184,204,228)">
-																<span id="ctlSpec_lblBunruiName" class="ctlLabel">エレシリンダー</span>
+																<span id="ctlSpec_lblBunruiName" class="ctlLabel">e电缸</span>
 															</td>
 															<td style="border-right:none">
 																<span id="ctlSpec_lblType" class="ctlLabel">EC-R6M-50-0</span>
@@ -149,10 +146,10 @@
 													<tbody>
 														<tr style="color: rgb(0,112,192)">
 															<td>
-																<span id="ctlSpec_lblAppearanceTitle" class="ctlLabel">外観</span>
+																<span id="ctlSpec_lblAppearanceTitle" class="ctlLabel">外观</span>
 															</td>
 															<td>
-																<span id="ctlSpec_lblLoadCapaLedgerTitle" class="ctlLabel">速度・加速度別可搬質量表</span>
+																<span id="ctlSpec_lblLoadCapaLedgerTitle" class="ctlLabel">速度·加速度可负载质量表</span>
 															</td>
 														</tr>
 														<tr>
@@ -183,7 +180,7 @@
 										</tr>
 										<tr>
 											<td style="color: rgb(0,112,192)">
-												<span id="ctlSpec_lblCmnSpecTitle" class="ctlLabel">共通仕様</span>
+												<span id="ctlSpec_lblCmnSpecTitle" class="ctlLabel">通用规格</span>
 											</td>
 										</tr>
 										<tr>
@@ -200,13 +197,13 @@
 																<span id="ctlSpec_lblShapeTitle" class="ctlLabel">形状</span>
 															</td>
 															<td class="spec-tbl-td2-nclr" style="border-right:none">
-																<span id="ctlSpec_lblShape" class="ctlLabel">ロッド</span>
+																<span id="ctlSpec_lblShape" class="ctlLabel">拉杆</span>
 															</td>
 															<td class="spec-tbl-td3-nclr" style="border-left:none"></td>
 														</tr>
 														<tr>
 															<td colspan="2" style="background-color: rgb(184,204,228)">
-																<span id="ctlSpec_lblStrokeTitle" class="ctlLabel">ストローク</span>
+																<span id="ctlSpec_lblStrokeTitle" class="ctlLabel">行程</span>
 															</td>
 															<td class="alignRight">
 																<span id="ctlSpec_lblStroke" class="ctlLabel">50</span>
@@ -217,7 +214,7 @@
 														</tr>
 														<tr>
 															<td colspan="2" style="background-color: rgb(184,204,228)">
-																<span id="ctlSpec_lblLeadTitle" class="ctlLabel">リード</span>
+																<span id="ctlSpec_lblLeadTitle" class="ctlLabel">导程</span>
 															</td>
 															<td class="alignRight">
 																<span id="ctlSpec_lblLead" class="ctlLabel">6</span>
@@ -228,7 +225,7 @@
 														</tr>
 														<tr>
 															<td rowspan="2" style="background-color: rgb(184,204,228)">
-																<span id="ctlSpec_lblMaxTransportWeightTitle" class="ctlLabel">最大搬送重量</span>
+																<span id="ctlSpec_lblMaxTransportWeightTitle" class="ctlLabel">最大负载质量</span>
 															</td>
 															<td style="background-color: rgb(184,204,228);width:50px">
 																<span id="ctlSpec_lblMaxTransportWeightTitle_Horizon" class="ctlLabel">水平</span>
@@ -303,7 +300,7 @@
 														</tr>
 														<tr>
 															<td colspan="2" style="background-color: rgb(184,204,228)">
-																<span id="ctlSpec_lblRepetPositionAccuracyTitle" class="ctlLabel">繰り返し位置決め精度</span>
+																<span id="ctlSpec_lblRepetPositionAccuracyTitle" class="ctlLabel">重复定位精度</span>
 															</td>
 															<td class="alignRight">
 																<span id="ctlSpec_lblRepetPositionAccuracy" class="ctlLabel">±0.05</span>
@@ -314,7 +311,7 @@
 														</tr>
 														<tr>
 															<td colspan="2" style="background-color: rgb(184,204,228)">
-																<span id="ctlSpec_lblStaticEquivalentLoadTitle" class="ctlLabel">静的許容等価荷重</span>
+																<span id="ctlSpec_lblStaticEquivalentLoadTitle" class="ctlLabel">静态允许等价负荷</span>
 															</td>
 															<td class="alignRight">
 																<span id="ctlSpec_lblStaticEquivalentLoad" class="ctlLabel">0</span>
@@ -325,7 +322,7 @@
 														</tr>
 														<tr>
 															<td rowspan="3" style="background-color: rgb(184,204,228)">
-																<span id="ctlSpec_lblStatToleranceMomentTitle" class="ctlLabel">静的許容モーメント</span>
+																<span id="ctlSpec_lblStatToleranceMomentTitle" class="ctlLabel">静态允许负载力矩</span>
 															</td>
 															<td style="background-color: rgb(184,204,228)">
 																<span id="ctlSpec_lblStatToleranceMomentTitle_A" class="ctlLabel">Ma</span>
@@ -361,7 +358,7 @@
 														</tr>
 														<tr>
 															<td colspan="2" style="background-color: rgb(184,204,228)">
-																<span id="ctlSpec_lblDynamicEquivalentLoadTitle" class="ctlLabel">動的許容等価荷重</span>
+																<span id="ctlSpec_lblDynamicEquivalentLoadTitle" class="ctlLabel">动态允许等价负荷</span>
 															</td>
 															<td class="alignRight">
 																<span id="ctlSpec_lblDynamicEquivalentLoad" class="ctlLabel">0</span>
@@ -372,7 +369,7 @@
 														</tr>
 														<tr>
 															<td rowspan="3" style="background-color: rgb(184,204,228)">
-																<span id="ctlSpec_lblDynaToleranceMomentTitle" class="ctlLabel">動的許容モーメント</span>
+																<span id="ctlSpec_lblDynaToleranceMomentTitle" class="ctlLabel">动态允许负载力矩</span>
 															</td>
 															<td style="background-color: rgb(184,204,228)">
 																<span id="ctlSpec_lblDynaToleranceMomentTitle_A" class="ctlLabel">Ma</span>
@@ -408,7 +405,7 @@
 														</tr>
 														<tr>
 															<td colspan="2" style="background-color: rgb(184,204,228)">
-																<span id="ctlSpec_lblMaOverhangAboveTitle" class="ctlLabel">Ma上面方向張出し負荷長</span>
+																<span id="ctlSpec_lblMaOverhangAboveTitle" class="ctlLabel">Ma上方负载伸出长</span>
 															</td>
 															<td class="alignRight">
 																<span id="ctlSpec_lblMaOverhangAbove" class="ctlLabel">0</span>
@@ -419,7 +416,7 @@
 														</tr>
 														<tr>
 															<td colspan="2" style="background-color: rgb(184,204,228)">
-																<span id="ctlSpec_lblMaOverhangTopTitle" class="ctlLabel">Ma先端方向張出し負荷長</span>
+																<span id="ctlSpec_lblMaOverhangTopTitle" class="ctlLabel">Ma末端负载伸出长</span>
 															</td>
 															<td class="alignRight">
 																<span id="ctlSpec_lblMaOverhangTop" class="ctlLabel">0</span>
@@ -430,7 +427,7 @@
 														</tr>
 														<tr>
 															<td colspan="2" style="background-color: rgb(184,204,228)">
-																<span id="ctlSpec_lblMbMcOverhangTitle" class="ctlLabel">Mb,Mc張出し負荷長</span>
+																<span id="ctlSpec_lblMbMcOverhangTitle" class="ctlLabel">Mb,Mc负载伸出长</span>
 															</td>
 															<td class="alignRight">
 																<span id="ctlSpec_lblMbMcOverhang" class="ctlLabel">0</span>
@@ -441,25 +438,25 @@
 														</tr>
 														<tr>
 															<td colspan="2" style="background-color: rgb(184,204,228)">
-																<span id="ctlSpec_lblUseSurroundTempHumidTitle" class="ctlLabel">使用周囲温度・湿度</span>
+																<span id="ctlSpec_lblUseSurroundTempHumidTitle" class="ctlLabel">适用环境温度与湿度</span>
 															</td>
 															<td class="alignRight">
-																<span id="ctlSpec_lblUseSurroundTempHumid" class="ctlLabel">0～40℃、85%RH以下（結露なきこと）</span>
+																<span id="ctlSpec_lblUseSurroundTempHumid" class="ctlLabel">0～40℃、85%RH以下（无结露）</span>
 															</td>
 															<td class="alignLeft"></td>
 														</tr>
 														<tr>
 															<td colspan="2" style="background-color: rgb(184,204,228)">
-																<span id="ctlSpec_lblEncodeKindTitle" class="ctlLabel">エンコーダ種別</span>
+																<span id="ctlSpec_lblEncodeKindTitle" class="ctlLabel">编码器种类</span>
 															</td>
 															<td class="alignRight">
-																<span id="ctlSpec_lblEncodeKind" class="ctlLabel">インクリメンタルエンコーダ</span>
+																<span id="ctlSpec_lblEncodeKind" class="ctlLabel">增量型编码器</span>
 															</td>
 															<td class="alignLeft"></td>
 														</tr>
 														<tr>
 															<td colspan="2" style="background-color: rgb(184,204,228)">
-																<span id="ctlSpec_lblCableLenTitle" class="ctlLabel">電源・ＩＯケーブル長さ</span>
+																<span id="ctlSpec_lblCableLenTitle" class="ctlLabel">电源·IO电缆长</span>
 															</td>
 															<td class="alignRight">
 																<span id="ctlSpec_lblCableLen" class="ctlLabel">0</span>
@@ -470,7 +467,7 @@
 														</tr>
 														<tr>
 															<td colspan="2" style="background-color: rgb(184,204,228)">
-																<span id="ctlSpec_lblSelectOptionTitle" class="ctlLabel">選択オプション</span>
+																<span id="ctlSpec_lblSelectOptionTitle" class="ctlLabel">选择选项</span>
 															</td>
 															<td class="alignRight">
 																<span id="ctlSpec_lblSelectOption" class="ctlLabel"></span>
@@ -479,7 +476,7 @@
 														</tr>
 														<tr>
 															<td colspan="2" style="background-color: rgb(184,204,228)">
-																<span id="ctlSpec_lblPowerVoltTitle" class="ctlLabel">電源電圧</span>
+																<span id="ctlSpec_lblPowerVoltTitle" class="ctlLabel">电源电压</span>
 															</td>
 															<td class="alignRight">
 																<span id="ctlSpec_lblPowerVolt" class="ctlLabel">DC24V±10％</span>
@@ -488,7 +485,7 @@
 														</tr>
 														<tr>
 															<td colspan="2" style="background-color: rgb(184,204,228)">
-																<span id="ctlSpec_lblPowerCapaTitle" class="ctlLabel">電源容量</span>
+																<span id="ctlSpec_lblPowerCapaTitle" class="ctlLabel">电源容量</span>
 															</td>
 															<td class="alignRight">
 																<span id="ctlSpec_lblPowerCapa" class="ctlLabel">最大4.2A</span>
@@ -497,10 +494,10 @@
 														</tr>
 														<tr>
 															<td colspan="2" style="background-color: rgb(184,204,228)">
-																<span id="ctlSpec_lblInOutSignalFormTitle" class="ctlLabel">入出力信号形態</span>
+																<span id="ctlSpec_lblInOutSignalFormTitle" class="ctlLabel">输入输出信号形态</span>
 															</td>
 															<td class="alignRight">
-																<span id="ctlSpec_lblInOutSignalForm" class="ctlLabel">NPN仕様</span>
+																<span id="ctlSpec_lblInOutSignalForm" class="ctlLabel">NPN规格</span>
 															</td>
 															<td class="alignLeft"></td>
 														</tr>
@@ -517,7 +514,7 @@
 										</tr>
 										<tr>
 											<td style="color: rgb(0,112,192)">
-												<span id="ctlSpec_lblSelectionConditionTitle" class="ctlLabel">選定条件</span>
+												<span id="ctlSpec_lblSelectionConditionTitle" class="ctlLabel">选定条件</span>
 											</td>
 										</tr>
 										<tr>
@@ -534,7 +531,7 @@
 																<span id="ctlSpec_lblConditionUseTitle" class="ctlLabel">用途</span>
 															</td>
 															<td class="spec-tbl-td2-nclr" style="border-right:none">
-																<span id="ctlSpec_lblConditionUse" class="ctlLabel">搬送位置決め</span>
+																<span id="ctlSpec_lblConditionUse" class="ctlLabel">搬运定位</span>
 															</td>
 															<td class="spec-tbl-td3-nclr" style="border-left:none"></td>
 														</tr>
@@ -543,22 +540,22 @@
 																<span id="ctlSpec_lblConditionShapeTitle" class="ctlLabel">形状</span>
 															</td>
 															<td class="alignRight">
-																<span id="ctlSpec_lblConditionShape" class="ctlLabel">希望条件 ： ロッド　ラジアルシリンダー<br>検索結果 ： ロッド　標準タイプ</span>
+																<span id="ctlSpec_lblConditionShape" class="ctlLabel">希望条件：径向拉杆型电缸<br>搜索结果：径向拉杆型电缸</span>
 															</td>
 															<td class="alignLeft"></td>
 														</tr>
 														<tr>
 															<td style="background-color: rgb(184,204,228)">
-																<span id="ctlSpec_lblConditionInstallDirectionTitle" class="ctlLabel">設置方向</span>
+																<span id="ctlSpec_lblConditionInstallDirectionTitle" class="ctlLabel">安装方向</span>
 															</td>
 															<td class="alignRight">
-																<span id="ctlSpec_lblConditionInstallDirection" class="ctlLabel">水平設置</span>
+																<span id="ctlSpec_lblConditionInstallDirection" class="ctlLabel">水平安装</span>
 															</td>
 															<td class="alignLeft"></td>
 														</tr>
 														<tr>
 															<td style="background-color: rgb(184,204,228)">
-																<span id="ctlSpec_lblConditionBehaviorRangeTitle" class="ctlLabel">動作範囲</span>
+																<span id="ctlSpec_lblConditionBehaviorRangeTitle" class="ctlLabel">移动范围</span>
 															</td>
 															<td class="alignRight">
 																<span id="ctlSpec_lblConditionBehaviorRange" class="ctlLabel">23</span>
@@ -569,7 +566,7 @@
 														</tr>
 														<tr>
 															<td style="background-color: rgb(184,204,228)">
-																<span id="ctlSpec_lblConditionLoadTitle" class="ctlLabel">荷重</span>
+																<span id="ctlSpec_lblConditionLoadTitle" class="ctlLabel">负载</span>
 															</td>
 															<td class="alignRight">
 																<span id="ctlSpec_lblConditionLoad" class="ctlLabel">23</span>
@@ -580,7 +577,7 @@
 														</tr>
 														<tr>
 															<td style="background-color: rgb(184,204,228)">
-																<span id="ctlSpec_lblConditionWorkLoadingStateTitle" class="ctlLabel">　ワーク積載状態</span>
+																<span id="ctlSpec_lblConditionWorkLoadingStateTitle" class="ctlLabel">　工件装载状态</span>
 															</td>
 															<td class="alignRight">
 																<span id="ctlSpec_lblConditionWorkLoadingState" class="ctlLabel">0</span>
@@ -600,7 +597,7 @@
 														</tr>
 														<tr>
 															<td style="background-color: rgb(184,204,228)">
-																<span id="ctlSpec_lblConditionDemandCycleTimeTitle" class="ctlLabel">要求サイクルタイム</span>
+																<span id="ctlSpec_lblConditionDemandCycleTimeTitle" class="ctlLabel">要求周期时间</span>
 															</td>
 															<td class="alignRight">
 																<span id="ctlSpec_lblConditionDemandCycleTime" class="ctlLabel">2</span>
@@ -611,29 +608,29 @@
 														</tr>
 														<tr>
 															<td style="background-color: rgb(184,204,228)">
-																<span id="ctlSpec_lblConditionRoundTimesTitle" class="ctlLabel">往復回数</span>
+																<span id="ctlSpec_lblConditionRoundTimesTitle" class="ctlLabel">往返次数</span>
 															</td>
 															<td class="alignRight">
 																<span id="ctlSpec_lblConditionRoundTimes" class="ctlLabel">2</span>
 															</td>
 															<td class="alignLeft">
-																<span id="ctlSpec_lblConditionRoundTimesUnit" class="ctlLabel">回/分</span>
+																<span id="ctlSpec_lblConditionRoundTimesUnit" class="ctlLabel">次/分钟</span>
 															</td>
 														</tr>
 														<tr>
 															<td style="background-color: rgb(184,204,228)">
-																<span id="ctlSpec_lblConditionOperatingTimeTitle" class="ctlLabel">稼働時間</span>
+																<span id="ctlSpec_lblConditionOperatingTimeTitle" class="ctlLabel">运行时间</span>
 															</td>
 															<td class="alignRight">
 																<span id="ctlSpec_lblConditionOperatingTime" class="ctlLabel">2</span>
 															</td>
 															<td class="alignLeft">
-																<span id="ctlSpec_lblConditionOperatingTimeUnit" class="ctlLabel">時間/日</span>
+																<span id="ctlSpec_lblConditionOperatingTimeUnit" class="ctlLabel">小时/天</span>
 															</td>
 														</tr>
 														<tr>
 															<td style="background-color: rgb(184,204,228)">
-																<span id="ctlSpec_lblConditionOperatingDaysTitle" class="ctlLabel">稼働日数</span>
+																<span id="ctlSpec_lblConditionOperatingDaysTitle" class="ctlLabel">运行天数</span>
 															</td>
 															<td class="alignRight">
 																<span id="ctlSpec_lblConditionOperatingDays" class="ctlLabel">342</span>
@@ -652,7 +649,7 @@
 										</tr>
 										<tr>
 											<td style="color: rgb(0,112,192)">
-												<span id="ctlSpec_lblTitleCalcCycleTime" class="ctlLabel">計算サイクルタイム</span>
+												<span id="ctlSpec_lblTitleCalcCycleTime" class="ctlLabel">计算周期时间</span>
 											</td>
 										</tr>
 										<tr>
@@ -666,7 +663,7 @@
 													<tbody>
 														<tr>
 															<td class="spec-tbl-td1">
-																<span id="ctlSpec_lblCalcCycleTimeTitle" class="ctlLabel">計算サイクルタイム</span>
+																<span id="ctlSpec_lblCalcCycleTimeTitle" class="ctlLabel">计算周期时间</span>
 															</td>
 															<td class="spec-tbl-td2-nclr" style="border-right:none">
 																<span id="ctlSpec_lblCalcCycleTime" class="ctlLabel">0.217</span>
@@ -677,7 +674,7 @@
 														</tr>
 														<tr>
 															<td class="spec-tbl-td1" rowspan="3">
-																<span id="ctlSpec_lblCalcDecisionTitle" class="ctlLabel">計算条件（AVD）</span>
+																<span id="ctlSpec_lblCalcDecisionTitle" class="ctlLabel">计算条件（ADV)</span>
 															</td>
 															<td class="spec-tbl-td2-nclr" style="border-right:none">
 																<span id="ctlSpec_lblAcceleration" class="ctlLabel">加速度（A）0.7</span>
@@ -689,7 +686,7 @@
 														<tr>
 
 															<td class="spec-tbl-td2-nclr" style="border-right:none">
-																<span id="ctlSpec_lblSpeed" class="ctlLabel">速度（V）240</span>
+																<span id="ctlSpec_lblSpeed" class="ctlLabel"></span>
 															</td>
 															<td class="spec-tbl-td3-nclr" style="border-left:none">
 																<span id="ctlSpec_lblSpeedUnit" class="ctlLabel">mm/s</span>
@@ -706,7 +703,6 @@
 														</tr>
 													</tbody>
 												</table>
-
 											</td>
 										</tr>
 										<tr>
@@ -714,7 +710,7 @@
 										</tr>
 										<tr>
 											<td style="color: rgb(0,112,192)">
-												<span id="ctlSpec_lblTitleCalcTravelingLifeSpan" class="ctlLabel">計算走行寿命</span>
+												<span id="ctlSpec_lblTitleCalcTravelingLifeSpan" class="ctlLabel">计算行走寿命</span>
 											</td>
 										</tr>
 										<tr>
@@ -728,7 +724,7 @@
 													<tbody>
 														<tr>
 															<td class="spec-tbl-td1">
-																<span id="ctlSpec_lblTravelingLifeDistanceTitle" class="ctlLabel">走行寿命計算</span>
+																<span id="ctlSpec_lblTravelingLifeDistanceTitle" class="ctlLabel">计算行走寿命</span>
 															</td>
 															<td class="spec-tbl-td2-nclr" style="border-right:none">
 																<span id="ctlSpec_lblTravelingLifeDistance" class="ctlLabel">0</span>
@@ -739,7 +735,7 @@
 														</tr>
 														<tr>
 															<td style="background-color: rgb(184,204,228)">
-																<span id="ctlSpec_lblTravelingLifeSpanTitle" class="ctlLabel">寿命予測</span>
+																<span id="ctlSpec_lblTravelingLifeSpanTitle" class="ctlLabel">预测寿命</span>
 															</td>
 															<td class="alignRight">
 																<span id="ctlSpec_lblTravelingLifeSpan" class="ctlLabel">0年0ヵ月</span>
@@ -765,7 +761,6 @@
 						</tr>
 						<tr>
 							<td>
-
 								<img id="imDrawing" src="{{ asset('i/client/EcRequire/EC-R6M_ZU.png') }}" style="width:960px;">
 								<img id="imDrawingStroke" onerror="this.style.display='none'" src="{{ asset('i/client/EcRequire/EC-R6M_STROKE-0050.png') }}" style="width:960px;">
 							</td>

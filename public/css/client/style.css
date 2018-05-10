@@ -157,6 +157,7 @@ input:disabled {
 .require-right{
 	display: table-cell;
     padding-left: 10px;
+    vertical-align: top;
 }
 .require-result{
 	background: #af2d4a;
@@ -746,5 +747,54 @@ table.Address td {
 
 #tblBreadCrumbs {
     border-collapse: collapse;
+    text-align: right;
+}
+
+#a-box-head{
+    width:200px;
+    vertical-align:middle;
+    float:left;
+    height:140px;
+}
+
+#b-box-head{
+    float:left;
+}
+
+#c-box-head{
+    float:left;
+}
+
+#d-box-head{
+    float:left;
+}
+#a-box,#b-box,#c-box,#d-box,#e-box,#f-box{
+	width: 650px;
+    display:table-cell; 
+    vertical-align:middle;
+    padding: 20px 0;
+}
+
+#d-box-load {
+    float:left;
+    margin-top:10px;
+}
+
+.imgbtnForm {
+    max-width: 200px;
+}
+
+#e-box-head {
+    float: left;
+}
+
+#e-box-input {
+    text-align: right;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+#e-box-input input[type="text"] {
+    width: 80px;
     text-align: right;
 }
