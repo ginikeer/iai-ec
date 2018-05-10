@@ -86,4 +86,10 @@ class EcTypeController extends Controller {
 		return view('client/ECCustomerInfo');
 	}
 	
+	public function getCustomerfinish(Request $request)
+	{
+		
+		return view('client/ECCustomerFinish');
+	}
+	
 }

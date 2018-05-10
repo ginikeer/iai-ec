@@ -156,6 +156,7 @@
 
 			
 		<!--</form>-->
+@endsection
 @section('script')
 	<script src="{{ asset('js/client/WebResource.js') }}"></script>
 	<script src="{{ asset('js/client/WebResource2.js') }}"></script>

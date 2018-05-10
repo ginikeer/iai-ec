@@ -150,9 +150,9 @@
 			            		<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnLoad_LST" id="ContentPlaceHolder1_imgbtnLoad_LST" class="imgbtnConditions modal-open" onkeydown="return KeyDownButton(this)" src="{{ asset('i/client/EcRequire/btnConditionsEntry.png') }}" onclick="return setFormName(&quot;http://iaiecsys.eigyo.com.cn/public/index.php/ECRequire/loadsmall&quot;);">
 			            	</div>
 			            	<div class="m-box-load" id="m-box-load">
-			            		<img id="ContentPlaceHolder1_imglblLoadST" class="imgbtnConditions" src="{{ asset('i/client/EcRequire/imgLabelLoad.png') }}" style="text-align:right; vertical-align:top; margin-top:15px; margin-right:10px;">
-			            		<input name="ctl00$ContentPlaceHolder1$txtLoad_LST" type="text" maxlength="3" id="ContentPlaceHolder1_txtLoad_LST" class="text" onkeydown="return numOnly(this,this.value,false)" style="text-align: right; vertical-align: top; margin-top: 15px; margin-right: 10px; border: none;" readonly="">
-			            		<img id="ContentPlaceHolder1_imglblLoadUnit_LST" src="{{ asset('i/client/EcRequire/imgLabelLoadUnit.png') }}" style="text-align:right; vertical-align:top; margin-top:15px; margin-right:10px;">
+			            		<img id="ContentPlaceHolder1_imglblLoadST" class="imgbtnConditions" src="{{ asset('i/client/EcRequire/imgLabelLoad.png') }}">
+			            		<input name="ctl00$ContentPlaceHolder1$txtLoad_LST" type="text" maxlength="3" id="ContentPlaceHolder1_txtLoad_LST" class="text" onkeydown="return numOnly(this,this.value,false)" readonly="">
+			            		<img id="ContentPlaceHolder1_imglblLoadUnit_LST" src="{{ asset('i/client/EcRequire/imgLabelLoadUnit.png') }}">
 			            	</div>
 			            	<div class="m-box-moment" id="m-box-moment">
 			            		<img id="ContentPlaceHolder1_imglblMomentST" class="imgbtnConditions" src="{{ asset('i/client/EcRequire/imgLabelMoment.png') }}" style="display: none">
@@ -285,6 +285,7 @@
 			</div>
 		</div>
 	</div>
+	@endsection
 	@section('script')
 		<script src="{{ asset('js/client/ECRequirementSelection.js') }}"></script>
 		<script type="text/javascript">

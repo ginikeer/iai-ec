@@ -63,7 +63,8 @@
 							</tr>
 							<tr>
 								<td colspan="4">
-									<img id="ContentPlaceHolder1_imgBreadCrumbs" class="imgBuyingFlow" src="{{ asset('i/client/EcRequire/breadcrumbs1.png') }}">
+									<img id="ContentPlaceHolder1_imgBreadCrumbs1" class="imgBuyingFlow" src="{{ asset('i/client/EcRequire/breadcrumbs1.png') }}">
+									<img id="ContentPlaceHolder1_imgBreadCrumbs5" class="imgBuyingFlow" src="{{ asset('i/client/EcRequire/breadcrumbs5.png') }}" style="display: none;">
 								</td>
 							</tr>
 						</tbody>
@@ -84,34 +85,15 @@
 								<th>
 									<span id="ContentPlaceHolder1_lblCompanyName" class="ctlLabel">会社名 </span></th>
 								<td>
-									<input name="ctl00$ContentPlaceHolder1$txtCompanyName" type="text" id="ContentPlaceHolder1_txtCompanyName" class="text"></td>
+									<input name="ctl00$ContentPlaceHolder1$txtCompanyName" type="text" id="ContentPlaceHolder1_txtCompanyName" class="text required-item"></td>
 								<td class="lblError">
 									<span id="ContentPlaceHolder1_lblCompanyError" class="ErrorFont"></span></td>
 							</tr>
 							<tr>
 								<th>
-									<span id="ContentPlaceHolder1_lblDivisionName" class="ctlLabel">部署 </span></th>
-								<td>
-									<input name="ctl00$ContentPlaceHolder1$txtDivisionName" type="text" id="ContentPlaceHolder1_txtDivisionName" class="text"></td>
-								<td class="lblError">
-									<span id="ContentPlaceHolder1_lblDivisionError" class="ErrorFont"></span></td>
-							</tr>
-							<tr>
-								<th>
-									<span id="ContentPlaceHolder1_lblPostalCode" class="ctlLabel">郵便番号</span></th>
-								<td>
-									<input name="ctl00$ContentPlaceHolder1$txtPostalTop" type="text" maxlength="3" id="ContentPlaceHolder1_txtPostalTop" class="p-postal-code" onkeydown="return numOnly(this,this.value,false)" style="border-color:#FFCC99;border-width:2px;border-style:Solid;font-size:18px;height:25px;width:50px;text-align:right;font-family:'メイリオ', 'Meiryo', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'ＭＳ Ｐゴシック', sans-serif;ime-mode:disabled;">
-									<span id="ContentPlaceHolder1_lblHyphen1" class="lblHyphen"> - </span>
-									<input name="ctl00$ContentPlaceHolder1$txtPostalBtm" type="text" maxlength="4" id="ContentPlaceHolder1_txtPostalBtm" class="p-postal-code" onkeydown="return numOnly(this,this.value,false)" style="border-color:#FFCC99;border-width:2px;border-style:Solid;font-size:18px;height:25px;width:50px;text-align:right;font-family:'メイリオ', 'Meiryo', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'ＭＳ Ｐゴシック', sans-serif;ime-mode:disabled;">
-								</td>
-								<td class="lblError">
-									<span id="ContentPlaceHolder1_lblPostalError" class="ErrorFont"></span></td>
-							</tr>
-							<tr>
-								<th>
 									<span id="ContentPlaceHolder1_lblAddress" class="ctlLabel">住所</span></th>
 								<td>
-									<input name="ctl00$ContentPlaceHolder1$txtAddress" type="text" id="ContentPlaceHolder1_txtAddress" class="p-region p-locality p-street-address p-extended-address" style="border-color:#FFCC99;border-width:2px;border-style:Solid;font-size:18px;height:25px;width:400px; font-family:'メイリオ', 'Meiryo', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'ＭＳ Ｐゴシック', sans-serif;">
+									<input name="ctl00$ContentPlaceHolder1$txtAddress" type="text" id="ContentPlaceHolder1_txtAddress" class="p-region p-locality p-street-address p-extended-address required-item" style="border-color:#FFCC99;border-width:2px;border-style:Solid;font-size:18px;height:25px;width:400px; font-family:'メイリオ', 'Meiryo', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'ＭＳ Ｐゴシック', sans-serif;">
 								</td>
 								<td class="lblError">
 									<span id="ContentPlaceHolder1_lblAddressError" class="ErrorFont"></span></td>
@@ -120,11 +102,11 @@
 								<th>
 									<span id="ContentPlaceHolder1_lblTel" class="ctlLabel">電話番号</span></th>
 								<td>
-									<input name="ctl00$ContentPlaceHolder1$txtTelTop" type="text" maxlength="5" id="ContentPlaceHolder1_txtTelTop" class="number" onkeypress="return CheckNum();" style="width:50px;ime-mode:disabled;">
+									<input name="ctl00$ContentPlaceHolder1$txtTelTop" type="text" maxlength="5" id="ContentPlaceHolder1_txtTelTop" class="number required-item" onkeypress="return CheckNum();" style="width:50px;ime-mode:disabled;">
 									<span id="ContentPlaceHolder1_lblHyphen2" class="lblHyphen"> - </span>
-									<input name="ctl00$ContentPlaceHolder1$txtTelMid" type="text" maxlength="5" id="ContentPlaceHolder1_txtTelMid" class="number" onkeypress="return CheckNum();" style="width:50px;ime-mode:disabled;">
+									<input name="ctl00$ContentPlaceHolder1$txtTelMid" type="text" maxlength="5" id="ContentPlaceHolder1_txtTelMid" class="number required-item" onkeypress="return CheckNum();" style="width:50px;ime-mode:disabled;">
 									<span id="ContentPlaceHolder1_lblHyphen3" class="lblHyphen"> - </span>
-									<input name="ctl00$ContentPlaceHolder1$txtTelBtm" type="text" maxlength="5" id="ContentPlaceHolder1_txtTelBtm" class="number" onkeypress="return CheckNum();" style="width:50px;ime-mode:disabled;">
+									<input name="ctl00$ContentPlaceHolder1$txtTelBtm" type="text" maxlength="5" id="ContentPlaceHolder1_txtTelBtm" class="number required-item" onkeypress="return CheckNum();" style="width:50px;ime-mode:disabled;">
 								</td>
 								<td class="lblError">
 									<span id="ContentPlaceHolder1_lblTelError" class="ErrorFont"></span></td>
@@ -133,23 +115,15 @@
 								<th>
 									<span id="ContentPlaceHolder1_lblNameKanji" class="ctlLabel">氏名(漢字)</span></th>
 								<td>
-									<input name="ctl00$ContentPlaceHolder1$txtNameKanji" type="text" id="ContentPlaceHolder1_txtNameKanji" class="text"></td>
+									<input name="ctl00$ContentPlaceHolder1$txtNameKanji" type="text" id="ContentPlaceHolder1_txtNameKanji" class="text required-item"></td>
 								<td class="lblError">
 									<span id="ContentPlaceHolder1_lblNameKanjiError" class="ErrorFont"></span></td>
 							</tr>
 							<tr>
 								<th>
-									<span id="ContentPlaceHolder1_lblNameFurigana" class="ctlLabel">氏名(フリガナ)</span></th>
-								<td>
-									<input name="ctl00$ContentPlaceHolder1$txtNameFurigana" type="text" id="ContentPlaceHolder1_txtNameFurigana" class="text"></td>
-								<td class="lblError">
-									<span id="ContentPlaceHolder1_lblNameFuriganaError" class="ErrorFont"></span></td>
-							</tr>
-							<tr>
-								<th>
 									<span id="ContentPlaceHolder1_lblMail" class="ctlLabel">メールアドレス</span></th>
 								<td>
-									<input name="ctl00$ContentPlaceHolder1$txtMail" type="text" id="ContentPlaceHolder1_txtMail" class="text" style="ime-mode:disabled;"></td>
+									<input name="ctl00$ContentPlaceHolder1$txtMail" type="text" id="ContentPlaceHolder1_txtMail" class="text required-item" style="ime-mode:disabled;"></td>
 								<td class="lblError">
 									<span id="ContentPlaceHolder1_lblMailError" class="ErrorFont"></span></td>
 							</tr>
@@ -157,29 +131,34 @@
 								<th>
 									<span id="ContentPlaceHolder1_lblMailConfirm" class="ctlLabel">メールアドレス(確認)</span></th>
 								<td>
-									<input name="ctl00$ContentPlaceHolder1$txtMailConfirmTop" type="text" id="ContentPlaceHolder1_txtMailConfirmTop" class="text" style="width:215px;ime-mode:disabled;">
+									<input name="ctl00$ContentPlaceHolder1$txtMailConfirmTop" type="text" id="ContentPlaceHolder1_txtMailConfirmTop" class="text required-item" style="width:215px;ime-mode:disabled;">
 									<span id="ContentPlaceHolder1_lblat" class="lblAtmark">@</span>
-									<input name="ctl00$ContentPlaceHolder1$txtMailConfirmBtm" type="text" id="ContentPlaceHolder1_txtMailConfirmBtm" class="text" style="width:150px;ime-mode:disabled;">
+									<input name="ctl00$ContentPlaceHolder1$txtMailConfirmBtm" type="text" id="ContentPlaceHolder1_txtMailConfirmBtm" class="text required-item" style="width:150px;ime-mode:disabled;">
 								</td>
 								<td class="lblError">
-									<span id="ContentPlaceHolder1_lblMailConfirmError" class="ErrorFont"></span></td>
+									<span id="ContentPlaceHolder1_lblMailConfirmError" class="ErrorFont"></span>
+								</td>
 							</tr>
 						</tbody>
 					</table>
 					<br>
 					<div class="imgButtonPosition">
-						<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnBack" id="ContentPlaceHolder1_imgbtnBack" class="imgButton" src="{{ asset('i/client/EcRequire/btnBack.png') }}">
+						<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnBack" id="ContentPlaceHolder1_imgbtnBack" class="imgButton" src="{{ asset('i/client/EcRequire/btnBack.png') }}" onclick="javaScript:history.go(-1);">
 						<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnNext" id="ContentPlaceHolder1_imgbtnNext" class="imgButton" src="{{ asset('i/client/EcRequire/btnNext.png') }}">
+						
+						<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnBack" id="ContentPlaceHolder1_imgbtnBack2" class="imgButton" src="{{ asset('i/client/EcRequire/btnBack.png') }}" style="display: none;">
+						<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnNext" id="ContentPlaceHolder1_imgbtnNext2" class="imgButton" src="{{ asset('i/client/EcRequire/btnNext.png') }}" style="display: none;" onclick="javascript:window.location.href= '{{url("/EC/customerfinish")}}'; ">
 					</div>
 				</div>
 
 			</div>
 
 		<!--</form>-->
+@endsection
 @section('script')
 	<script src="{{ asset('js/client/WebResource.js') }}"></script>
 	<script src="{{ asset('js/client/WebResource2.js') }}"></script>
-	<!--<script src="{{ asset('js/client/yubinbango.js') }}"></script>-->
+	<script src="{{ asset('js/client/customerInfo.js') }}"></script>
 	<script type="text/javascript">
 		window.onload = function() {
 //			if(typeof contentPageLoad == 'function') contentPageLoad();

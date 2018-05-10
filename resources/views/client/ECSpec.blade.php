@@ -70,25 +70,20 @@
 				</tr>
 			</tbody>
 		</table>
-
 		<br>
 		<div class="imgButtonPosition">
-
 			<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnSavePDF" id="ContentPlaceHolder1_imgbtnSavePDF" class="imgButton" src="{{ asset('i/client/EcRequire/btnPDF.png') }}">
-
 		</div>
-
 	</div>
-
-	<script type="text/javascript">
-		WebForm_AutoFocus('DummySubmitButton'); 
-	</script>
 </form>
+@endsection
+
 @section('script')
 	<script type="text/javascript">
 		window.onload = function() {
 			if(typeof contentPageLoad == 'function') contentPageLoad();
 		}
+		WebForm_AutoFocus('DummySubmitButton'); 
 	</script>
 @stop
 			

@@ -286,7 +286,7 @@ input:disabled {
 .n-box-load input[type="text"] {
     width:80px; 
     text-align:right;
-    margin-left:160px;
+    margin-left:140px;
 }
 
 .k-box-head{
@@ -680,4 +680,71 @@ table.Peripheral td {
 .AttentionMsg {
     color: red;
     font-size: 18px;
+}
+
+
+table.Address {
+    width: 800px;
+    margin: 0px;
+    border-collapse: separate;
+    border-spacing: 0px 1px;
+    font-size: 18px;
+}
+ 
+table.Address th,
+table.Address td {
+padding-left:1px;
+}
+ 
+table.Address th {
+    background: #FFCC99;
+    vertical-align: middle;
+    text-align: left;
+    width: 200px;
+    overflow: visible;
+    position: relative;
+    color: #000;
+    font-weight: normal;
+    font-size: 18px;
+}
+ 
+table.Address th:after {
+    left: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(136, 183, 213, 0);
+    border-width: 0px;
+    margin-top: -10px;
+}
+/* firefox */
+@-moz-document url-prefix() {
+    table.Address th::after {
+        float: right;
+        padding: 0;
+        left: 30px;
+        top: 10px;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: relative;
+        pointer-events: none;
+        border: 10px solid transparent;
+        border-left: #295890 10px solid;
+        margin-top: -10px;
+    }
+}
+ 
+table.Address td {
+    /*background: #f8f8f8;*/
+    width: 400px;
+}
+
+#tblBreadCrumbs {
+    border-collapse: collapse;
+    text-align: right;
 }

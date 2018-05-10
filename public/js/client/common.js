@@ -41,7 +41,6 @@ var ssImgName       = "ImgName"　 //画像名
 var ssFullName      = "FullName"  //機種名
 
 
-// 機種選定画面
 var ssTransport = "Transport";
 var ssPressing = "Presssing";
 var ssSlider = "Slider";
@@ -51,7 +50,6 @@ var ssHorizontal = "Horizontal";
 var ssVertical = "Vertical";
 var ssPressingForce = "PressingForce"
 
-// 機種選定結果
 var ssSelectSeries = "SelectSeries";        // シリーズ
 var ssSelectType = "SelectType";            // 型式
 var ssSelectStroke = "SelectStroke";        // ストローク
@@ -60,7 +58,6 @@ var ssCalcLife = "CalcLife";            // 寿命予測計算
 var ssCalcDistance= "CalcDistance";        // 走行寿命計算
 var ssCalcMoment = "CalcMoment";        // モーメント
 
-// 機種選定結果 - ワンランク下
 var ssDownSeries = "DownSeries"
 var ssDownType = "DownType"
 var ssDownStroke =  "DownStroke"
@@ -82,7 +79,6 @@ var ssDownCalcMoment = "DownCalcMoment"
 var ssDownCalcDistance = "DownCalcDistance"
 var ssDownCalcLife = "DownCalcLife"
 
-// 機種選定画面－エアシリンダ
 var ssResemble_Bore1 = "Resemble_Bore1";
 var ssResemble_Bore2 = "Resemble_Bore2";
 var ssResemble_Bore3 = "Resemble_Bore3";
@@ -99,7 +95,6 @@ var ssResemble_Horizontal = "Resemble_Horizontal";
 var ssResemble_Vertical = "Resemble_Vertical";
 var ssResemble_Stroke = "Resemble_Stroke"
 
-// 子画面で取り扱うセッション（セッションの先頭に文字連結して使用）
 var ssTemp = "Temp";
 
 // ifream请求页面
@@ -988,4 +983,31 @@ function CalcLife(calcKbn           // 計算区分
 function SessionClear() {
     // すべて消去
     sessionStorage.clear();
+}
+
+//判断所有必选项是否都填写
+function checkNullAll() {
+	$(".ErrorFont").hide();
+	var flag = true;
+	
+	$(".required-item").each(function() {
+	 	if( $(this).val() == "" ) {
+	 		$(this).parents('td').siblings('.lblError').find('.ErrorFont').show().text('此项目为必填项');
+	 		flag = false;
+	 	}
+	});
+	
+	return flag;
+}
+
+//判断两次输入是否一致
+function checkSame(text, again, _error) {
+	$(_error).hide();
+	
+	if(pwd != again){
+		$(_error).show();
+		return false;
+	} else {
+		return true;
+	}
 }
