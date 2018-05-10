@@ -21,8 +21,6 @@
 	
 	@yield('content')
 	
-	
-	
 
 	<script src="{{ asset('') }}"></script>
 	
