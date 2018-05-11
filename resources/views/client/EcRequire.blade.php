@@ -13,6 +13,7 @@
 	</div>
 	<div class="content">
 		<div class="container">
+			<!--<form method="post" action="" onkeypress="" id="form1" class="h-adr">-->
 			<div class="size-box">
 				<div class="require-left">
 					<h3 class="title-tips red">请在以下“输入条件”栏内选择相应条件，<br>在右侧 “选定结果”栏内显示推荐机种。</h3>
@@ -283,6 +284,7 @@
 				<input name="ctl00$ContentPlaceHolder1$txtHdnSelectType" type="text" id="ContentPlaceHolder1_txtHdnSelectType" style="display: none">
 				<input name="ctl00$ContentPlaceHolder1$txtHdnSelectStroke" type="text" id="ContentPlaceHolder1_txtHdnSelectStroke" style="display: none">
 			</div>
+			<!--</form>-->
 		</div>
 	</div>
 	@endsection
