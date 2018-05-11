@@ -6,7 +6,7 @@
 		<div class="container">
 			<div class="header-title"><p>e电缸机种选定[请选择使用条件]</p></div>
 			<div class="header-btn">
-				<a href="http://iai.eigyo.com.cn/public/index.php"><img src="{{ asset('i/client/home/btnHome.png') }}"></a>
+				<a href="{{ url('') }}"><img src="{{ asset('i/client/home/btnHome.png') }}"></a>
 				<a href="http://iai.eigyo.com.cn/public/index.php/contact"><img src="{{ asset('i/client/home/btnContact.png') }}"></a>
 			</div>
 		</div>
