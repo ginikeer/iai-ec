@@ -38,7 +38,6 @@ $(function () {
                 $('.modal-overlay').remove();
             });
 
-            //SelectModel("ContentPlaceHolder1_lblLoad")
             SelectModel(this)
             return false
         });
@@ -314,12 +313,6 @@ function setItems(own) {
 };
 
 // 機種選定処理
-//function SelectionModels(blnFlag,
-//                         intBore1, intBore2, intBore3, intBore4, intBore5, intBore6,
-//                         intAir1, intAir2,
-//                         intRodless, intRod,
-//                         intHorizontal, intVertical,
-//                         intStroke) {
 function SelectionModels(blnFlag,
                          intBore1, intBore2, intBore3, intBore4, intBore5, intBore6,intBore7,intBore8,
                          intAir1, intAir2,
@@ -327,83 +320,83 @@ function SelectionModels(blnFlag,
                          intHorizontal, intVertical,
                          intStroke) {
 
-    $.ajax({
-        type: "get",
-        datatype: "xml",
-        contentType: "text/xml; charset=utf-8",
-        url: ECMS_HOST_URL + "/WCF/srvECSelection.svc/SelectionModels_Resemble",
-        data: {
-            vBore1: intBore1,
-            vBore2: intBore2,
-            vBore3: intBore3,
-            vBore4: intBore4,
-            vBore5: intBore5,
-            vBore6: intBore6,
-            vBore7: intBore7,
-            vBore8: intBore8,
-            vAir1: intAir1,
-            vAir2: intAir2,
-            vRodless: intRodless,
-            vRod: intRod,
-            vHorizontal: intHorizontal,
-            vVertical: intVertical,
-            vStroke: intStroke
-        },
-
-    }).done(function (data) {
-        var cnt;
-        cnt = data.getElementsByTagName("Table").length;
-
-        //必須項目の状態で処理を切り替える
-        if (blnFlag || cnt == 0) {
-            //divの表示有無設定
-            document.getElementById("cnt-box").style.display = "block";
-            document.getElementById("h-box").style.display = "none";
-
-            //検索件数の表示
-            document.getElementById("ContentPlaceHolder1_lblSearchRecords").innerHTML = "適合製品" + cnt + "件";
-
-            // 件数が0件
-            if (cnt == 0) {
-                document.getElementById("ContentPlaceHolder1_lblWarn1").innerHTML = "※";
-                document.getElementById("ContentPlaceHolder1_lblWarn2").innerHTML = "お客様の条件に適合する製品<br>がございません<br>入力条件の見直しもしくは機種変更<br>のためお問い合わせください";
-            } else {
-                document.getElementById("ContentPlaceHolder1_lblWarn1").innerHTML = "";
-                document.getElementById("ContentPlaceHolder1_lblWarn2").innerHTML = "";
-            }
-
-            // オプションケーブル長ボタン使用不可
-            document.getElementById("ContentPlaceHolder1_imgbtnOptionCable").disabled = true;
-
-        } else {
-            //divの表示有無設定
-            document.getElementById("cnt-box").style.display = "none";
-            document.getElementById("h-box").style.display = "block";
-
-            //推奨機種
-            document.getElementById("ContentPlaceHolder1_lblRecommendModelName").innerHTML = data.getElementsByTagName("FULL_NAME")['0'].textContent;
-            //標準価格
-            document.getElementById("ContentPlaceHolder1_lblRecommendPrice").innerHTML = "\\" + setComma(parseInt(data.getElementsByTagName("PRICE")['0'].textContent), true, false);
-            // 画像設定
-            document.getElementById("ContentPlaceHolder1_imgRecommendModel").src = data.getElementsByTagName("IMG_NAME")['0'].textContent;
-
-
-
-            //機種選定が行われたタイミングで取得値をセッションに設定
-            //CALC～は実装されたら指定
-            sessionStorage.setItem(ssSelectSeries, data.getElementsByTagName("SERIES")['0'].textContent);
-            sessionStorage.setItem(ssSelectType, data.getElementsByTagName("TYPE")['0'].textContent);
-            sessionStorage.setItem(ssSelectStroke, data.getElementsByTagName("STROKE")['0'].textContent);
-            // オプションケーブル長ボタン解除
-            document.getElementById("ContentPlaceHolder1_imgbtnOptionCable").disabled = false;
-
-        }
-
-
-    }).fail(function (data, textStatus, errorThrown) {
-        // エラー時   
-        alert("false")
-    });
+//  $.ajax({
+//      type: "get",
+//      datatype: "xml",
+//      contentType: "text/xml; charset=utf-8",
+//      url: ECMS_HOST_URL + "/WCF/srvECSelection.svc/SelectionModels_Resemble",
+//      data: {
+//          vBore1: intBore1,
+//          vBore2: intBore2,
+//          vBore3: intBore3,
+//          vBore4: intBore4,
+//          vBore5: intBore5,
+//          vBore6: intBore6,
+//          vBore7: intBore7,
+//          vBore8: intBore8,
+//          vAir1: intAir1,
+//          vAir2: intAir2,
+//          vRodless: intRodless,
+//          vRod: intRod,
+//          vHorizontal: intHorizontal,
+//          vVertical: intVertical,
+//          vStroke: intStroke
+//      },
+//
+//  }).done(function (data) {
+//      var cnt;
+//      cnt = data.getElementsByTagName("Table").length;
+//
+//      //必須項目の状態で処理を切り替える
+//      if (blnFlag || cnt == 0) {
+//          //divの表示有無設定
+//          document.getElementById("cnt-box").style.display = "block";
+//          document.getElementById("h-box").style.display = "none";
+//
+//          //検索件数の表示
+//          document.getElementById("ContentPlaceHolder1_lblSearchRecords").innerHTML = "適合製品" + cnt + "件";
+//
+//          // 件数が0件
+//          if (cnt == 0) {
+//              document.getElementById("ContentPlaceHolder1_lblWarn1").innerHTML = "※";
+//              document.getElementById("ContentPlaceHolder1_lblWarn2").innerHTML = "お客様の条件に適合する製品<br>がございません<br>入力条件の見直しもしくは機種変更<br>のためお問い合わせください";
+//          } else {
+//              document.getElementById("ContentPlaceHolder1_lblWarn1").innerHTML = "";
+//              document.getElementById("ContentPlaceHolder1_lblWarn2").innerHTML = "";
+//          }
+//
+//          // オプションケーブル長ボタン使用不可
+//          document.getElementById("ContentPlaceHolder1_imgbtnOptionCable").disabled = true;
+//
+//      } else {
+//          //divの表示有無設定
+//          document.getElementById("cnt-box").style.display = "none";
+//          document.getElementById("h-box").style.display = "block";
+//
+//          //推奨機種
+//          document.getElementById("ContentPlaceHolder1_lblRecommendModelName").innerHTML = data.getElementsByTagName("FULL_NAME")['0'].textContent;
+//          //標準価格
+//          document.getElementById("ContentPlaceHolder1_lblRecommendPrice").innerHTML = "\\" + setComma(parseInt(data.getElementsByTagName("PRICE")['0'].textContent), true, false);
+//          // 画像設定
+//          document.getElementById("ContentPlaceHolder1_imgRecommendModel").src = data.getElementsByTagName("IMG_NAME")['0'].textContent;
+//
+//
+//
+//          //機種選定が行われたタイミングで取得値をセッションに設定
+//          //CALC～は実装されたら指定
+//          sessionStorage.setItem(ssSelectSeries, data.getElementsByTagName("SERIES")['0'].textContent);
+//          sessionStorage.setItem(ssSelectType, data.getElementsByTagName("TYPE")['0'].textContent);
+//          sessionStorage.setItem(ssSelectStroke, data.getElementsByTagName("STROKE")['0'].textContent);
+//          // オプションケーブル長ボタン解除
+//          document.getElementById("ContentPlaceHolder1_imgbtnOptionCable").disabled = false;
+//
+//      }
+//
+//
+//  }).fail(function (data, textStatus, errorThrown) {
+//      // エラー時   
+//      alert("false")
+//  });
 
 }
 
