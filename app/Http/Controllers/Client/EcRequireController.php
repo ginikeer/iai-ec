@@ -4,6 +4,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\Database\Series_Type;
+
 class EcRequireController extends Controller {
 
 	/*
@@ -95,6 +97,14 @@ class EcRequireController extends Controller {
 	public function getLoadrod(Request $request)
 	{
 		return view('client/ECRequireLoadRod');
+		
+	}
+	
+	public function getAjaxSelectModel(Request $request)
+	{
+		dd($request->all());
+		
+		
 		
 	}
 	

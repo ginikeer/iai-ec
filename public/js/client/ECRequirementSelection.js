@@ -535,47 +535,48 @@ function SelectionModels(blnFlag, intTransport, intPressing, intSlider, intRod, 
                             intHorizontal, intVertical, intStroke, intLoad, intGrvCntrPosition, intGrvCntrZPosition, intGrvCntrYPosition, intGrvCntrZPosition, intWorkLoadingState, intOffSetDistance, intOverhangDistance,
                             intPressingForce,dblHopeCycleTime,intCycleTimeCalcKbn,dblUptime1,dblUptime2,dblUptime3) {
     
-//  $.ajax({
-//      type: "get",
-//      datatype: "xml",
-//      contentType: "text/xml; charset=utf-8",
-//      url: ECMS_HOST_URL + "/WCF/srvECSelection.svc/SelectionModels",
-//      data: {
-//          vTransport: intTransport,
-//          vPressing: intPressing,
-//          vSlider: intSlider,
-//          vRod: intRod,
-//          vSmall: intSmall,
-//          vLinearGuideRod: intLinearGuideRod,
-//          vLinearGuideSmall: intLinearGuideSmall,
-//          vHorizontal: intHorizontal,
-//          vVertical: intVertical,
-//          vStroke: intStroke,
-//          vLoad: intLoad,
-//          vGravityOfCenter: intGrvCntrPosition,
-//          vGravityOfCenterX: intGrvCntrXPosition,
-//          vGravityOfCenterY: intGrvCntrYPosition,
-//          vGravityOfCenterZ: intGrvCntrZPosition,
-//          vWorkLoadingState: intWorkLoadingState,
-//          vOffSetDistance: intOffSetDistance,
-//          vOverhangDistance: intOverhangDistance,
-//          vPressingForce: intPressingForce,
-//          vHopeCycleTime: dblHopeCycleTime,
-//          vCycleTimeCalcKbn: intCycleTimeCalcKbn,
-//          vUptime1: dblUptime1,
-//          vUptime2: dblUptime2,
-//          vUptime3: dblUptime3
-//      },
-//
-//  }).done(function (data) {
-//
+    $.ajax({
+        type: "get",
+        datatype: "xml",
+        contentType: "text/xml; charset=utf-8",
+        url: $('#url-ajax-select-model').val(),
+		headers: { 'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content') },
+        data: {
+            vTransport: intTransport,
+            vPressing: intPressing,
+            vSlider: intSlider,
+            vRod: intRod,
+            vSmall: intSmall,
+            vLinearGuideRod: intLinearGuideRod,
+            vLinearGuideSmall: intLinearGuideSmall,
+            vHorizontal: intHorizontal,
+            vVertical: intVertical,
+            vStroke: intStroke,
+            vLoad: intLoad,
+            vGravityOfCenter: intGrvCntrPosition,
+            vGravityOfCenterX: intGrvCntrXPosition,
+            vGravityOfCenterY: intGrvCntrYPosition,
+            vGravityOfCenterZ: intGrvCntrZPosition,
+            vWorkLoadingState: intWorkLoadingState,
+            vOffSetDistance: intOffSetDistance,
+            vOverhangDistance: intOverhangDistance,
+            vPressingForce: intPressingForce,
+            vHopeCycleTime: dblHopeCycleTime,
+            vCycleTimeCalcKbn: intCycleTimeCalcKbn,
+            vUptime1: dblUptime1,
+            vUptime2: dblUptime2,
+            vUptime3: dblUptime3
+        },
+
+    }).done(function (data) {
+
 //      setModel(blnFlag, data)
-//
-//  }).fail(function (data, textStatus, errorThrown) {
-//      // エラー時   
-//      alert("Data cannot be retrieved. Please contact your system administrator.")
-//      });
-    }
+
+    }).fail(function (data, textStatus, errorThrown) {
+	    // エラー時   
+	    alert("Data cannot be retrieved. Please contact your system administrator.")
+	});
+}
 
 function setModel(blnFlag, data) {
     var cnt;

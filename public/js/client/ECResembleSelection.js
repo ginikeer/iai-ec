@@ -1290,3 +1290,14 @@ function ImageGroupChange(Group, own) {
         }
 
 }
+
+function getData() {
+	$.ajax({
+		type:"get",
+		url:"",
+		data: "",
+		success: function(res) {
+			
+		}
+	});
+}

@@ -14,6 +14,7 @@
 	<div class="content">
 		<div class="container">
 			<!--<form method="post" action="" onkeypress="" id="form1" class="h-adr">-->
+			<input type="hidden" id="url-ajax-select-model" value="{{ url('ECRequire/ajax-select-model') }}" />
 			<div class="size-box">
 				<div class="require-left">
 					<h3 class="title-tips red">请在以下“输入条件”栏内选择相应条件，<br>在右侧 “选定结果”栏内显示推荐机种。</h3>
@@ -78,7 +79,7 @@
 			            	<div id="e-box-head" class="e-box-head" style="float: left;">
 			            		<img id="ContentPlaceHolder1_imgNo5" class="imgNum" src="{{ asset('i/client/EcRequire/No5.png') }}">
 			            		<img id="ContentPlaceHolder1_imgHead5" class="imgHead1" src="{{ asset('i/client/EcRequire/Head5.png') }}">
-			            		<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnLoad" id="ContentPlaceHolder1_imgbtnLoad" class="imgbtnConditions modal-open" onkeydown="return KeyDownButton(this)" src="{{ asset('i/client/EcRequire/btnConditionsEntry.png') }}" onclick="return setFormName(&quot;http://iaiecsys.eigyo.com.cn/public/ECRequire/slider&quot;);">
+			            		<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnLoad" id="ContentPlaceHolder1_imgbtnLoad" class="imgbtnConditions modal-open" onkeydown="return KeyDownButton(this)" src="{{ asset('i/client/EcRequire/btnConditionsEntry.png') }}" onclick="return setFormName(&quot;{{ url('ECRequire/slider') }}&quot;);">
 			            	</div>
 			            	<div id="e-box-load" class="e-box-load">
 			            		<p>
@@ -110,7 +111,7 @@
 			            	<div class="n-box-head" id="n-box-head">
 			            		<img id="ContentPlaceHolder1_imgNo5_PST" class="imgNum" src="{{ asset('i/client/EcRequire/No5.png') }}">
 			            		<img id="ContentPlaceHolder1_imgHead5_PST" class="imgHead1" src="{{ asset('i/client/EcRequire/Head5_P.png') }}">
-			            		<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnPressST" id="ContentPlaceHolder1_imgbtnPressST" class="imgbtnConditions modal-open" onkeydown="return KeyDownButton(this)" src="{{ asset('i/client/EcRequire/btnConditionsEntry.png') }}" onclick="return setFormName(&quot;http://iaiecsys.eigyo.com.cn/public/index.php/ECRequire/pressingsmall&quot;);">
+			            		<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnPressST" id="ContentPlaceHolder1_imgbtnPressST" class="imgbtnConditions modal-open" onkeydown="return KeyDownButton(this)" src="{{ asset('i/client/EcRequire/btnConditionsEntry.png') }}" onclick="return setFormName(&quot;{{ url('ECRequire/pressingsmall') }}&quot;);">
 			            	</div>
 			            	<div class="n-box-load" id="n-box-load">
 			            		<input name="ctl00$ContentPlaceHolder1$txtPressST" type="text" maxlength="4" id="ContentPlaceHolder1_txtPressST" class="text" style="border: none;" readonly="">
@@ -122,7 +123,7 @@
 			            	<div class="k-box-head" id="k-box-head">
 			            		<img id="ContentPlaceHolder1_imgNo5_LR" class="imgNum" src="{{ asset('i/client/EcRequire/No5.png') }}">
 			            		<img id="ContentPlaceHolder1_imgHead_LR" class="imgHead1" src="{{ asset('i/client/EcRequire/Head5_LR.png') }}">
-			            		<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnLoad_LR" id="ContentPlaceHolder1_imgbtnLoad_LR" class="imgbtnConditions modal-open" onkeydown="return KeyDownButton(this)" src="{{ asset('i/client/EcRequire/btnConditionsEntry.png') }}" onclick="return setFormName(&quot;http://iaiecsys.eigyo.com.cn/public/index.php/ECRequire/loadrod&quot;);">
+			            		<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnLoad_LR" id="ContentPlaceHolder1_imgbtnLoad_LR" class="imgbtnConditions modal-open" onkeydown="return KeyDownButton(this)" src="{{ asset('i/client/EcRequire/btnConditionsEntry.png') }}" onclick="return setFormName(&quot;{{ url('ECRequire/loadrod') }}&quot;);">
 			            	</div>
 			            	<div class="k-box-load" id="k-box-load">
 			            		<img id="ContentPlaceHolder1_Image1" class="imgbtnConditions">
@@ -135,7 +136,7 @@
 			            	<div class="l-box-head" id="l-box-head">
 			            		<img id="ContentPlaceHolder1_imgNo5_LRL" class="imgNum" src="{{ asset('i/client/EcRequire/No5.png') }}">
 			            		<img id="ContentPlaceHolder1_imgHead_LRL" class="imgHead1" src="{{ asset('i/client/EcRequire/Head5_LR.png') }}">
-			            		<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnLoad_LRL" id="ContentPlaceHolder1_imgbtnLoad_LRL" class="imgbtnConditions modal-open" onkeydown="return KeyDownButton(this)" src="{{ asset('i/client/EcRequire/btnConditionsEntry.png') }}" onclick="return setFormName(&quot;http://iaiecsys.eigyo.com.cn/public/index.php/ECRequire/loadrodlinerguide&quot;);">
+			            		<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnLoad_LRL" id="ContentPlaceHolder1_imgbtnLoad_LRL" class="imgbtnConditions modal-open" onkeydown="return KeyDownButton(this)" src="{{ asset('i/client/EcRequire/btnConditionsEntry.png') }}" onclick="return setFormName(&quot;{{ url('ECRequire/loadrodlinerguide') }}&quot;);">
 			            	</div>
 			            	<div class="l-box-load" id="l-box-load">
 			            		<img id="ContentPlaceHolder1_Image2" class="imgbtnConditions">
@@ -148,7 +149,7 @@
 			            	<div class="m-box-head" id="m-box-head">
 			            		<img id="ContentPlaceHolder1_imgNo5_LST" class="imgNum" src="{{ asset('i/client/EcRequire/No5.png') }}">
 			            		<img id="ContentPlaceHolder1_imgHead_LST" class="imgHead1" src="{{ asset('i/client/EcRequire/Head5_LR.png') }}">
-			            		<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnLoad_LST" id="ContentPlaceHolder1_imgbtnLoad_LST" class="imgbtnConditions modal-open" onkeydown="return KeyDownButton(this)" src="{{ asset('i/client/EcRequire/btnConditionsEntry.png') }}" onclick="return setFormName(&quot;http://iaiecsys.eigyo.com.cn/public/index.php/ECRequire/loadsmall&quot;);">
+			            		<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnLoad_LST" id="ContentPlaceHolder1_imgbtnLoad_LST" class="imgbtnConditions modal-open" onkeydown="return KeyDownButton(this)" src="{{ asset('i/client/EcRequire/btnConditionsEntry.png') }}" onclick="return setFormName(&quot;{{ url('ECRequire/loadsmall') }}&quot;);">
 			            	</div>
 			            	<div class="m-box-load" id="m-box-load">
 			            		<img id="ContentPlaceHolder1_imglblLoadST" class="imgbtnConditions" src="{{ asset('i/client/EcRequire/imgLabelLoad.png') }}">
@@ -169,7 +170,7 @@
 			            		<img id="ContentPlaceHolder1_imgHead6" class="imgHead1" src="{{ asset('i/client/EcRequire/Head6.png') }}">
 			            	</div>
 			            	<div class="f-box-select" id="f-box-select">
-			            		<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnCycleTime" id="ContentPlaceHolder1_imgbtnCycleTime" class="modal-open" src="{{ asset('i/client/EcRequire/imgbtnHopeTime_Off.png') }}" onclick="if(document.getElementById(&quot;ContentPlaceHolder1_txtHdnSlider&quot;).value == &quot;1&quot;){setFormName(&quot;http://iaiecsys.eigyo.com.cn/public/index.php/ECRequire/time&quot;);}else if(document.getElementById(&quot;ContentPlaceHolder1_txtHdnRod&quot;).value == &quot;1&quot;){setFormName(&quot;http://iaiecsys.eigyo.com.cn/public/index.php/ECRequire/cycletimerod&quot;);}else if(document.getElementById(&quot;ContentPlaceHolder1_txtHdnSmallType&quot;).value == &quot;1&quot;){setFormName(&quot;http://iaiecsys.eigyo.com.cn/public/index.php/ECRequire/cycletimesmall&quot;);}else{setFormName(&quot;http://iaiecsys.eigyo.com.cn/public/index.php/ECRequire/time&quot;);}imgbtnCycleTime_onclick(this);return false;">
+			            		<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnCycleTime" id="ContentPlaceHolder1_imgbtnCycleTime" class="modal-open" src="{{ asset('i/client/EcRequire/imgbtnHopeTime_Off.png') }}" onclick="if(document.getElementById(&quot;ContentPlaceHolder1_txtHdnSlider&quot;).value == &quot;1&quot;){setFormName(&quot;{{ url('ECRequire/time') }}&quot;);}else if(document.getElementById(&quot;ContentPlaceHolder1_txtHdnRod&quot;).value == &quot;1&quot;){setFormName(&quot;{{ url('ECRequire/cycletimerod') }}&quot;);}else if(document.getElementById(&quot;ContentPlaceHolder1_txtHdnSmallType&quot;).value == &quot;1&quot;){setFormName(&quot;{{ url('ECRequire/cycletimesmall') }}&quot;);}else{setFormName(&quot;{{ url('ECRequire/time') }}&quot;);}imgbtnCycleTime_onclick(this);return false;">
 			            		<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnFastest" id="ContentPlaceHolder1_imgbtnFastest" src="{{ asset('i/client/EcRequire/imgbtnFastest_Off.png') }}" onclick="return imgbtnFastest_onclick(this);">
 			            	</div>
 			            	<div class="f-box-input" id="f-box-input">
@@ -185,7 +186,7 @@
 			            		<img id="ContentPlaceHolder1_imgHead7" class="imgHead1" src="{{ asset('i/client/EcRequire/Head7.png') }}">
 			            	</div>
 			            	<div class="g-box-load" id="g-box-load">
-			            		<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnLife" id="ContentPlaceHolder1_imgbtnLife" class="imgbtnConditions modal-open" src="{{ asset('i/client/EcRequire/btnConditionsEntry.png') }}" onclick="return setFormName(&quot;http://iaiecsys.eigyo.com.cn/public/index.php/ECRequire/life&quot;);">
+			            		<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnLife" id="ContentPlaceHolder1_imgbtnLife" class="imgbtnConditions modal-open" src="{{ asset('i/client/EcRequire/btnConditionsEntry.png') }}" onclick="return setFormName(&quot;{{ url('ECRequire/life') }}&quot;);">
 			            	</div>
 			            	<div class="g-box-input" id="g-box-input">
 			            		<img id="ContentPlaceHolder1_imglblLife" class="imgbtnConditions" src="{{ asset('i/client/EcRequire/imgLabelHopeLife.png') }}">
@@ -258,31 +259,31 @@
 						<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnDecision" id="ContentPlaceHolder1_imgbtnDecision" class="modal-decision" src="{{ asset('i/client/EcRequire/btnRequirementDecision.png') }}" style="width:auto; height:auto; max-width:150px; max-height:100px;">
 					</div>
 				</div>
-			
-				<input name="ctl00$ContentPlaceHolder1$txtHdnTransport" type="text" id="ContentPlaceHolder1_txtHdnTransport" style="display: none">
-				<input name="ctl00$ContentPlaceHolder1$txtHdnPressing" type="text" id="ContentPlaceHolder1_txtHdnPressing" style="display: none">
-				<input name="ctl00$ContentPlaceHolder1$txtHdnSlider" type="text" id="ContentPlaceHolder1_txtHdnSlider" style="display: none">
-				<input name="ctl00$ContentPlaceHolder1$txtHdnRod" type="text" id="ContentPlaceHolder1_txtHdnRod" style="display: none">
-				<input name="ctl00$ContentPlaceHolder1$txtHdnSmallType" type="text" id="ContentPlaceHolder1_txtHdnSmallType" style="display: none">
-				<input name="ctl00$ContentPlaceHolder1$txtHdnHorizontal" type="text" id="ContentPlaceHolder1_txtHdnHorizontal" style="display: none">
-				<input name="ctl00$ContentPlaceHolder1$txtHdnVertical" type="text" id="ContentPlaceHolder1_txtHdnVertical" style="display: none">
-				<input name="ctl00$ContentPlaceHolder1$txtHdnLoad" type="text" value="0" id="ContentPlaceHolder1_txtHdnLoad" style="display: none">
-				<input name="ctl00$ContentPlaceHolder1$txtHdnRange" type="text" value="0" id="ContentPlaceHolder1_txtHdnRange" style="display: none">
-				<input name="ctl00$ContentPlaceHolder1$txtHdnWorkLoadState" type="text" value="0" id="ContentPlaceHolder1_txtHdnWorkLoadState" style="display: none">
-				<input name="ctl00$ContentPlaceHolder1$txtHdnGrvCntrPosition" type="text" value="0" id="ContentPlaceHolder1_txtHdnGrvCntrPosition" style="display: none">
-				<input name="ctl00$ContentPlaceHolder1$txtGrvCntrPosition" type="text" id="ContentPlaceHolder1_txtGrvCntrPosition" style="display: none">
-				<input name="ctl00$ContentPlaceHolder1$txtHdnHopeCycleTime" type="text" value="0" id="ContentPlaceHolder1_txtHdnHopeCycleTime" style="display: none">
-				<input name="ctl00$ContentPlaceHolder1$txtHdnCycleTimeHopeOrFastKbn" type="text" value="0" id="ContentPlaceHolder1_txtHdnCycleTimeHopeOrFastKbn" style="display: none">
-				<input name="ctl00$ContentPlaceHolder1$txtHdnCalcCycleTime" type="text" value="0" id="ContentPlaceHolder1_txtHdnCalcCycleTime" style="display: none">
-				<input name="ctl00$ContentPlaceHolder1$txtHdnHopeLife" type="text" value="0" id="ContentPlaceHolder1_txtHdnHopeLife" style="display: none">
-				<input name="ctl00$ContentPlaceHolder1$txtHdnCalcLife" type="text" value="0" id="ContentPlaceHolder1_txtHdnCalcLife" style="display: none">
-				<input name="ctl00$ContentPlaceHolder1$txtHdnCalcMoment" type="text" value="0" id="ContentPlaceHolder1_txtHdnCalcMoment" style="display: none">
-				<input name="ctl00$ContentPlaceHolder1$txtHdnRoundTrip" type="text" value="0" id="ContentPlaceHolder1_txtHdnRoundTrip" style="display: none">
-				<input name="ctl00$ContentPlaceHolder1$txtHdnOperatingTime" type="text" value="0" id="ContentPlaceHolder1_txtHdnOperatingTime" style="display: none">
-				<input name="ctl00$ContentPlaceHolder1$txtHdnOperatingDay" type="text" value="0" id="ContentPlaceHolder1_txtHdnOperatingDay" style="display: none">
-				<input name="ctl00$ContentPlaceHolder1$txtHdnSelectSeries" type="text" id="ContentPlaceHolder1_txtHdnSelectSeries" style="display: none">
-				<input name="ctl00$ContentPlaceHolder1$txtHdnSelectType" type="text" id="ContentPlaceHolder1_txtHdnSelectType" style="display: none">
-				<input name="ctl00$ContentPlaceHolder1$txtHdnSelectStroke" type="text" id="ContentPlaceHolder1_txtHdnSelectStroke" style="display: none">
+				
+				<input name="ctl00$ContentPlaceHolder1$txtHdnTransport" type="hidden" id="ContentPlaceHolder1_txtHdnTransport">
+				<input name="ctl00$ContentPlaceHolder1$txtHdnPressing" type="hidden" id="ContentPlaceHolder1_txtHdnPressing">
+				<input name="ctl00$ContentPlaceHolder1$txtHdnSlider" type="hidden" id="ContentPlaceHolder1_txtHdnSlider">
+				<input name="ctl00$ContentPlaceHolder1$txtHdnRod" type="hidden" id="ContentPlaceHolder1_txtHdnRod">
+				<input name="ctl00$ContentPlaceHolder1$txtHdnSmallType" type="hidden" id="ContentPlaceHolder1_txtHdnSmallType">
+				<input name="ctl00$ContentPlaceHolder1$txtHdnHorizontal" type="hidden" id="ContentPlaceHolder1_txtHdnHorizontal">
+				<input name="ctl00$ContentPlaceHolder1$txtHdnVertical" type="hidden" id="ContentPlaceHolder1_txtHdnVertical">
+				<input name="ctl00$ContentPlaceHolder1$txtHdnLoad" type="hidden" value="0" id="ContentPlaceHolder1_txtHdnLoad">
+				<input name="ctl00$ContentPlaceHolder1$txtHdnRange" type="hidden" value="0" id="ContentPlaceHolder1_txtHdnRange">
+				<input name="ctl00$ContentPlaceHolder1$txtHdnWorkLoadState" type="hidden" value="0" id="ContentPlaceHolder1_txtHdnWorkLoadState">
+				<input name="ctl00$ContentPlaceHolder1$txtHdnGrvCntrPosition" type="hidden" value="0" id="ContentPlaceHolder1_txtHdnGrvCntrPosition">
+				<input name="ctl00$ContentPlaceHolder1$txtGrvCntrPosition" type="hidden" id="ContentPlaceHolder1_txtGrvCntrPosition">
+				<input name="ctl00$ContentPlaceHolder1$txtHdnHopeCycleTime" type="hidden" value="0" id="ContentPlaceHolder1_txtHdnHopeCycleTime">
+				<input name="ctl00$ContentPlaceHolder1$txtHdnCycleTimeHopeOrFastKbn" type="hidden" value="0" id="ContentPlaceHolder1_txtHdnCycleTimeHopeOrFastKbn">
+				<input name="ctl00$ContentPlaceHolder1$txtHdnCalcCycleTime" type="hidden" value="0" id="ContentPlaceHolder1_txtHdnCalcCycleTime">
+				<input name="ctl00$ContentPlaceHolder1$txtHdnHopeLife" type="hidden" value="0" id="ContentPlaceHolder1_txtHdnHopeLife">
+				<input name="ctl00$ContentPlaceHolder1$txtHdnCalcLife" type="hidden" value="0" id="ContentPlaceHolder1_txtHdnCalcLife">
+				<input name="ctl00$ContentPlaceHolder1$txtHdnCalcMoment" type="hidden" value="0" id="ContentPlaceHolder1_txtHdnCalcMoment">
+				<input name="ctl00$ContentPlaceHolder1$txtHdnRoundTrip" type="hidden" value="0" id="ContentPlaceHolder1_txtHdnRoundTrip">
+				<input name="ctl00$ContentPlaceHolder1$txtHdnOperatingTime" type="hidden" value="0" id="ContentPlaceHolder1_txtHdnOperatingTime">
+				<input name="ctl00$ContentPlaceHolder1$txtHdnOperatingDay" type="hidden" value="0" id="ContentPlaceHolder1_txtHdnOperatingDay">
+				<input name="ctl00$ContentPlaceHolder1$txtHdnSelectSeries" type="hidden" id="ContentPlaceHolder1_txtHdnSelectSeries">
+				<input name="ctl00$ContentPlaceHolder1$txtHdnSelectType" type="hidden" id="ContentPlaceHolder1_txtHdnSelectType">
+				<input name="ctl00$ContentPlaceHolder1$txtHdnSelectStroke" type="hidden" id="ContentPlaceHolder1_txtHdnSelectStroke">
 			</div>
 			<!--</form>-->
 		</div>
