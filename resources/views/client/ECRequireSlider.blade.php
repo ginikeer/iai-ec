@@ -47,9 +47,9 @@
                         <img id="ContentPlaceHolder1_imgWorkLoadStateVTitle" class="imgSize" src="{{ asset('i/client/EcRequire/LoadSlider_WorkLoadStateV.png') }}">
                     </div>                                               
                     <div id="dvWorkLoadingStateEntryVImage">
-                        <input type="image" name="ctl00$ContentPlaceHolder1$imgWorkLoadState7" id="ContentPlaceHolder1_imgWorkLoadState7" class="ImgWorkLoadStateSlider" src="{{ asset('i/client/EcRequire/WorkLoadState7_Off.png') }}" onclick="return ImageChange(this,7);" disabled="">
-                        <input type="image" name="ctl00$ContentPlaceHolder1$imgWorkLoadState8" id="ContentPlaceHolder1_imgWorkLoadState8" class="ImgWorkLoadStateSlider" src="{{ asset('i/client/EcRequire/WorkLoadState8_Off.png') }}" onclick="return ImageChange(this,8);" disabled="">
-                        <input type="image" name="ctl00$ContentPlaceHolder1$imgWorkLoadState9" id="ContentPlaceHolder1_imgWorkLoadState9" class="ImgWorkLoadStateSlider" src="{{ asset('i/client/EcRequire/WorkLoadState9_Off.png') }}" onclick="return ImageChange(this,9);" disabled="">
+                        <input type="image" name="ctl00$ContentPlaceHolder1$imgWorkLoadState7" id="ContentPlaceHolder1_imgWorkLoadState7" class="ImgWorkLoadStateSlider" src="{{ asset('i/client/EcRequire/WorkLoadState7_Off.png') }}" onclick="return ImageChange(this,7);" >
+                        <input type="image" name="ctl00$ContentPlaceHolder1$imgWorkLoadState8" id="ContentPlaceHolder1_imgWorkLoadState8" class="ImgWorkLoadStateSlider" src="{{ asset('i/client/EcRequire/WorkLoadState8_Off.png') }}" onclick="return ImageChange(this,8);" >
+                        <input type="image" name="ctl00$ContentPlaceHolder1$imgWorkLoadState9" id="ContentPlaceHolder1_imgWorkLoadState9" class="ImgWorkLoadStateSlider" src="{{ asset('i/client/EcRequire/WorkLoadState9_Off.png') }}" onclick="return ImageChange(this,9);" >
                     </div>
                 </div>
             </div>
@@ -76,7 +76,7 @@
                 </div>                                        
                 <div id="dvConditionLoadEntry2">
                     <img id="ContentPlaceHolder1_imgConditionLoadEntry2Content" src="{{ asset('i/client/EcRequire/LoadSlider_content4.png') }}" style="max-width:300px;">
-                    <img id="ContentPlaceHolder1_imgConditionGravityCenterPositionItem" class="imgSize" src="{{ asset('i/client/EcRequire/LoadSlider_GrvCntrPositionItem.png') }}">
+                    <!--<img id="ContentPlaceHolder1_imgConditionGravityCenterPositionItem" class="imgSize" src="{{ asset('i/client/EcRequire/LoadSlider_GrvCntrPositionItem.png') }}">-->
                     <input name="ctl00$ContentPlaceHolder1$numConditionGravityCenterPosition" type="text" maxlength="3" id="ContentPlaceHolder1_numConditionGravityCenterPosition" class="number" onchange="calc()" onkeypress="return CheckNum();" style="ime-mode:disabled;">
                     <img id="ContentPlaceHolder1_imgConditionGravityCenterPositionUnit" src="{{ asset('i/client/EcRequire/LoadSlider_GrvCntrPositionUnit.png') }}">
                     <div>
@@ -90,7 +90,7 @@
 @endsection
 
 @section('script')
-	<script src="{{ asset('js/client/ECRequirementPressingSmall.js') }}"></script>
+	<script src="{{ asset('js/client/ECRequirementLoadSlider.js') }}"></script>
 	<script type="text/javascript">
 		function procCheckLoadSlider(WorkLoadingState) {
 	        var Load = 0;
