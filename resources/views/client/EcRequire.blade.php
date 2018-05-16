@@ -200,12 +200,12 @@
 				<div class="require-right">
 					<h3 class="require-result">结果选定</h3>
 					<div class="result-content">
-						<div id="cnt-box" style="display: none;">
+						<div id="cnt-box">
 							<br>
 							<span id="ContentPlaceHolder1_lblDescription" class="ctlLabel">请在左侧1~5项输入产品信息</span>
 							<br>
 							<p>
-								<span id="ContentPlaceHolder1_lblSearchRecords" class="ctlLabel">机种3件</span>
+								<span id="ContentPlaceHolder1_lblSearchRecords" class="ctlLabel"></span>
 							</p>
 							<br>
 							<p>
@@ -213,7 +213,7 @@
 								<span id="ContentPlaceHolder1_lblWarn2" class="WarnMsg"></span>
 							</p>
 						</div>
-						<div id="h-box" style="display: block;">
+						<div id="h-box" style="display: none;">
 							<div>
 								<span id="ContentPlaceHolder1_lblRecommendModel" class="ctlLabel">推荐机种</span>
 								<span id="ContentPlaceHolder1_lblRecommendModelName" class="ctlLabel">EC-RR6M-65</span>

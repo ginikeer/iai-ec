@@ -4,7 +4,9 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use App\Database\Series_Type;
+use App\Http\Database\Mst_Series;
+
+use App\Services\Mst;
 
 class EcRequireController extends Controller {
 
@@ -102,10 +104,12 @@ class EcRequireController extends Controller {
 	
 	public function getAjaxSelectModel(Request $request)
 	{
-		dd($request->all());
+		$data = Mst_Series::getFilterData($request->all());
 		
+		$result["data"] = $data;
+		$result["cnt"] = count($data);
 		
-		
+		echo json_encode($result);
 	}
 	
 }

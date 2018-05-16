@@ -537,10 +537,9 @@ function SelectionModels(blnFlag, intTransport, intPressing, intSlider, intRod, 
     
     $.ajax({
         type: "get",
-        datatype: "xml",
-        contentType: "text/xml; charset=utf-8",
         url: $('#url-ajax-select-model').val(),
 		headers: { 'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content') },
+		datatype: "json",
         data: {
             vTransport: intTransport,
             vPressing: intPressing,
@@ -568,20 +567,20 @@ function SelectionModels(blnFlag, intTransport, intPressing, intSlider, intRod, 
             vUptime3: dblUptime3
         },
 
-    }).done(function (data) {
-
-//      setModel(blnFlag, data)
+    }).done(function (res) {
+		res = JSON.parse(res); 
+        setModel(blnFlag, res);
 
     }).fail(function (data, textStatus, errorThrown) {
 	    // エラー時   
-	    alert("Data cannot be retrieved. Please contact your system administrator.")
+	    alert("数据获取错误，请稍后重试！")
 	});
 }
 
 function setModel(blnFlag, data) {
     var cnt;
-    cnt = data.getElementsByTagName("Table").length;
-   
+    cnt = data.cnt;
+    
     //必須項目の状態で処理を切り替える
     if (blnFlag || cnt == 0) {
         //divの表示有無設定
@@ -603,8 +602,7 @@ function setModel(blnFlag, data) {
 
         // オプションケーブル長ボタン使用不可
         document.getElementById("ContentPlaceHolder1_imgbtnOptionCable").disabled = true;
-        document.getElementById("ContentPlaceHolder1_imgBtnRankDown").disabled = true;
-    } else if (data.getElementsByTagName("ERROR_KBN")['0'].textContent == enmERROR_KBN_OVERHANG) {
+    } else if (0 /* data.getElementsByTagName("ERROR_KBN")['0'].textContent == enmERROR_KBN_OVERHANG */) {
         // 張出し負荷長が限界を超えている場合、機種選定結果を表示しない
 
         document.getElementById("cnt-box").style.display = "block";
@@ -617,7 +615,7 @@ function setModel(blnFlag, data) {
         document.getElementById("ContentPlaceHolder1_lblWarn2").innerHTML = "張り出し負荷長過大、重心位置を<br>見直してください";
 
         //} else if (data.getElementsByTagName("CALC_DISTANCE")['0'].textContent <= gcDistanceLimit && document.getElementById("ContentPlaceHolder1_txtHdnSlider").value == "1") {
-    } else if (data.getElementsByTagName("ERROR_KBN")['0'].textContent == enmERROR_KBN_DISTANCE) {
+    } else if (0 /*data.getElementsByTagName("ERROR_KBN")['0'].textContent == enmERROR_KBN_DISTANCE */) {
         // 走行寿命距離が限界値以下の場合、機種選定結果を表示しない
         
         document.getElementById("cnt-box").style.display = "block";
@@ -697,38 +695,38 @@ function setModel(blnFlag, data) {
         document.getElementById("ContentPlaceHolder1_imgbtnOptionCable").disabled = false;
         
         //機種選定が行われたタイミングでワンサイズ下のデータをセッションに設定
-        sessionStorage.setItem(ssDownSeries, data.getElementsByTagName("DOWN_SERIES")['0'].textContent);
-        sessionStorage.setItem(ssDownType, data.getElementsByTagName("DOWN_TYPE")['0'].textContent);
-        sessionStorage.setItem(ssDownStroke, data.getElementsByTagName("DOWN_STROKE")['0'].textContent);
-        sessionStorage.setItem(ssDownPrice, data.getElementsByTagName("DOWN_PRICE")['0'].textContent);
-        sessionStorage.setItem(ssDownListOrder, data.getElementsByTagName("DOWN_LIST_ORDER")['0'].textContent);
-        sessionStorage.setItem(ssDownTypeName, data.getElementsByTagName("DOWN_TYPE_NAME")['0'].textContent);
-        sessionStorage.setItem(ssDownTypeForm, data.getElementsByTagName("DOWN_TYPE_FORM")['0'].textContent);
-        sessionStorage.setItem(ssDownTransport, data.getElementsByTagName("DOWN_TRANSPORT")['0'].textContent);
-        sessionStorage.setItem(ssDownPressing, data.getElementsByTagName("DOWN_PRESSING")['0'].textContent);
-        sessionStorage.setItem(ssDownHorizontal, data.getElementsByTagName("DOWN_HORIZONTAL")['0'].textContent);
-        sessionStorage.setItem(ssDownVertical, data.getElementsByTagName("DOWN_VERTICAL")['0'].textContent);
-        sessionStorage.setItem(ssDownStandardLife, data.getElementsByTagName("DOWN_STANDARD_LIFE")['0'].textContent);
-        sessionStorage.setItem(ssDownSpeed, data.getElementsByTagName("DOWN_SPEED")['0'].textContent);
-        sessionStorage.setItem(ssDownAcceleration, data.getElementsByTagName("DOWN_ACCELERATION")['0'].textContent);
-        sessionStorage.setItem(ssDownCalcCycleTime, data.getElementsByTagName("DOWN_CALC_CYCLE_TIME")['0'].textContent);
-        sessionStorage.setItem(ssDownImgName, data.getElementsByTagName("DOWN_IMG_NAME")['0'].textContent);
-        sessionStorage.setItem(ssDownFullName, data.getElementsByTagName("DOWN_FULL_NAME")['0'].textContent);
-        sessionStorage.setItem(ssDownCalcMoment, data.getElementsByTagName("DOWN_CALC_MOMENT")['0'].textContent);
-        sessionStorage.setItem(ssDownCalcDistance, data.getElementsByTagName("DOWN_CALC_DISTANCE")['0'].textContent);
-        sessionStorage.setItem(ssDownCalcLife, data.getElementsByTagName("DOWN_CALC_LIFE")['0'].textContent);
+//      sessionStorage.setItem(ssDownSeries, data.getElementsByTagName("DOWN_SERIES")['0'].textContent);
+//      sessionStorage.setItem(ssDownType, data.getElementsByTagName("DOWN_TYPE")['0'].textContent);
+//      sessionStorage.setItem(ssDownStroke, data.getElementsByTagName("DOWN_STROKE")['0'].textContent);
+//      sessionStorage.setItem(ssDownPrice, data.getElementsByTagName("DOWN_PRICE")['0'].textContent);
+//      sessionStorage.setItem(ssDownListOrder, data.getElementsByTagName("DOWN_LIST_ORDER")['0'].textContent);
+//      sessionStorage.setItem(ssDownTypeName, data.getElementsByTagName("DOWN_TYPE_NAME")['0'].textContent);
+//      sessionStorage.setItem(ssDownTypeForm, data.getElementsByTagName("DOWN_TYPE_FORM")['0'].textContent);
+//      sessionStorage.setItem(ssDownTransport, data.getElementsByTagName("DOWN_TRANSPORT")['0'].textContent);
+//      sessionStorage.setItem(ssDownPressing, data.getElementsByTagName("DOWN_PRESSING")['0'].textContent);
+//      sessionStorage.setItem(ssDownHorizontal, data.getElementsByTagName("DOWN_HORIZONTAL")['0'].textContent);
+//      sessionStorage.setItem(ssDownVertical, data.getElementsByTagName("DOWN_VERTICAL")['0'].textContent);
+//      sessionStorage.setItem(ssDownStandardLife, data.getElementsByTagName("DOWN_STANDARD_LIFE")['0'].textContent);
+//      sessionStorage.setItem(ssDownSpeed, data.getElementsByTagName("DOWN_SPEED")['0'].textContent);
+//      sessionStorage.setItem(ssDownAcceleration, data.getElementsByTagName("DOWN_ACCELERATION")['0'].textContent);
+//      sessionStorage.setItem(ssDownCalcCycleTime, data.getElementsByTagName("DOWN_CALC_CYCLE_TIME")['0'].textContent);
+//      sessionStorage.setItem(ssDownImgName, data.getElementsByTagName("DOWN_IMG_NAME")['0'].textContent);
+//      sessionStorage.setItem(ssDownFullName, data.getElementsByTagName("DOWN_FULL_NAME")['0'].textContent);
+//      sessionStorage.setItem(ssDownCalcMoment, data.getElementsByTagName("DOWN_CALC_MOMENT")['0'].textContent);
+//      sessionStorage.setItem(ssDownCalcDistance, data.getElementsByTagName("DOWN_CALC_DISTANCE")['0'].textContent);
+//      sessionStorage.setItem(ssDownCalcLife, data.getElementsByTagName("DOWN_CALC_LIFE")['0'].textContent);
 
-        if (sessionStorage.getItem(ssDownSeries).trim() != "") {           
-            //ランクダウン使用可
-            document.getElementById("ContentPlaceHolder1_imgBtnRankDown").disabled = false;
-            document.getElementById("ContentPlaceHolder1_imgBtnRankDown").style.display = "inline-block";
-            document.getElementById("ContentPlaceHolder1_imgBtnRankUp").style.display = "none";
-        } else {
-            //ランクダウン使用不可
-            document.getElementById("ContentPlaceHolder1_imgBtnRankDown").disabled = true;
-            document.getElementById("ContentPlaceHolder1_imgBtnRankDown").style.display = "inline-block";
-            document.getElementById("ContentPlaceHolder1_imgBtnRankUp").style.display = "none";
-        };
+//      if (sessionStorage.getItem(ssDownSeries).trim() != "") {           
+//          //ランクダウン使用可
+//          document.getElementById("ContentPlaceHolder1_imgBtnRankDown").disabled = false;
+//          document.getElementById("ContentPlaceHolder1_imgBtnRankDown").style.display = "inline-block";
+//          document.getElementById("ContentPlaceHolder1_imgBtnRankUp").style.display = "none";
+//      } else {
+//          //ランクダウン使用不可
+//          document.getElementById("ContentPlaceHolder1_imgBtnRankDown").disabled = true;
+//          document.getElementById("ContentPlaceHolder1_imgBtnRankDown").style.display = "inline-block";
+//          document.getElementById("ContentPlaceHolder1_imgBtnRankUp").style.display = "none";
+//      };
 
         if (data.getElementsByTagName("ERROR_KBN")['0'].textContent == enmERROR_KBN_RRCHANGE) {
             document.getElementById("ContentPlaceHolder1_lblWarn3").innerHTML = "モーメント過大のため、ロッド<br>タイプに外付けガイド併用にて<br>検討をお願いします";
