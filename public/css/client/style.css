@@ -94,7 +94,7 @@ input:disabled {
 .imgHead1{    
     height:auto;
     max-width:170px;
-    max-height:50px;
+    /*max-height:50px;*/
 }
 
 .imgHead2{    
@@ -228,7 +228,7 @@ input:disabled {
 .g-box-load{
     text-align: right;
     margin-top: 15px;
-    width: 180px;
+    /*width: 180px;*/
     float: left;
 }
 .g-box-input{
