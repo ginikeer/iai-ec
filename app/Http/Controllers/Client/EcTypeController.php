@@ -46,6 +46,9 @@ class EcTypeController extends Controller {
 	
 	public function getSpecsub(Request $request)
 	{
+		$id = $request->input('id');
+		
+		
 		
 		return view('client/ECSpecSub');
 	}
