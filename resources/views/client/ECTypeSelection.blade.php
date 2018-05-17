@@ -236,7 +236,9 @@
 		
 		<div class="imgButtonPosition" style="width:100%">
 			<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnBack" id="ContentPlaceHolder1_imgbtnBack" tabindex="5" class="imgButton" src="{{ asset('i/client/EcRequire/btnBack.png') }}" onclick="javaScript:history.go(-1);">
-			<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnNext" id="ContentPlaceHolder1_imgbtnNext" tabindex="5" class="imgButton" src="{{ asset('i/client/EcRequire/btnNext.png') }}" onclick="javascript:window.location.href= '{{url("EC/peripheral")}}' ">
+			<!--<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnNext" id="ContentPlaceHolder1_imgbtnNext" tabindex="5" class="imgButton" src="{{ asset('i/client/EcRequire/btnNext.png') }}" onclick="javascript:window.location.href= '{{url("EC/peripheral")}}' ">-->
+			<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnNext" id="ContentPlaceHolder1_imgbtnNext" tabindex="5" class="imgButton" src="{{ asset('i/client/EcRequire/btnNext.png') }}" >
+			<input type="hidden" id="next-link" value="{{url("EC/peripheral")}}" />
 		</div>
 		
 		<div id="dvOptionError">
@@ -646,5 +648,20 @@
 		
 			document.getElementById("ContentPlaceHolder1_ddlSeries").onchange = setSeries;
 			document.getElementById("ContentPlaceHolder1_ddlType").onchange = setModel;
+			
+			
+			
+			$('#ContentPlaceHolder1_imgbtnNext').click(function(){
+				var options =  $('#ContentPlaceHolder1_lstBoxOption option:selected');
+				var ContentPlaceHolder1_lstBoxOption = [];
+				for (var i=0 ; i< options.length ; i++) {
+					ContentPlaceHolder1_lstBoxOption.push(options[i].innerHTML)
+				}
+				
+				sessionStorage.setItem('ddlCable', $('#ContentPlaceHolder1_ddlCable').val());
+				sessionStorage.setItem('boxOption', ContentPlaceHolder1_lstBoxOption);
+				
+				window.location.href = $('#next-link').val();
+			});
 		</script>
 	@stop
