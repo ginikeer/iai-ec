@@ -41,6 +41,7 @@ var ssImgName       = "ImgName"　 //画像名
 var ssFullName      = "FullName"  //機種名
 
 
+var ssIdx = "Idx";
 var ssTransport = "Transport";
 var ssPressing = "Presssing";
 var ssSlider = "Slider";

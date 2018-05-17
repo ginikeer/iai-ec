@@ -51,6 +51,7 @@ class Mst {
 	
 	static public function completeData($data, $vLoad, $vPosition)
 	{
+		if(empty($data)) return array();
 		$series = $data->SERIES;
 		$type = $data->TYPE;
 		$set_direction = ($vPosition == 'horizontal') ? '水平' : '垂直';
@@ -61,7 +62,7 @@ class Mst {
 		$data->SPEED = $temp->SPEED;
 		$data->ACCELERATION = $temp->ACCELERATION;
 		$data->IMG_NAME = EC_REQUIRE_IMG_PATH . $series . '-' . $type . ".png";
-		$data->FULL_NAME = $series . '-' . $type . '-' . $stroke;
+		$data->FULL_NAME = self::getFullName($series, $type, $stroke);
 		
 		$data->ERROR_KBN = 0;
 		$data->CALC_CYCLE_TIME = 0;
@@ -70,6 +71,11 @@ class Mst {
 		$data->CALC_LIFE = 0;
 		
 		return $data;
+	}
+	
+	static public function getFullName($series, $type, $stroke)
+	{
+		return $series . '-' . $type . '-' . $stroke;
 	}
 	
 }

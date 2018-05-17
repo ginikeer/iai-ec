@@ -651,8 +651,6 @@ function setModel(blnFlag, data) {
             document.getElementById("h-box-distance").style.visibility = "visible";
         }
 		
-		console.log(data);
-		
         //モーメント
         document.getElementById("ContentPlaceHolder1_lblMoment").value = data.data.CALC_MOMENT;
         document.getElementById("ContentPlaceHolder1_lblMomentST").value = data.data.CALC_MOMENT;
@@ -677,6 +675,7 @@ function setModel(blnFlag, data) {
 
         //機種選定が行われたタイミングで取得値をセッションに設定
         //CALC～は実装されたら指定
+        sessionStorage.setItem(ssIdx, data.data.ID);
         sessionStorage.setItem(ssSelectSeries, data.data.SERIES);
         sessionStorage.setItem(ssSelectType, data.data.TYPE);
         sessionStorage.setItem(ssSelectStroke, data.data.STROKE);
@@ -2081,7 +2080,12 @@ function createParam() {
     var st;
     var ssk;
     var lg;
- 
+ 	
+ 	if (sessionStorage.getItem(ssIdx) != null && $.trim(sessionStorage.getItem(ssIdx)) != '') {
+        idx = sessionStorage.getItem(ssIdx);
+    } else {
+        idx = 0;
+    }
     if (sessionStorage.getItem(ssTransport) != null && $.trim(sessionStorage.getItem(ssTransport)) != '') {
         t = sessionStorage.getItem(ssTransport);
     } else {
@@ -2213,6 +2217,7 @@ function createParam() {
 
     // 仕様書に受け渡す値をすべてパラメータに設定
     param = '?RS=1';
+    param += '&IDX=' + idx;
     param += '&F=' + gcECRequirementSelection;
     param += '&T=' + t;
     param += '&P=' + p;

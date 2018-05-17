@@ -114,6 +114,18 @@ class Mst_Series extends Model {
 		return $data;
 	}
 	
+	//
+	static public function getDataById ($id) {
+		$d = DB::table(self::$table_name)
+				->leftJoin('mst_series_type as t', function($join) {
+					$join->on('t.SERIES', '=', 'ls.SERIES')->on('ls.TYPE', '=', 't.TYPE');
+				})->where('ls.ID', $id)
+//				->select()
+				->first();
+					
+		$data->FULL_NAME = Mst::getFullName($d->SERIES, $d->TYPE, $d->STROKE);
+	}
+	
 	//获取表中所有的stroke范围，返回数组格式
 	static public function getStrokeRange () {
 		return DB::table("mst_series_lead_stroke")
