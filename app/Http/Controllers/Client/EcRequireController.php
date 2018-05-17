@@ -102,6 +102,12 @@ class EcRequireController extends Controller {
 		
 	}
 	
+	public function getOptiondiscription(Request $request)
+	{
+		return view('client/ECOptionDiscription');
+		
+	}
+	
 	public function getAjaxSelectModel(Request $request)
 	{
 		$data = Mst_Series::getFilterData($request->all());
