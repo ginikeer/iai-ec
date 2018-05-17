@@ -49,6 +49,35 @@ class Mst {
 		return ($step1 && $step2 && $step3 && $step4 && $step5 && $step6);
 	}
 	
+	static public function completeData($data, $vLoad, $vPosition)
+	{
+		if(empty($data)) return array();
+		$series = $data->SERIES;
+		$type = $data->TYPE;
+		$set_direction = ($vPosition == 'horizontal') ? '水平' : '垂直';
+		$stroke = $data->STROKE;
+		
+		$temp = Mst_Series::getSpeedAndAcceleration($series, $type, $set_direction, $stroke, $vLoad);
+		
+		$data->SPEED = $temp->SPEED;
+		$data->ACCELERATION = $temp->ACCELERATION;
+		$data->IMG_NAME = EC_REQUIRE_IMG_PATH . $series . '-' . $type . ".png";
+		$data->FULL_NAME = self::getFullName($series, $type, $stroke);
+		
+		$data->ERROR_KBN = 0;
+		$data->CALC_CYCLE_TIME = 0;
+		$data->CALC_MOMENT = 0;
+		$data->CALC_DISTANCE = 0;
+		$data->CALC_LIFE = 0;
+		
+		return $data;
+	}
+	
+	static public function getFullName($series, $type, $stroke)
+	{
+		return $series . '-' . $type . '-' . $stroke;
+	}
+	
 }
 
 ?>

@@ -49,12 +49,15 @@ class Mst_Series extends Model {
 
 		$data = $data->leftJoin('mst_series_type as t', function($join) {
 					$join->on('t.SERIES', '=', 'ls.SERIES')->on('ls.TYPE', '=', 't.TYPE');
-				});
+				})
+				->select('ls.ID', 'ls.SERIES', 'ls.TYPE', 'ls.STROKE', 't.LIST_ORDER', 't.TYPE_NAME', 't.TYPE_FORM', 
+						't.TRANSPORT', 't.PRESSING', 't.HORIZONTAL', 't.VERTICAL', 't.STANDARD_LIFE', 't.MA_OVERHANG_ABOVE');
 		
 		//检查必填项是否都有数据，是的话多条数据则只取第一项
 		$must = Mst::checkMust($param);
 		if($must) {
 			$data = $data->first();
+			$data = Mst::completeData($data, $param["vLoad"], $position);
 		} else {	//否的话取多条数据
 			$data = $data->get();
 		}
@@ -111,6 +114,18 @@ class Mst_Series extends Model {
 		return $data;
 	}
 	
+	//
+	static public function getDataById ($id) {
+		$d = DB::table(self::$table_name)
+				->leftJoin('mst_series_type as t', function($join) {
+					$join->on('t.SERIES', '=', 'ls.SERIES')->on('ls.TYPE', '=', 't.TYPE');
+				})->where('ls.ID', $id)
+//				->select()
+				->first();
+					
+		$data->FULL_NAME = Mst::getFullName($d->SERIES, $d->TYPE, $d->STROKE);
+	}
+	
 	//获取表中所有的stroke范围，返回数组格式
 	static public function getStrokeRange () {
 		return DB::table("mst_series_lead_stroke")
@@ -155,5 +170,27 @@ class Mst_Series extends Model {
 				->lists('load');
 		
 		return $base;
+	}
+	
+	static public function getSpeedAndAcceleration($series, $type, $set_direction, $stroke, $vLoad) {
+		$data = DB::table('mst_acceleration')
+						->where('SERIES', $series)
+						->where('TYPE', $type)
+						->where('SET_DIRECTION', $set_direction)
+						->where('STROKE', $stroke);
+		
+		$loadRange = $data;
+		
+		$loadRange = $loadRange->select(DB::raw('distinct(`LOAD`) as `load`'))
+							   ->orderBy('load', 'asc')
+							   ->lists('load');
+		
+		$load = Mst::largeThanClosest($loadRange, $vLoad);
+		
+		$data = $data->where('LOAD', $load)
+					 ->select('SPEED', 'ACCELERATION')
+					 ->first();
+			 
+		return $data;
 	}
 }

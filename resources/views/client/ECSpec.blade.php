@@ -66,14 +66,10 @@
 		<table id="ContentPlaceHolder1_tblMain" width="100%">
 			<tbody>
 				<tr>
-					<td><iframe src="http://iaiecsys.eigyo.com.cn/public/EC/specsub?idx=0" id="ContentPlaceHolder1_ifDraw_0" style="height: 3072px; width: 100%;" frameborder="0" scrolling="no"></iframe></td>
+					<td><iframe src="{{ url('EC/specsub?idx=' . $idx) }}" id="ContentPlaceHolder1_ifDraw_0" style="height: 3072px; width: 100%;" frameborder="0" scrolling="no"></iframe></td>
 				</tr>
 			</tbody>
 		</table>
-		<br>
-		<div class="imgButtonPosition">
-			<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnSavePDF" id="ContentPlaceHolder1_imgbtnSavePDF" class="imgButton" src="{{ asset('i/client/EcRequire/btnPDF.png') }}">
-		</div>
 	</div>
 </form>
 @endsection
@@ -83,7 +79,7 @@
 		window.onload = function() {
 			if(typeof contentPageLoad == 'function') contentPageLoad();
 		}
-		WebForm_AutoFocus('DummySubmitButton'); 
+		//WebForm_AutoFocus('DummySubmitButton'); 
 	</script>
 @stop
 			

@@ -589,7 +589,7 @@ function setModel(blnFlag, data) {
         document.getElementById("h-box").style.display = "none";
       
         //検索件数の表示
-        document.getElementById("ContentPlaceHolder1_lblSearchRecords").innerHTML = "適合製品" + cnt + "件";
+        document.getElementById("ContentPlaceHolder1_lblSearchRecords").innerHTML = "适合产品" + cnt + "件";
 
         // 件数が0件
         if(cnt == 0){
@@ -650,46 +650,44 @@ function setModel(blnFlag, data) {
             document.getElementById("h-box-distance-head").style.visibility = "visible";
             document.getElementById("h-box-distance").style.visibility = "visible";
         }
-
+		
         //モーメント
-        document.getElementById("ContentPlaceHolder1_lblMoment").value = data.getElementsByTagName("CALC_MOMENT")['0'].textContent;
-        document.getElementById("ContentPlaceHolder1_lblMomentST").value = data.getElementsByTagName("CALC_MOMENT")['0'].textContent;
+        document.getElementById("ContentPlaceHolder1_lblMoment").value = data.data.CALC_MOMENT;
+        document.getElementById("ContentPlaceHolder1_lblMomentST").value = data.data.CALC_MOMENT;
         //推奨機種
-        document.getElementById("ContentPlaceHolder1_lblRecommendModelName").innerHTML = data.getElementsByTagName("FULL_NAME")['0'].textContent;
-        //標準価格
-        document.getElementById("ContentPlaceHolder1_lblRecommendPrice").innerHTML = "\\" + setComma(parseInt(data.getElementsByTagName("PRICE")['0'].textContent), true, false);
+        document.getElementById("ContentPlaceHolder1_lblRecommendModelName").innerHTML = data.data.FULL_NAME;
         //サイクルタイム
-        document.getElementById("ContentPlaceHolder1_lblRecommendCycleTime").innerHTML = data.getElementsByTagName("CALC_CYCLE_TIME")['0'].textContent + " s";
+        document.getElementById("ContentPlaceHolder1_lblRecommendCycleTime").innerHTML = data.data.CALC_CYCLE_TIME + " s";
         //寿命予測計算
-        document.getElementById("ContentPlaceHolder1_lblRecommendLife").innerHTML = data.getElementsByTagName("CALC_LIFE")['0'].textContent;
-        document.getElementById("ContentPlaceHolder1_txtLife").value = data.getElementsByTagName("CALC_LIFE")['0'].textContent;
+        document.getElementById("ContentPlaceHolder1_lblRecommendLife").innerHTML = data.data.CALC_LIFE;
+        document.getElementById("ContentPlaceHolder1_txtLife").value = data.data.CALC_LIFE;
         //走行距離寿命
-        if (data.getElementsByTagName("CALC_DISTANCE")['0'].textContent != 0) { 
-            document.getElementById("ContentPlaceHolder1_lblRecommendDistance").innerHTML = setComma(data.getElementsByTagName("CALC_DISTANCE")['0'].textContent, true, false) +  'km';
+        if (data.data.CALC_DISTANCE != 0) { 
+            document.getElementById("ContentPlaceHolder1_lblRecommendDistance").innerHTML = setComma(data.data.CALC_DISTANCE, true, false) +  'km';
         } else {
             document.getElementById("ContentPlaceHolder1_lblRecommendDistance").innerHTML = "";
         }
 
         // 画像設定
-        document.getElementById("ContentPlaceHolder1_imgRecommendModel").src = data.getElementsByTagName("IMG_NAME")['0'].textContent;
+        document.getElementById("ContentPlaceHolder1_imgRecommendModel").src = data.data.IMG_NAME;
 
 
 
         //機種選定が行われたタイミングで取得値をセッションに設定
         //CALC～は実装されたら指定
-        sessionStorage.setItem(ssSelectSeries, data.getElementsByTagName("SERIES")['0'].textContent);
-        sessionStorage.setItem(ssSelectType, data.getElementsByTagName("TYPE")['0'].textContent);
-        sessionStorage.setItem(ssSelectStroke, data.getElementsByTagName("STROKE")['0'].textContent);
-        sessionStorage.setItem(ssCalcCycleTime, data.getElementsByTagName("CALC_CYCLE_TIME")['0'].textContent);
-        sessionStorage.setItem(ssCalcLife, data.getElementsByTagName("CALC_LIFE")['0'].textContent);
-        sessionStorage.setItem(ssCalcDistance, data.getElementsByTagName("CALC_DISTANCE")['0'].textContent);
-        sessionStorage.setItem(ssCalcMoment, data.getElementsByTagName("CALC_MOMENT")['0'].textContent);
-        sessionStorage.setItem(ssAcceleration, data.getElementsByTagName("ACCELERATION")['0'].textContent);
-        sessionStorage.setItem(ssSpeed, data.getElementsByTagName("SPEED")['0'].textContent);
+        sessionStorage.setItem(ssIdx, data.data.ID);
+        sessionStorage.setItem(ssSelectSeries, data.data.SERIES);
+        sessionStorage.setItem(ssSelectType, data.data.TYPE);
+        sessionStorage.setItem(ssSelectStroke, data.data.STROKE);
+        sessionStorage.setItem(ssCalcCycleTime, data.data.CALC_CYCLE_TIME);
+        sessionStorage.setItem(ssCalcLife, data.data.CALC_LIFE);
+        sessionStorage.setItem(ssCalcDistance, data.data.CALC_DISTANCE);
+        sessionStorage.setItem(ssCalcMoment, data.data.CALC_MOMENT);
+        sessionStorage.setItem(ssAcceleration, data.data.ACCELERATION);
+        sessionStorage.setItem(ssSpeed, data.data.SPEED);
 
-        sessionStorage.setItem(ssPrice, data.getElementsByTagName("PRICE")['0'].textContent);
-        sessionStorage.setItem(ssImgName, data.getElementsByTagName("IMG_NAME")['0'].textContent);
-        sessionStorage.setItem(ssFullName, data.getElementsByTagName("FULL_NAME")['0'].textContent);
+        sessionStorage.setItem(ssImgName, data.data.IMG_NAME);
+        sessionStorage.setItem(ssFullName, data.data.FULL_NAME);
 
         // オプションケーブル長ボタン解除
         document.getElementById("ContentPlaceHolder1_imgbtnOptionCable").disabled = false;
@@ -728,7 +726,7 @@ function setModel(blnFlag, data) {
 //          document.getElementById("ContentPlaceHolder1_imgBtnRankUp").style.display = "none";
 //      };
 
-        if (data.getElementsByTagName("ERROR_KBN")['0'].textContent == enmERROR_KBN_RRCHANGE) {
+        if (data.data.ERROR_KBN == enmERROR_KBN_RRCHANGE) {
             document.getElementById("ContentPlaceHolder1_lblWarn3").innerHTML = "モーメント過大のため、ロッド<br>タイプに外付けガイド併用にて<br>検討をお願いします";
         } else {
             document.getElementById("ContentPlaceHolder1_lblWarn3").innerHTML = "";
@@ -2082,7 +2080,12 @@ function createParam() {
     var st;
     var ssk;
     var lg;
- 
+ 	
+ 	if (sessionStorage.getItem(ssIdx) != null && $.trim(sessionStorage.getItem(ssIdx)) != '') {
+        idx = sessionStorage.getItem(ssIdx);
+    } else {
+        idx = 0;
+    }
     if (sessionStorage.getItem(ssTransport) != null && $.trim(sessionStorage.getItem(ssTransport)) != '') {
         t = sessionStorage.getItem(ssTransport);
     } else {
@@ -2214,6 +2217,7 @@ function createParam() {
 
     // 仕様書に受け渡す値をすべてパラメータに設定
     param = '?RS=1';
+    param += '&IDX=' + idx;
     param += '&F=' + gcECRequirementSelection;
     param += '&T=' + t;
     param += '&P=' + p;

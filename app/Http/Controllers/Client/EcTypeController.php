@@ -4,6 +4,10 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\Http\Database\Mst_Series;
+
+use App\Services\Mst;
+
 class EcTypeController extends Controller {
 
 	/*
@@ -40,14 +44,16 @@ class EcTypeController extends Controller {
 	
 	public function getSpec(Request $request)
 	{
+		$id = $request->input('IDX');
 		
-		return view('client/ECSpec');
+		return view('client/ECSpec', ['idx' => $id]);
 	}
 	
 	public function getSpecsub(Request $request)
 	{
+		$data = Mst_Series::getDataById($request->input('idx'));
 		
-		return view('client/ECSpecSub');
+		return view('client/ECSpecSub', ['data' => $data]);
 	}
 	
 	public function getPeripheral(Request $request)

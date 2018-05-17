@@ -1,6 +1,6 @@
 <?php
 
-	define("PER", 20);
+	define("EC_REQUIRE_IMG_PATH", 'i/client/EcRequire/');
 	
 	
 	
