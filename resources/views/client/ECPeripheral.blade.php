@@ -67,7 +67,7 @@
 								<tr>
 									<th scope="col" style="width:100px;">NO</th>
 									<th scope="col">型式</th>
-									<th align="right" scope="col" style="width:150px;">単価（円）</th>
+									<!--<th align="right" scope="col" style="width:150px;">単価（円）</th>-->
 								</tr>
 								<tr>
 									<td>
@@ -76,9 +76,9 @@
 									<td valign="top">
 										<span id="ContentPlaceHolder1_grdType_lblType_0" class="ctlLabel">EC-RR6M-65-0-FFA-FL</span>
 									</td>
-									<td align="right" valign="top">
+									<!--<td align="right" valign="top">
 										<span id="ContentPlaceHolder1_grdType_lblUnitPrice_0" class="ctlLabel">53,500</span>
-									</td>
+									</td>-->
 								</tr>
 							</tbody>
 						</table>
@@ -149,7 +149,8 @@
 				<br>
 				<div class="imgButtonPosition">
 					<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnBack" id="ContentPlaceHolder1_imgbtnBack" class="imgButton" src="{{ asset('i/client/EcRequire/btnBack.png') }}" onclick="javaScript:history.go(-1);">
-					<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnNext" id="ContentPlaceHolder1_imgbtnNext" class="imgButton" src="{{ asset('i/client/EcRequire/btnNext.png') }}" onclick="javascript:window.location.href= '{{url("EC/productestimate")}}' ">
+					<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnNext" id="ContentPlaceHolder1_imgbtnNext" class="imgButton" src="{{ asset('i/client/EcRequire/btnNext.png') }}" />
+					<input type="hidden" id="next-link" value="{{url("EC/productestimate")}}" />
 				</div>
 
 			</div>
@@ -164,6 +165,39 @@
 		window.onload = function() {
 			if(typeof contentPageLoad == 'function') contentPageLoad();
 		}
+		
+		$(function(){
+			
+			//显示全名
+			var FullName = sessionStorage.getItem('FullName');
+			var ddlCable = sessionStorage.getItem('ddlCable');
+			var boxOption = sessionStorage.getItem('boxOption').split(",");
+			var productName = FullName + '-' + ddlCable;
+			if(boxOption != ''){
+				for(i=0; i<boxOption.length; i++){
+					productName += '-' + boxOption[i];
+				}
+			}
+			$('#ContentPlaceHolder1_grdType_lblType_0').text(productName);
+			
+			//点击下一步
+			$('#ContentPlaceHolder1_imgbtnNext').click(function(){
+				var options =  $('input[type="checkbox"]');
+				var ContentPlaceHolder1_chkTypeDt1 = [];
+				for(i=0;i < options.length;i++){
+			        if(options[i].checked){
+			            var id = options[i].id;
+		                nice_name = $('label[for="'+ id +'"]').text().split('(')[0];
+			            ContentPlaceHolder1_chkTypeDt1.push(nice_name);
+			        }
+			    }
+				
+				sessionStorage.setItem('chkTypeDt', ContentPlaceHolder1_chkTypeDt1);
+				
+				window.location.href = $('#next-link').val();
+			});
+			
+		});
 	
 		var theForm = document.forms['form1'];
 		if(!theForm) {

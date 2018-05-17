@@ -81,7 +81,7 @@
 									<th scope="col">商品名</th>
 									<th align="right" scope="col" style="width:100px;">数量</th>
 								</tr>
-								<tr>
+								<!--<tr>
 									<td style="width:50px;">
 										<span id="ContentPlaceHolder1_grdView_lblNo_0" class="ctlLabel">1</span>
 									</td>
@@ -89,10 +89,9 @@
 										<span id="ContentPlaceHolder1_grdView_lblProductName_0" class="ctlLabel">EC-S7LH-250-0</span>
 									</td>
 									<td align="right" style="width:100px;">
-										<!--<input name="ctl00$ContentPlaceHolder1$grdView$ctl02$numSuryo" type="number" value="1" maxlength="4" id="ContentPlaceHolder1_grdView_numSuryo_0" class="number" onchange="calc(this)" onkeydown="javascript:return numOnly(document.getElementById('ContentPlaceHolder1_grdView_numSuryo_0'),0,false);return true;" onblur="javascript:serKetaKugiri(document.getElementById('ContentPlaceHolder1_grdView_numSuryo_0'),4,true,3,0);return true;" onfocus="javascript:serKetaKugiri(document.getElementById('ContentPlaceHolder1_grdView_numSuryo_0'),3,false,3,0);return true;" style="ime-mode:disabled;">-->
 										<input name="ctl00$ContentPlaceHolder1$grdView$ctl02$numSuryo" type="number" value="1" maxlength="4" id="ContentPlaceHolder1_grdView_numSuryo_0" class="number" onkeydown="javascript:return numOnly(document.getElementById('ContentPlaceHolder1_grdView_numSuryo_0'),0,false);return true;" onblur="javascript:serKetaKugiri(document.getElementById('ContentPlaceHolder1_grdView_numSuryo_0'),4,true,3,0);return true;" onfocus="javascript:serKetaKugiri(document.getElementById('ContentPlaceHolder1_grdView_numSuryo_0'),3,false,3,0);return true;" style="ime-mode:disabled;">
 									</td>
-								</tr>
+								</tr>-->
 							</tbody>
 						</table>
 					</div>
@@ -103,7 +102,8 @@
 				<div class="imgButtonPosition">
 					<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnBack" id="ContentPlaceHolder1_imgbtnBack" class="imgButton" src="{{ asset('i/client/EcRequire/btnBack.png') }}" onclick="javaScript:history.go(-1);">
 					<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnSpec" id="ContentPlaceHolder1_imgbtnSpec" class="imgButton" src="{{ asset('i/client/EcRequire/btnSpec.png') }}" onclick="javascript:window.location.href= '{{url("EC/spec")}}' ">
-					<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnNext" id="ContentPlaceHolder1_imgbtnNext" class="imgButton" src="{{ asset('i/client/EcRequire/btnNext.png') }}" onclick="javascript:window.location.href= '{{url("EC/productestimateconfirm")}}' ">
+					<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnNext" id="ContentPlaceHolder1_imgbtnNext" class="imgButton" src="{{ asset('i/client/EcRequire/btnNext.png') }}" >
+					<input type="hidden" id="next-link" value="{{url("EC/productestimateconfirm")}}" />
 				</div>
 			</div>
 
@@ -113,4 +113,67 @@
 	<script src="{{ asset('js/client/WebResource.js') }}"></script>
 	<script src="{{ asset('js/client/WebResource2.js') }}"></script>
 	<!--<script src="{{ asset('js/client/ProductEstimate.js') }}"></script>-->
+	<script>
+		$(function(){
+			
+//			首页选择的产品
+			var FullName = sessionStorage.getItem('FullName');
+			var ddlCable = sessionStorage.getItem('ddlCable');
+			var boxOption = sessionStorage.getItem('boxOption').split(",");
+			var productName = FullName + '-' + ddlCable;
+			if(boxOption!=''){
+				for(i=0; i<boxOption.length; i++){
+					productName += '-' + boxOption[i];
+				}
+			}
+			
+			var html = '<tr>' +
+				'<td style="width:50px;">' +
+					'<span id="ContentPlaceHolder1_grdView_lblNo_0" class="ctlLabel">1</span>' +
+				'</td>' +
+				'<td>' +
+					'<span id="ContentPlaceHolder1_grdView_lblProductName_0" class="ctlLabel">'+ productName +'</span>' +
+				'</td>' +
+				'<td align="right" style="width:100px;">' +
+					'<input name="ctl00$ContentPlaceHolder1$grdView$ctl02$numSuryo" type="number" value="1" maxlength="4" id="ContentPlaceHolder1_grdView_numSuryo_0" class="number" onkeydown="javascript:return numOnly(document.getElementById(this.id),0,false);return true;" onblur="javascript:serKetaKugiri(document.getElementById(this.id),4,true,3,0);return true;" onfocus="javascript:serKetaKugiri(document.getElementById(this.id),3,false,3,0);return true;" style="ime-mode:disabled;">' +
+				'</td>' +
+			'</tr>';
+			
+//			上一页勾选的产品
+			var chkTypeDt = sessionStorage.getItem('chkTypeDt').split(",");
+			if(chkTypeDt!=''){
+				for (var i= 0; i<chkTypeDt.length; i++) {
+					html += '<tr>' +
+						'<td style="width:50px;">' +
+							'<span id="ContentPlaceHolder1_grdView_lblNo_'+ (i+1) +'" class="ctlLabel">'+ (i+2) +'</span>' +
+						'</td>' +
+						'<td>' +
+							'<span id="ContentPlaceHolder1_grdView_lblProductName_'+ (i+1) +'" class="ctlLabel">'+ chkTypeDt[i] +'</span>' +
+						'</td>' +
+						'<td align="right" style="width:100px;">' +
+							'<input name="ctl00$ContentPlaceHolder1$grdView$ctl02$numSuryo" type="number" value="1" maxlength="4" id="ContentPlaceHolder1_grdView_numSuryo_'+(i+1)+'" class="number" onkeydown="javascript:return numOnly(document.getElementById(this.id),0,false);return true;" onblur="javascript:serKetaKugiri(document.getElementById(this.id),4,true,3,0);return true;" onfocus="javascript:serKetaKugiri(document.getElementById(this.id),3,false,3,0);return true;" style="ime-mode:disabled;">' +
+						'</td>' +
+					'</tr>';
+				}
+			}
+			
+			$('#ContentPlaceHolder1_grdView tbody').append(html);
+			
+			//点击下一步
+			$('#ContentPlaceHolder1_imgbtnNext').click(function(){
+				var productCom=[];
+				for(var i=0 ; i<$('#ContentPlaceHolder1_grdView tr').length-1; i++){
+					var n = {
+						'name': $('#ContentPlaceHolder1_grdView_lblProductName_'+i).text(),
+						'numSuryo' : $('#ContentPlaceHolder1_grdView_numSuryo_'+i).val()
+					}
+					productCom.push(n);
+				}
+				sessionStorage.setItem('productCom', JSON.stringify(productCom));
+				
+				window.location.href = $('#next-link').val();
+			});
+			
+		});
+	</script>
 @stop

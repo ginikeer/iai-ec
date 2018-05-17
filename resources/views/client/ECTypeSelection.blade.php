@@ -106,7 +106,7 @@
 					<select name="ctl00$ContentPlaceHolder1$ddlSeries" id="ContentPlaceHolder1_ddlSeries" tabindex="1" onchange="setSelectIndex(this)" style="width:100px;display:none;">
 						<option selected="selected" value="0">EC</option>
 					</select>
-					<span id="ContentPlaceHolder1_lblSeries" class="Series" style="display:inline-block;width:150px;display:inline;">EC</span>
+					<span id="ContentPlaceHolder1_lblSeries" class="Series" style="display:inline-block;width:150px;display:inline;"></span>
 					<input name="ctl00$ContentPlaceHolder1$txtSeries" type="text" value="EC" id="ContentPlaceHolder1_txtSeries" tabindex="-1" class="text" style="display: none">
 				</div>
 				<div class="box-size50">
@@ -140,7 +140,7 @@
 						<option value="23">R7L</option>
 						<option value="24">RR6S</option>
 						<option value="25">RR6H</option>
-						<option selected="selected" value="26">RR6M</option>
+						<option value="26">RR6M</option>
 						<option value="27">RR6L</option>
 						<option value="28">RR7S</option>
 						<option value="29">RR7H</option>
@@ -170,7 +170,7 @@
 						<option value="53">TW4M</option>
 						<option value="54">TW4L</option>
 					</select>
-					<span id="ContentPlaceHolder1_lblType" class="Series" style="display:inline-block;width:150px;display:inline;">RR6M</span>
+					<span id="ContentPlaceHolder1_lblType" class="Series" style="display:inline-block;width:150px;display:inline;"></span>
 					<input name="ctl00$ContentPlaceHolder1$txtIndexType" type="text" value="RR6M" id="ContentPlaceHolder1_txtIndexType" tabindex="-1" class="text" style="display: none">
 					<div style="margin-top: 20px;">
 						<img id="ContentPlaceHolder1_imgCableOption" src="{{ asset('i/client/EcRequire/cableoption_RD_RR.png') }}" align="left">
@@ -181,14 +181,14 @@
 				</div>
 				<div class="box-size">
 					<select name="ctl00$ContentPlaceHolder1$ddlStroke" id="ContentPlaceHolder1_ddlStroke" tabindex="3" onchange="setSelectIndex(this)" style="width:150px;display:none;">
-						<option selected="selected" value="0">65</option>
+						<option value="0">65</option>
 						<option value="1">115</option>
 						<option value="2">165</option>
 						<option value="3">215</option>
 						<option value="4">265</option>
 						<option value="5">315</option>
 					</select>
-					<span id="ContentPlaceHolder1_lblStroke" class="Series" style="display:inline-block;width:150px;display:inline;">65</span>
+					<span id="ContentPlaceHolder1_lblStroke" class="Series" style="display:inline-block;width:150px;display:inline;"></span>
 					<input name="ctl00$ContentPlaceHolder1$txtIndexStroke" type="text" value="65" id="ContentPlaceHolder1_txtIndexStroke" tabindex="-1" class="text" style="display: none">
 				</div>
 				<div class="box-size50">
@@ -649,7 +649,9 @@
 			document.getElementById("ContentPlaceHolder1_ddlSeries").onchange = setSeries;
 			document.getElementById("ContentPlaceHolder1_ddlType").onchange = setModel;
 			
-			
+			$('#ContentPlaceHolder1_lblSeries').text(sessionStorage.getItem('SelectSeries'));
+			$('#ContentPlaceHolder1_lblType').text(sessionStorage.getItem('SelectType'));
+			$('#ContentPlaceHolder1_lblStroke').text(sessionStorage.getItem('SelectStroke'));
 			
 			$('#ContentPlaceHolder1_imgbtnNext').click(function(){
 				var options =  $('#ContentPlaceHolder1_lstBoxOption option:selected');
