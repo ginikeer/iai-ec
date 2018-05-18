@@ -14,6 +14,7 @@
 	<div class="content">
 		<div class="container">
 			<!--<form method="post" action="" onkeypress="" id="form1" class="h-adr">-->
+				<input type="hidden" id="url-ajax-select-model" value="{{ url('ECResemble/ajax-select-model') }}" />
 				<div class="size-box">
 					<div class="require-left">
 						<div id="resemble-box">

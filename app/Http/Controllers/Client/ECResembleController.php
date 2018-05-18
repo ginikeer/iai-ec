@@ -38,4 +38,14 @@ class ECResembleController extends Controller {
 		return view('client/ECResemble');
 	}
 	
+	public function getAjaxSelectModel(Request $request)
+	{
+		$data = Mst_Series::getResembleFilterData($request->all());
+		
+		$result["data"] = $data;
+		$result["cnt"] = count($data);
+		
+		echo json_encode($result);
+	}
+	
 }

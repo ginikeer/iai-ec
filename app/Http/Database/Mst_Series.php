@@ -114,7 +114,7 @@ class Mst_Series extends Model {
 		return $data;
 	}
 	
-	//
+	//根据id获取详细信息
 	static public function getDataById ($id, $direction, $load) {
 		$d = DB::table(self::$table_name)
 				->leftJoin('mst_series_type as t', function($join) {
