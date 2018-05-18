@@ -25,11 +25,11 @@ class Mst_Series extends Model {
 	
 	
 	static public function getFilterData ($param) {
-		$position = '';	//位置
+		$direction = '';	//方向
 		if($param["vHorizontal"] > 0) 
-			$position = 'horizontal';
+			$direction = 'horizontal';
 		if($param["vVertical"] > 0) 	
-			$position = 'vertical';
+			$direction = 'vertical';
 		
 		//完整的条件筛选
 		$data = self::baseFilter(DB::table(self::$table_name), $param);
@@ -41,9 +41,9 @@ class Mst_Series extends Model {
 		}
 		
 		//载重范围
-		if($param["vLoad"] > 0 && !empty($position)) {
-			$filed = ($position == 'horizontal') ? 'ls.MAX_POWER_HRZ' : 'ls.MAX_POWER_VTC';
-			$load_range_arr = self::getFilterPowerRange($position, $param);
+		if($param["vLoad"] > 0 && !empty($direction)) {
+			$filed = ($direction == 'horizontal') ? 'ls.MAX_POWER_HRZ' : 'ls.MAX_POWER_VTC';
+			$load_range_arr = self::getFilterPowerRange($direction, $param);
 			$data->where($filed, Mst::largeThanClosest($load_range_arr, $param["vLoad"]));
 		}
 
@@ -57,7 +57,7 @@ class Mst_Series extends Model {
 		$must = Mst::checkMust($param);
 		if($must) {
 			$data = $data->first();
-			$data = Mst::completeData($data, $param["vLoad"], $position);
+			$data = Mst::completeData($data, $param["vLoad"], $direction);
 		} else {	//否的话取多条数据
 			$data = $data->get();
 		}
@@ -115,15 +115,27 @@ class Mst_Series extends Model {
 	}
 	
 	//
-	static public function getDataById ($id) {
+	static public function getDataById ($id, $direction, $load) {
 		$d = DB::table(self::$table_name)
 				->leftJoin('mst_series_type as t', function($join) {
 					$join->on('t.SERIES', '=', 'ls.SERIES')->on('ls.TYPE', '=', 't.TYPE');
 				})->where('ls.ID', $id)
-//				->select()
 				->first();
 					
-		$data->FULL_NAME = Mst::getFullName($d->SERIES, $d->TYPE, $d->STROKE);
+		$d->NAME = $d->SERIES . '-' . $d->TYPE;
+		$d->FULL_NAME = Mst::getFullName($d->SERIES, $d->TYPE, $d->STROKE);
+		$d->IMG_NAME = Mst::getImgName(EC_APPEARANCE_IMG_PATH, $d->SERIES, $d->TYPE);
+		$d->KAHAN = Mst::getKahan($d->SERIES, $d->TYPE);
+		$d->STROKE_IMG_NAME = Mst::getStrokeImg($d->SERIES, $d->TYPE, $d->STROKE);
+		$d->PURPOSE = $d->TRANSPORT == 1 ? '搬运定位' : '推压压入';
+		$d->DIRECTION = ($direction == 'horizontal') ? '水平安装' : '垂直安装';
+		
+		$set_direction = ($direction == 'horizontal') ? '水平' : '垂直';
+		$temp = self::getSpeedAndAcceleration($d->SERIES, $d->TYPE, $set_direction, $d->STROKE, $load);
+		$d->SPEED = $temp->SPEED;
+		$d->ACCELERATION = $temp->ACCELERATION;
+		
+		return $d;
 	}
 	
 	//获取表中所有的stroke范围，返回数组格式
@@ -148,8 +160,8 @@ class Mst_Series extends Model {
 	}
 	
 	//获取表中所有的最大载重范围，返回数组格式
-	static public function getPowerRange ($position) {
-		$filed = ($position == 'horizontal') ? 'MAX_POWER_HRZ' : 'MAX_POWER_VTC';
+	static public function getPowerRange ($direction) {
+		$filed = ($direction == 'horizontal') ? 'MAX_POWER_HRZ' : 'MAX_POWER_VTC';
 		
 		return DB::table("mst_series_lead_stroke")
 				->select(DB::raw('distinct(' . $filed . ') as `load`'))
@@ -158,8 +170,8 @@ class Mst_Series extends Model {
 	}
 	
 	//根据已有筛选条件，获取表中符合要求的最大载重范围，返回数组格式
-	static public function getFilterPowerRange ($position, $param) {
-		$filed = ($position == 'horizontal') ? 'MAX_POWER_HRZ' : 'MAX_POWER_VTC';
+	static public function getFilterPowerRange ($direction, $param) {
+		$filed = ($direction == 'horizontal') ? 'MAX_POWER_HRZ' : 'MAX_POWER_VTC';
 		
 		$base = self::baseFilter(DB::table(self::$table_name), $param);
 		$base = $base->leftJoin('mst_series_type as t', function($join) {

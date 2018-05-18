@@ -49,19 +49,18 @@ class Mst {
 		return ($step1 && $step2 && $step3 && $step4 && $step5 && $step6);
 	}
 	
-	static public function completeData($data, $vLoad, $vPosition)
+	static public function completeData($data, $vLoad, $vDirection)
 	{
 		if(empty($data)) return array();
 		$series = $data->SERIES;
 		$type = $data->TYPE;
-		$set_direction = ($vPosition == 'horizontal') ? '水平' : '垂直';
+		$set_direction = ($vDirection == 'horizontal') ? '水平' : '垂直';
 		$stroke = $data->STROKE;
-		
 		$temp = Mst_Series::getSpeedAndAcceleration($series, $type, $set_direction, $stroke, $vLoad);
 		
 		$data->SPEED = $temp->SPEED;
 		$data->ACCELERATION = $temp->ACCELERATION;
-		$data->IMG_NAME = EC_REQUIRE_IMG_PATH . $series . '-' . $type . ".png";
+		$data->IMG_NAME = self::getImgName(EC_APPEARANCE_IMG_PATH, $series, $type);
 		$data->FULL_NAME = self::getFullName($series, $type, $stroke);
 		
 		$data->ERROR_KBN = 0;
@@ -76,6 +75,25 @@ class Mst {
 	static public function getFullName($series, $type, $stroke)
 	{
 		return $series . '-' . $type . '-' . $stroke;
+	}
+	
+	static public function getImgName($path, $series, $type)
+	{
+		return $path . $series . '-' . $type . ".png";
+	}
+	
+	static public function getKahan($series, $type)
+	{
+		return EC_LOADCAPALEDGER_IMG_PATH . $series . '-' . $type . "_SOKUDO-KAHAN.png";
+	}
+	
+	static public function getStrokeImg($series, $type, $stroke)
+	{
+		if( strlen($stroke) == 1) $stroke = '000' . $stroke;
+		if( strlen($stroke) == 2) $stroke = '00' . $stroke;
+		if( strlen($stroke) == 3) $stroke = '0' . $stroke;
+		
+		return EC_DRAWING_IMG_PATH . $series . '-' . $type . "_STROKE-" . $stroke . ".png";
 	}
 	
 }

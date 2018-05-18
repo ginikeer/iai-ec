@@ -1,7 +1,7 @@
 <?php
 
-	define("EC_REQUIRE_IMG_PATH", 'i/client/EcRequire/');
-	
-	
+	define("EC_APPEARANCE_IMG_PATH", 'i/client/Appearance/');
+	define("EC_LOADCAPALEDGER_IMG_PATH", 'i/client/LoadCapaLedger/');
+	define("EC_DRAWING_IMG_PATH", 'i/client/Drawing/');
 	
 ?>

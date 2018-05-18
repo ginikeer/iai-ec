@@ -66,7 +66,7 @@
 		<table id="ContentPlaceHolder1_tblMain" width="100%">
 			<tbody>
 				<tr>
-					<td><iframe src="{{ url('EC/specsub?idx=' . $idx) }}" id="ContentPlaceHolder1_ifDraw_0" style="height: 3072px; width: 100%;" frameborder="0" scrolling="no"></iframe></td>
+					<td><iframe src="{{ url('EC/specsub?idx=' . $idx . '&direction=' . $direction . '&load=' . $load) }}" id="ContentPlaceHolder1_ifDraw_{{ $idx }}" style="height: 3072px; width: 100%;" frameborder="0" scrolling="no"></iframe></td>
 				</tr>
 			</tbody>
 		</table>

@@ -14,6 +14,7 @@
 
 				var elm = window.parent.document.getElementById("ContentPlaceHolder1_ifDraw_" + arg.idx);
 				elm.style.height = (document.body.scrollHeight + 100) + "px";
+				
 			};
 		</script>
 		<form method="post" action="" id="form1">
@@ -126,7 +127,7 @@
 																<span id="ctlSpec_lblBunruiName" class="ctlLabel">e电缸</span>
 															</td>
 															<td style="border-right:none">
-																<span id="ctlSpec_lblType" class="ctlLabel">EC-R6M-50-0</span>
+																<span id="ctlSpec_lblType" class="ctlLabel">{{ $data->FULL_NAME }}-0</span>
 															</td>
 															<td style="text-align: right;border-left:none">
 																<span id="ctlSpec_lblNum" class="ctlLabel">1</span>
@@ -162,13 +163,13 @@
 														</tr>
 														<tr>
 															<td>
-																<img id="ctlSpec_imgAppearance" class="ImageAppearance" src="{{ asset('i/client/EcRequire/EC-R6M.png') }}">
+																<img id="ctlSpec_imgAppearance" class="ImageAppearance" src="{{ asset($data->IMG_NAME) }}">
 																<br>
 																<span id="ctlSpec_lblCation" class="ctlLabel"></span>
 															</td>
 
 															<td>
-																<img id="ctlSpec_imgLoadCapaLedger" class="ImageLoadCapaLedger" src="{{ asset('i/client/EcRequire/EC-R6M_SOKUDO-KAHAN.png') }}">
+																<img id="ctlSpec_imgLoadCapaLedger" class="ImageLoadCapaLedger" src="{{ asset($data->KAHAN) }}">
 															</td>
 														</tr>
 													</tbody>
@@ -197,7 +198,7 @@
 																<span id="ctlSpec_lblShapeTitle" class="ctlLabel">形状</span>
 															</td>
 															<td class="spec-tbl-td2-nclr" style="border-right:none">
-																<span id="ctlSpec_lblShape" class="ctlLabel">拉杆</span>
+																<span id="ctlSpec_lblShape" class="ctlLabel">{{ $data->TYPE_FORM }}</span>
 															</td>
 															<td class="spec-tbl-td3-nclr" style="border-left:none"></td>
 														</tr>
@@ -206,7 +207,7 @@
 																<span id="ctlSpec_lblStrokeTitle" class="ctlLabel">行程</span>
 															</td>
 															<td class="alignRight">
-																<span id="ctlSpec_lblStroke" class="ctlLabel">50</span>
+																<span id="ctlSpec_lblStroke" class="ctlLabel">{{ $data->STROKE }}</span>
 															</td>
 															<td class="alignLeft">
 																<span id="ctlSpec_lblStrokeUnit" class="ctlLabel">mm</span>
@@ -217,7 +218,7 @@
 																<span id="ctlSpec_lblLeadTitle" class="ctlLabel">导程</span>
 															</td>
 															<td class="alignRight">
-																<span id="ctlSpec_lblLead" class="ctlLabel">6</span>
+																<span id="ctlSpec_lblLead" class="ctlLabel">{{ $data->LEAD }}</span>
 															</td>
 															<td class="alignLeft">
 																<span id="ctlSpec_lblLeadUnit" class="ctlLabel">mm</span>
@@ -231,7 +232,7 @@
 																<span id="ctlSpec_lblMaxTransportWeightTitle_Horizon" class="ctlLabel">水平</span>
 															</td>
 															<td class="alignRight">
-																<span id="ctlSpec_lblMaxTransportWeight_Horizon" class="ctlLabel">40</span>
+																<span id="ctlSpec_lblMaxTransportWeight_Horizon" class="ctlLabel">{{ $data->MAX_POWER_HRZ }}</span>
 															</td>
 															<td class="alignLeft">
 																<span id="ctlSpec_lblMaxTransportWeight_HorizonUnit" class="ctlLabel">kg</span>
@@ -242,7 +243,7 @@
 																<span id="ctlSpec_lblMaxTransportWeightTitle_Vertical" class="ctlLabel">垂直</span>
 															</td>
 															<td class="alignRight">
-																<span id="ctlSpec_lblMaxTransportWeight_Vertical" class="ctlLabel">10</span>
+																<span id="ctlSpec_lblMaxTransportWeight_Vertical" class="ctlLabel">{{ $data->MAX_POWER_VTC }}</span>
 															</td>
 															<td class="alignLeft">
 																<span id="ctlSpec_lblMaxTransportWeitht_VerticalUnit" class="ctlLabel">kg</span>
@@ -256,7 +257,7 @@
 																<span id="ctlSpec_lblMaxSpeedTitle_Horizon" class="ctlLabel">水平</span>
 															</td>
 															<td class="alignRight">
-																<span id="ctlSpec_lblMaxSpeed_Horizon" class="ctlLabel">450</span>
+																<span id="ctlSpec_lblMaxSpeed_Horizon" class="ctlLabel">{{ $data->MAX_SPEED_HRZ }}</span>
 															</td>
 															<td class="alignLeft">
 																<span id="ctlSpec_lblMaxSpeet_HorizonUnit" class="ctlLabel">mm/s</span>
@@ -267,7 +268,7 @@
 																<span id="ctlSpec_lblMaxSpeedTitle_Vertical" class="ctlLabel">垂直</span>
 															</td>
 															<td class="alignRight">
-																<span id="ctlSpec_lblMaxSpeed_Vertical" class="ctlLabel">450</span>
+																<span id="ctlSpec_lblMaxSpeed_Vertical" class="ctlLabel">{{ $data->MAX_SPEED_VTC }}</span>
 															</td>
 															<td class="alignLeft">
 																<span id="ctlSpec_lblMaxSpeed_VerticalUnit" class="ctlLabel">mm/s</span>
@@ -281,7 +282,7 @@
 																<span id="ctlSpec_lblMaxAccelerationTitle_Horizon" class="ctlLabel">水平</span>
 															</td>
 															<td class="alignRight">
-																<span id="ctlSpec_lblMaxAcceleration_Horizon" class="ctlLabel">1</span>
+																<span id="ctlSpec_lblMaxAcceleration_Horizon" class="ctlLabel">{{ $data->MAX_ACCEL_HRZ }}</span>
 															</td>
 															<td class="alignLeft">
 																<span id="ctlSpec_lblMaxAcceleration_HorizonUnit" class="ctlLabel">Ｇ</span>
@@ -292,7 +293,7 @@
 																<span id="ctlSpec_lblMaxAccelerationTitle_Vertical" class="ctlLabel">垂直</span>
 															</td>
 															<td class="alignRight">
-																<span id="ctlSpec_lblMaxAcceleration_Vertical" class="ctlLabel">0.5</span>
+																<span id="ctlSpec_lblMaxAcceleration_Vertical" class="ctlLabel">{{ $data->MAX_ACCEL_VTC }}</span>
 															</td>
 															<td class="alignLeft">
 																<span id="ctlSpec_lblMaxAcceleration_VerticalUnit" class="ctlLabel">Ｇ</span>
@@ -303,7 +304,7 @@
 																<span id="ctlSpec_lblRepetPositionAccuracyTitle" class="ctlLabel">重复定位精度</span>
 															</td>
 															<td class="alignRight">
-																<span id="ctlSpec_lblRepetPositionAccuracy" class="ctlLabel">±0.05</span>
+																<span id="ctlSpec_lblRepetPositionAccuracy" class="ctlLabel">±{{ $data->ACCURACY }}</span>
 															</td>
 															<td class="alignLeft">
 																<span id="ctlSpec_lblRepetPositionAccuracyUnit" class="ctlLabel">mm</span>
@@ -314,7 +315,7 @@
 																<span id="ctlSpec_lblStaticEquivalentLoadTitle" class="ctlLabel">静态允许等价负荷</span>
 															</td>
 															<td class="alignRight">
-																<span id="ctlSpec_lblStaticEquivalentLoad" class="ctlLabel">0</span>
+																<span id="ctlSpec_lblStaticEquivalentLoad" class="ctlLabel">{{ $data->STATIC_EQUIVALENT_LOAD }}</span>
 															</td>
 															<td class="alignLeft">
 																<span id="ctlSpec_lblStaticEquivalentLoad_Unit" class="ctlLabel">Ｎ</span>
@@ -328,7 +329,7 @@
 																<span id="ctlSpec_lblStatToleranceMomentTitle_A" class="ctlLabel">Ma</span>
 															</td>
 															<td class="alignRight">
-																<span id="ctlSpec_lblStatToleranceMoment_A" class="ctlLabel">0</span>
+																<span id="ctlSpec_lblStatToleranceMoment_A" class="ctlLabel">{{ $data->MA_MOMENT_ST }}</span>
 															</td>
 															<td class="alignLeft">
 																<span id="ctlSpec_lblStatToleranceMoment_AUnit" class="ctlLabel">Ｎ・ｍ</span>
@@ -339,7 +340,7 @@
 																<span id="ctlSpec_lblStatToleranceMomentTitle_B" class="ctlLabel">Mb</span>
 															</td>
 															<td class="alignRight">
-																<span id="ctlSpec_lblStatToleranceMoment_B" class="ctlLabel">0</span>
+																<span id="ctlSpec_lblStatToleranceMoment_B" class="ctlLabel">{{ $data->MB_MOMENT_ST }}</span>
 															</td>
 															<td class="alignLeft">
 																<span id="ctlSpec_lblStatToleranceMoment_BUnit" class="ctlLabel">Ｎ・ｍ</span>
@@ -350,7 +351,7 @@
 																<span id="ctlSpec_lblStatToleranceMomentTitle_C" class="ctlLabel">Mc</span>
 															</td>
 															<td class="alignRight">
-																<span id="ctlSpec_lblStatToleranceMoment_C" class="ctlLabel">0</span>
+																<span id="ctlSpec_lblStatToleranceMoment_C" class="ctlLabel">{{ $data->MC_MOMENT_ST }}</span>
 															</td>
 															<td class="alignLeft">
 																<span id="ctlSpec_lblStatToleranceMoment_CUnit" class="ctlLabel">Ｎ・ｍ</span>
@@ -361,7 +362,7 @@
 																<span id="ctlSpec_lblDynamicEquivalentLoadTitle" class="ctlLabel">动态允许等价负荷</span>
 															</td>
 															<td class="alignRight">
-																<span id="ctlSpec_lblDynamicEquivalentLoad" class="ctlLabel">0</span>
+																<span id="ctlSpec_lblDynamicEquivalentLoad" class="ctlLabel">{{ $data->STATIC_EQUIVALENT_LOAD }}</span>
 															</td>
 															<td class="alignLeft">
 																<span id="ctlSpec_lblDynamicEquivalentLoad_Unit" class="ctlLabel">Ｎ</span>
@@ -375,7 +376,7 @@
 																<span id="ctlSpec_lblDynaToleranceMomentTitle_A" class="ctlLabel">Ma</span>
 															</td>
 															<td class="alignRight">
-																<span id="ctlSpec_lblDynaToleranceMoment_A" class="ctlLabel">0</span>
+																<span id="ctlSpec_lblDynaToleranceMoment_A" class="ctlLabel">{{ $data->MA_MOMENT }}</span>
 															</td>
 															<td class="alignLeft">
 																<span id="ctlSpec_lblDynaToleranceMoment_AUnit" class="ctlLabel">Ｎ・ｍ</span>
@@ -386,7 +387,7 @@
 																<span id="ctlSpec_lblDynaToleranceMomentTitle_B" class="ctlLabel">Mb</span>
 															</td>
 															<td class="alignRight">
-																<span id="ctlSpec_lblDynaToleranceMoment_B" class="ctlLabel">0</span>
+																<span id="ctlSpec_lblDynaToleranceMoment_B" class="ctlLabel">{{ $data->MB_MOMENT }}</span>
 															</td>
 															<td class="alignLeft">
 																<span id="ctlSpec_lblDynaToleranceMoment_BUnit" class="ctlLabel">Ｎ・ｍ</span>
@@ -397,7 +398,7 @@
 																<span id="ctlSpec_lblDynaToleranceMomentTitle_C" class="ctlLabel">Mc</span>
 															</td>
 															<td class="alignRight">
-																<span id="ctlSpec_lblDynaToleranceMoment_C" class="ctlLabel">0</span>
+																<span id="ctlSpec_lblDynaToleranceMoment_C" class="ctlLabel">{{ $data->MC_MOMENT }}</span>
 															</td>
 															<td class="alignLeft">
 																<span id="ctlSpec_lblDynaToleranceMoment_CUnit" class="ctlLabel">Ｎ・ｍ</span>
@@ -408,7 +409,7 @@
 																<span id="ctlSpec_lblMaOverhangAboveTitle" class="ctlLabel">Ma上方负载伸出长</span>
 															</td>
 															<td class="alignRight">
-																<span id="ctlSpec_lblMaOverhangAbove" class="ctlLabel">0</span>
+																<span id="ctlSpec_lblMaOverhangAbove" class="ctlLabel">{{ $data->MA_OVERHANG_ABOVE }}</span>
 															</td>
 															<td class="alignLeft">
 																<span id="ctlSpec_lblMaOverhangAbove_Unit" class="ctlLabel">mm</span>
@@ -419,7 +420,7 @@
 																<span id="ctlSpec_lblMaOverhangTopTitle" class="ctlLabel">Ma末端负载伸出长</span>
 															</td>
 															<td class="alignRight">
-																<span id="ctlSpec_lblMaOverhangTop" class="ctlLabel">0</span>
+																<span id="ctlSpec_lblMaOverhangTop" class="ctlLabel">{{ $data->MA_OVERHANG_TOP }}</span>
 															</td>
 															<td class="alignLeft">
 																<span id="ctlSpec_lblMaOverhangTop_Unit" class="ctlLabel">mm</span>
@@ -430,7 +431,7 @@
 																<span id="ctlSpec_lblMbMcOverhangTitle" class="ctlLabel">Mb,Mc负载伸出长</span>
 															</td>
 															<td class="alignRight">
-																<span id="ctlSpec_lblMbMcOverhang" class="ctlLabel">0</span>
+																<span id="ctlSpec_lblMbMcOverhang" class="ctlLabel">{{ $data->MBMC_OVERHANG }}</span>
 															</td>
 															<td class="alignLeft">
 																<span id="ctlSpec_lblMbMcOverhang_Unit" class="ctlLabel">mm</span>
@@ -441,7 +442,7 @@
 																<span id="ctlSpec_lblUseSurroundTempHumidTitle" class="ctlLabel">适用环境温度与湿度</span>
 															</td>
 															<td class="alignRight">
-																<span id="ctlSpec_lblUseSurroundTempHumid" class="ctlLabel">0～40℃、85%RH以下（无结露）</span>
+																<span id="ctlSpec_lblUseSurroundTempHumid" class="ctlLabel">{{ $data->TEMP_HUMID }}</span>
 															</td>
 															<td class="alignLeft"></td>
 														</tr>
@@ -450,7 +451,7 @@
 																<span id="ctlSpec_lblEncodeKindTitle" class="ctlLabel">编码器种类</span>
 															</td>
 															<td class="alignRight">
-																<span id="ctlSpec_lblEncodeKind" class="ctlLabel">增量型编码器</span>
+																<span id="ctlSpec_lblEncodeKind" class="ctlLabel"></span>
 															</td>
 															<td class="alignLeft"></td>
 														</tr>
@@ -479,7 +480,7 @@
 																<span id="ctlSpec_lblPowerVoltTitle" class="ctlLabel">电源电压</span>
 															</td>
 															<td class="alignRight">
-																<span id="ctlSpec_lblPowerVolt" class="ctlLabel">DC24V±10％</span>
+																<span id="ctlSpec_lblPowerVolt" class="ctlLabel">{{ $data->POWER_VOLTAGE }}</span>
 															</td>
 															<td class="alignLeft"></td>
 														</tr>
@@ -488,7 +489,7 @@
 																<span id="ctlSpec_lblPowerCapaTitle" class="ctlLabel">电源容量</span>
 															</td>
 															<td class="alignRight">
-																<span id="ctlSpec_lblPowerCapa" class="ctlLabel">最大4.2A</span>
+																<span id="ctlSpec_lblPowerCapa" class="ctlLabel">{{ $data->POWER_CAPACITY }}</span>
 															</td>
 															<td class="alignLeft"></td>
 														</tr>
@@ -497,7 +498,7 @@
 																<span id="ctlSpec_lblInOutSignalFormTitle" class="ctlLabel">输入输出信号形态</span>
 															</td>
 															<td class="alignRight">
-																<span id="ctlSpec_lblInOutSignalForm" class="ctlLabel">NPN规格</span>
+																<span id="ctlSpec_lblInOutSignalForm" class="ctlLabel"></span>
 															</td>
 															<td class="alignLeft"></td>
 														</tr>
@@ -531,7 +532,7 @@
 																<span id="ctlSpec_lblConditionUseTitle" class="ctlLabel">用途</span>
 															</td>
 															<td class="spec-tbl-td2-nclr" style="border-right:none">
-																<span id="ctlSpec_lblConditionUse" class="ctlLabel">搬运定位</span>
+																<span id="ctlSpec_lblConditionUse" class="ctlLabel">{{ $data->PURPOSE }}</span>
 															</td>
 															<td class="spec-tbl-td3-nclr" style="border-left:none"></td>
 														</tr>
@@ -540,7 +541,7 @@
 																<span id="ctlSpec_lblConditionShapeTitle" class="ctlLabel">形状</span>
 															</td>
 															<td class="alignRight">
-																<span id="ctlSpec_lblConditionShape" class="ctlLabel">希望条件：径向拉杆型电缸<br>搜索结果：径向拉杆型电缸</span>
+																<span id="ctlSpec_lblConditionShape" class="ctlLabel">希望条件：{{ $data->TYPE_FORM }}<br>搜索结果：{{ $data->TYPE_FORM . ' ' . $data->TYPE_FORM2 }}</span>
 															</td>
 															<td class="alignLeft"></td>
 														</tr>
@@ -549,7 +550,7 @@
 																<span id="ctlSpec_lblConditionInstallDirectionTitle" class="ctlLabel">安装方向</span>
 															</td>
 															<td class="alignRight">
-																<span id="ctlSpec_lblConditionInstallDirection" class="ctlLabel">水平安装</span>
+																<span id="ctlSpec_lblConditionInstallDirection" class="ctlLabel">{{ $data->DIRECTION }}</span>
 															</td>
 															<td class="alignLeft"></td>
 														</tr>
@@ -558,7 +559,7 @@
 																<span id="ctlSpec_lblConditionBehaviorRangeTitle" class="ctlLabel">移动范围</span>
 															</td>
 															<td class="alignRight">
-																<span id="ctlSpec_lblConditionBehaviorRange" class="ctlLabel">23</span>
+																<span id="ctlSpec_lblConditionBehaviorRange" class="ctlLabel"></span>
 															</td>
 															<td class="alignLeft">
 																<span id="ctlSpec_lblConditionBehaviorRangeUnit" class="ctlLabel">mm</span>
@@ -569,7 +570,7 @@
 																<span id="ctlSpec_lblConditionLoadTitle" class="ctlLabel">负载</span>
 															</td>
 															<td class="alignRight">
-																<span id="ctlSpec_lblConditionLoad" class="ctlLabel">23</span>
+																<span id="ctlSpec_lblConditionLoad" class="ctlLabel"></span>
 															</td>
 															<td class="alignLeft">
 																<span id="ctlSpec_lblConditionLoadUnit" class="ctlLabel">kg</span>
@@ -580,7 +581,7 @@
 																<span id="ctlSpec_lblConditionWorkLoadingStateTitle" class="ctlLabel">　工件装载状态</span>
 															</td>
 															<td class="alignRight">
-																<span id="ctlSpec_lblConditionWorkLoadingState" class="ctlLabel">0</span>
+																<span id="ctlSpec_lblConditionWorkLoadingState" class="ctlLabel"></span>
 															</td>
 															<td class="alignLeft"></td>
 														</tr>
@@ -589,7 +590,7 @@
 																<span id="ctlSpec_lblConditionGravityCenterPositionTitle" class="ctlLabel">　重心位置 L1</span>
 															</td>
 															<td class="alignRight">
-																<span id="ctlSpec_lblConditionGravityCenterPosition" class="ctlLabel">0</span>
+																<span id="ctlSpec_lblConditionGravityCenterPosition" class="ctlLabel"></span>
 															</td>
 															<td class="alignLeft">
 																<span id="ctlSpec_lblConditionGravityCenterPositionUnit" class="ctlLabel">mm</span>
@@ -600,7 +601,7 @@
 																<span id="ctlSpec_lblConditionDemandCycleTimeTitle" class="ctlLabel">要求周期时间</span>
 															</td>
 															<td class="alignRight">
-																<span id="ctlSpec_lblConditionDemandCycleTime" class="ctlLabel">2</span>
+																<span id="ctlSpec_lblConditionDemandCycleTime" class="ctlLabel"></span>
 															</td>
 															<td class="alignLeft">
 																<span id="ctlSpec_lblConditionDemandCycleTimeUnit" class="ctlLabel">s</span>
@@ -611,7 +612,7 @@
 																<span id="ctlSpec_lblConditionRoundTimesTitle" class="ctlLabel">往返次数</span>
 															</td>
 															<td class="alignRight">
-																<span id="ctlSpec_lblConditionRoundTimes" class="ctlLabel">2</span>
+																<span id="ctlSpec_lblConditionRoundTimes" class="ctlLabel"></span>
 															</td>
 															<td class="alignLeft">
 																<span id="ctlSpec_lblConditionRoundTimesUnit" class="ctlLabel">次/分钟</span>
@@ -622,7 +623,7 @@
 																<span id="ctlSpec_lblConditionOperatingTimeTitle" class="ctlLabel">运行时间</span>
 															</td>
 															<td class="alignRight">
-																<span id="ctlSpec_lblConditionOperatingTime" class="ctlLabel">2</span>
+																<span id="ctlSpec_lblConditionOperatingTime" class="ctlLabel"></span>
 															</td>
 															<td class="alignLeft">
 																<span id="ctlSpec_lblConditionOperatingTimeUnit" class="ctlLabel">小时/天</span>
@@ -633,7 +634,7 @@
 																<span id="ctlSpec_lblConditionOperatingDaysTitle" class="ctlLabel">运行天数</span>
 															</td>
 															<td class="alignRight">
-																<span id="ctlSpec_lblConditionOperatingDays" class="ctlLabel">342</span>
+																<span id="ctlSpec_lblConditionOperatingDays" class="ctlLabel"></span>
 															</td>
 															<td class="alignLeft">
 																<span id="ctlSpec_lblConditionOperatingDaysUnit" class="ctlLabel">日/年</span>
@@ -666,7 +667,7 @@
 																<span id="ctlSpec_lblCalcCycleTimeTitle" class="ctlLabel">计算周期时间</span>
 															</td>
 															<td class="spec-tbl-td2-nclr" style="border-right:none">
-																<span id="ctlSpec_lblCalcCycleTime" class="ctlLabel">0.217</span>
+																<span id="ctlSpec_lblCalcCycleTime" class="ctlLabel"></span>
 															</td>
 															<td class="spec-tbl-td3-nclr" style="border-left:none">
 																<span id="ctlSpec_lblCalcCycleTimeUnit" class="ctlLabel">s</span>
@@ -677,7 +678,7 @@
 																<span id="ctlSpec_lblCalcDecisionTitle" class="ctlLabel">计算条件（ADV)</span>
 															</td>
 															<td class="spec-tbl-td2-nclr" style="border-right:none">
-																<span id="ctlSpec_lblAcceleration" class="ctlLabel">加速度（A）0.7</span>
+																<span id="ctlSpec_lblAcceleration" class="ctlLabel">加速度（A）{{ $data->ACCELERATION }}</span>
 															</td>
 															<td class="spec-tbl-td3-nclr" style="border-left:none">
 																<span id="ctlSpec_lblAccelerationUnit" class="ctlLabel">G</span>
@@ -686,7 +687,7 @@
 														<tr>
 
 															<td class="spec-tbl-td2-nclr" style="border-right:none">
-																<span id="ctlSpec_lblSpeed" class="ctlLabel"></span>
+																<span id="ctlSpec_lblSpeed" class="ctlLabel">速度（V）{{ $data->SPEED }}</span>
 															</td>
 															<td class="spec-tbl-td3-nclr" style="border-left:none">
 																<span id="ctlSpec_lblSpeedUnit" class="ctlLabel">mm/s</span>
@@ -695,7 +696,7 @@
 														<tr>
 
 															<td class="spec-tbl-td2-nclr" style="border-right:none">
-																<span id="ctlSpec_lblDeceleration" class="ctlLabel">減速度（D）0.7</span>
+																<span id="ctlSpec_lblDeceleration" class="ctlLabel">減速度（D）{{ $data->ACCELERATION }}</span>
 															</td>
 															<td class="spec-tbl-td3-nclr" style="border-left:none">
 																<span id="ctlSpec_lblDecelerationUnit" class="ctlLabel">G</span>
@@ -727,7 +728,7 @@
 																<span id="ctlSpec_lblTravelingLifeDistanceTitle" class="ctlLabel">计算行走寿命</span>
 															</td>
 															<td class="spec-tbl-td2-nclr" style="border-right:none">
-																<span id="ctlSpec_lblTravelingLifeDistance" class="ctlLabel">0</span>
+																<span id="ctlSpec_lblTravelingLifeDistance" class="ctlLabel"></span>
 															</td>
 															<td class="spec-tbl-td3-nclr" style="border-left:none">
 																<span id="ctlSpec_lblTravelingLifeDistanceUnit" class="ctlLabel">km</span>
@@ -738,7 +739,7 @@
 																<span id="ctlSpec_lblTravelingLifeSpanTitle" class="ctlLabel">预测寿命</span>
 															</td>
 															<td class="alignRight">
-																<span id="ctlSpec_lblTravelingLifeSpan" class="ctlLabel">0年0ヵ月</span>
+																<span id="ctlSpec_lblTravelingLifeSpan" class="ctlLabel"></span>
 															</td>
 															<td class="alignLeft">
 																<span id="ctlSpec_lblTravelingLifeSpanUnit" class="ctlLabel"></span>
@@ -761,17 +762,41 @@
 						</tr>
 						<tr>
 							<td>
-								<img id="imDrawing" src="{{ asset('i/client/EcRequire/EC-R6M_ZU.png') }}" style="width:960px;">
-								<img id="imDrawingStroke" onerror="this.style.display='none'" src="{{ asset('i/client/EcRequire/EC-R6M_STROKE-0050.png') }}" style="width:960px;">
+								<img id="imDrawing" src="{{ asset('i/client/Drawing/' . $data->NAME . '_ZU.png') }}" style="width:960px;">
+								<img id="imDrawingStroke" onerror="this.style.display='none'" src="{{ asset($data->STROKE_IMG_NAME) }}" style="width:960px;">
 							</td>
 						</tr>
 					</tbody>
 				</table>
 
 			</div>
+			
+			<script> var baseurl = "{{ url('/') }}"; </script>
+			<script src="{{ asset('js/client/jquery-1.11.2.min.js') }}"></script>
+			<script src="{{ asset('js/client/common.js') }}"></script>
 			<script src="{{ asset('js/client/usrSpec.js') }}"></script>
 			<script type="text/javascript">
-				DefaultDesign();
+				//DefaultDesign();
+				
+				$(function() {
+					$('#ctlSpec_lblConditionBehaviorRange').text(checkEmpty(sessionStorage.getItem(ssStroke)));
+					$('#ctlSpec_lblConditionLoad').text(checkEmpty(sessionStorage.getItem(ssLoad)));
+					$('#ctlSpec_lblConditionWorkLoadingState').text(checkEmpty(sessionStorage.getItem(ssWorkLoadingState)));
+					$('#ctlSpec_lblConditionGravityCenterPosition').text(checkEmpty(sessionStorage.getItem(ssGrvCntrPosition)));
+					$('#ctlSpec_lblConditionDemandCycleTime').text(checkEmpty(sessionStorage.getItem(ssHopeCycleTime)));
+					$('#ctlSpec_lblConditionRoundTimes').text(checkEmpty(sessionStorage.getItem(ssRoundTrip)));
+					$('#ctlSpec_lblConditionOperatingTime').text(checkEmpty(sessionStorage.getItem(ssOperatingTime)));
+					$('#ctlSpec_lblConditionOperatingDays').text(checkEmpty(sessionStorage.getItem(ssOperatingDay)));
+				});
+				
+				function checkEmpty(_val) {
+					if(_val != null && $.trim(_val) != '') {
+						return _val;
+					} else {
+						return 0;
+					}
+				}
+				
 			</script>
 		</form>
 

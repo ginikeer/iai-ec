@@ -45,14 +45,20 @@ class EcTypeController extends Controller {
 	public function getSpec(Request $request)
 	{
 		$id = $request->input('IDX');
+		$hz = $request->input('HZ');
+		$vt = $request->input('VT');
+		$load = $request->input('L');
 		
-		return view('client/ECSpec', ['idx' => $id]);
+		if($hz) $direction = 'horizontal';
+		if($vt) $direction = 'vertical';
+		
+		return view('client/ECSpec', ['idx' => $id, 'direction' => $direction, 'load' => $load]);
 	}
 	
 	public function getSpecsub(Request $request)
 	{
-		$data = Mst_Series::getDataById($request->input('idx'));
-		
+		$data = Mst_Series::getDataById($request->input('idx'), $request->input('direction'), $request->input('load'));
+
 		return view('client/ECSpecSub', ['data' => $data]);
 	}
 	
