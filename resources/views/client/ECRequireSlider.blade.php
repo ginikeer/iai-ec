@@ -66,7 +66,7 @@
                 <div id="dvConditionLoadEntry1">
                     <img id="ContentPlaceHolder1_imgConditionLoadEntry1Content" src="{{ asset('i/client/EcRequire/LoadSlider_content3.png') }}" style="max-width:300px;">
                     <img id="ContentPlaceHolder1_imgConditionLoadItem" class="imgSize" src="{{ asset('i/client/EcRequire/LoadSlider_LoadItem.png') }}">
-                    <input name="ctl00$ContentPlaceHolder1$numConditionLoad" type="text" id="ContentPlaceHolder1_numConditionLoad" class="number" isimeon="false" onchange="calc()" onkeydown="javascript:return numOnly(document.getElementById('ContentPlaceHolder1_numConditionLoad'),1,false);return true;" onblur="javascript:serKetaKugiri(document.getElementById('ContentPlaceHolder1_numConditionLoad'),4,true,2,1);return true;" onfocus="javascript:serKetaKugiri(document.getElementById('ContentPlaceHolder1_numConditionLoad'),4,false,2,1);return true;" style="ime-mode:disabled;">
+                    <input name="ctl00$ContentPlaceHolder1$numConditionLoad" type="text" id="ContentPlaceHolder1_numConditionLoad" class="number" isimeon="false" onchange="calc()" onkeydown="javascript:return numOnly(document.getElementById('ContentPlaceHolder1_numConditionLoad'),1,false);return true;" onblur="javascript:serKetaKugiri(document.getElementById('ContentPlaceHolder1_numConditionLoad'),4,true,2,1);return true;" onfocus="javascript:serKetaKugiri(document.getElementById('ContentPlaceHolder1_numConditionLoad'),4,false,2,1);return true;" style="ime-mode:disabled; vertical-align: bottom;">
                     <img id="ContentPlaceHolder1_imgConditionLoadUnit" src="{{ asset('i/client/EcRequire/LoadSlider_LoadUnit.png') }}">
                     <div>
                         <span id="ContentPlaceHolder1_lblError2" class="AttentionMsg"></span>
@@ -77,7 +77,7 @@
                 <div id="dvConditionLoadEntry2">
                     <img id="ContentPlaceHolder1_imgConditionLoadEntry2Content" src="{{ asset('i/client/EcRequire/LoadSlider_content4.png') }}" style="max-width:300px;">
                     <!--<img id="ContentPlaceHolder1_imgConditionGravityCenterPositionItem" class="imgSize" src="{{ asset('i/client/EcRequire/LoadSlider_GrvCntrPositionItem.png') }}">-->
-                    <input name="ctl00$ContentPlaceHolder1$numConditionGravityCenterPosition" type="text" maxlength="3" id="ContentPlaceHolder1_numConditionGravityCenterPosition" class="number" onchange="calc()" onkeypress="return CheckNum();" style="ime-mode:disabled;">
+                    <input name="ctl00$ContentPlaceHolder1$numConditionGravityCenterPosition" type="text" maxlength="3" id="ContentPlaceHolder1_numConditionGravityCenterPosition" class="number" onchange="calc()" onkeypress="return CheckNum();" style="ime-mode:disabled; vertical-align: bottom;">
                     <img id="ContentPlaceHolder1_imgConditionGravityCenterPositionUnit" src="{{ asset('i/client/EcRequire/LoadSlider_GrvCntrPositionUnit.png') }}">
                     <div>
                         <span id="ContentPlaceHolder1_lblError3" class="AttentionMsg"></span>
@@ -135,5 +135,6 @@
 	
 	        return true;
 	    };
+	    
     </script>
 @stop

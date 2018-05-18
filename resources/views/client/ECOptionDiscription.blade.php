@@ -13,6 +13,13 @@
 	.margin20 {
 		margin-left: 20px;
 	}
+	.option-title{
+		color: #fff;
+		background: #b8b8b8;
+		text-align: center;
+		line-height: 30px;
+		padding: 10px 50px;
+	}
 </style>
 @stop
 @extends('master/client')
@@ -27,7 +34,7 @@
 			<tbody>
 				<tr>
 					<td class="Align">
-						<h2>选项说明画面</h2>
+						<h2 class="option-title">选项说明画面</h2>
 					</td>
 				</tr>
 			</tbody>
@@ -39,77 +46,32 @@
 			<tbody>
 				<tr>
 					<td class="Align">
-						<img id="ContentPlaceHolder1_imgOption1" class="imgOption" src="../Image/Drawing/Option/AC5.png">
+						<img id="ContentPlaceHolder1_imgOption2" class="imgOption" src="{{ asset('i/client//Drawing/Option/B.png') }}">
 					</td>
 				</tr>
 				<tr>
 					<td class="Align">
-						<img id="ContentPlaceHolder1_imgOption2" class="imgOption" src="../Image/Drawing/Option/B.png">
+						<img id="ContentPlaceHolder1_imgOption3" class="imgOption" src="{{ asset('i/client//Drawing/Option/FL.png') }}">
 					</td>
 				</tr>
 				<tr>
 					<td class="Align">
-						<img id="ContentPlaceHolder1_imgOption3" class="imgOption" src="../Image/Drawing/Option/FL.png">
+						<img id="ContentPlaceHolder1_imgOption4" class="imgOption" src="{{ asset('i/client//Drawing/Option/FT.png') }}">
 					</td>
 				</tr>
 				<tr>
 					<td class="Align">
-						<img id="ContentPlaceHolder1_imgOption4" class="imgOption" src="../Image/Drawing/Option/FT.png">
+						<img id="ContentPlaceHolder1_imgOption5" class="imgOption" src="{{ asset('i/client//Drawing/Option/NFA.png') }}">
 					</td>
 				</tr>
 				<tr>
 					<td class="Align">
-						<img id="ContentPlaceHolder1_imgOption5" class="imgOption" src="../Image/Drawing/Option/NFA.png">
+						<img id="ContentPlaceHolder1_imgOption11" class="imgOption" src="{{ asset('i/client//Drawing/Option/NM.png') }}">
 					</td>
 				</tr>
 				<tr>
 					<td class="Align">
-						<img id="ContentPlaceHolder1_imgOption6" class="imgOption" src="../Image/Drawing/Option/FFA.png">
-					</td>
-				</tr>
-				<tr>
-					<td class="Align">
-						<img id="ContentPlaceHolder1_imgOption7" class="imgOption" src="../Image/Drawing/Option/NJ.png">
-					</td>
-				</tr>
-				<tr>
-					<td class="Align">
-						<img id="ContentPlaceHolder1_imgOption8" class="imgOption" src="../Image/Drawing/Option/NJPB.png">
-					</td>
-				</tr>
-				<tr>
-					<td class="Align">
-						<img id="ContentPlaceHolder1_imgOption9" class="imgOption" src="../Image/Drawing/Option/QR.png">
-					</td>
-				</tr>
-				<tr>
-					<td class="Align">
-						<img id="ContentPlaceHolder1_imgOption10" class="imgOption" src="../Image/Drawing/Option/QRPB.png">
-					</td>
-				</tr>
-				<tr>
-					<td class="Align">
-						<img id="ContentPlaceHolder1_imgOption11" class="imgOption" src="../Image/Drawing/Option/NM.png">
-					</td>
-				</tr>
-				<tr>
-					<td class="Align">
-						<img id="ContentPlaceHolder1_imgOption12" class="imgOption" src="../Image/Drawing/Option/PN.png">
-					</td>
-				</tr>
-				<tr>
-					<td class="Align">
-						<img id="ContentPlaceHolder1_imgOption13" class="imgOption" src="../Image/Drawing/Option/WA.png">
-					</td>
-				</tr>
-				<tr>
-					<td class="Align">
-						<img id="ContentPlaceHolder1_imgOption14" class="imgOption" src="../Image/Drawing/Option/WL.png">
-					</td>
-				</tr>
-				<tr>
-					<td class="Align">
-						<img id="ContentPlaceHolder1_imgOption15" class="imgOption" src="../Image/Drawing/Option/GT2.png">
+						<img id="ContentPlaceHolder1_imgOption12" class="imgOption" src="{{ asset('i/client//Drawing/Option/PN.png') }}">
 					</td>
 				</tr>
 			</tbody>

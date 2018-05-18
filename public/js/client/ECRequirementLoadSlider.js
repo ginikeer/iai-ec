@@ -30,7 +30,6 @@ if (sessionStorage.getItem(ssDirection) != null) {
 }
 if (sessionStorage.getItem(ssWorkLoadingState) != null){
     WorkLoadingState = sessionStorage.getItem(ssWorkLoadingState)
-
     switch(WorkLoadingState){
         case "1":
             ImageChange(document.getElementById("ContentPlaceHolder1_imgWorkLoadState1"), 1);
@@ -182,13 +181,16 @@ function calc() {
     document.getElementById("ContentPlaceHolder1_lblError3").innerHTML = ""
     // blurイベントを発火させ、小数点の桁数調整
     ctrLoad.onblur();
-
+    
     if (WorkLoadingState > 0 && ctrLoad.value.length > 0 && GrvCntrPosition.length > 0) {
-
+    	
         // セッションに値の設定
-        //sessionStorage.setItem(calcResult, calcResult);
+//		sessionStorage.setItem(calcResult, calcResult);
         sessionStorage.setItem(ssTemp + ssWorkLoadingState, WorkLoadingState);
         sessionStorage.setItem(ssTemp + ssLoad, ctrLoad.value);
         sessionStorage.setItem(ssTemp + ssGrvCntrPosition, GrvCntrPosition);
+        
+        
     }
 }
+

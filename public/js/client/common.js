@@ -1001,3 +1001,14 @@ function checkNullAll() {
 	return flag;
 }
 
+//判断两次输入的密码是否一致
+function checkSame(pwd, again, _error) {
+	$(_error).hide();
+	
+	if(pwd != again){
+		$(_error).show();
+		return false;
+	} else {
+		return true;
+	}
+}

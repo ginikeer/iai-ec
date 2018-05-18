@@ -64,7 +64,7 @@
 									<th scope="col">型式</th>
 									<th align="right" scope="col" style="width:150px;">数量</th>
 								</tr>
-								<tr>
+								<!--<tr>
 									<td>
 										<span id="ContentPlaceHolder1_grdView_lblNo_0" class="ctlLabel">1</span>
 									</td>
@@ -74,7 +74,7 @@
 									<td align="right">
 										<span id="ContentPlaceHolder1_grdView_lblSuryo_0" class="ctlLabel">1</span>
 									</td>
-								</tr>
+								</tr>-->
 							</tbody>
 						</table>
 					</div>
@@ -133,5 +133,26 @@
 		};
 		
 		WebForm_AutoFocus('DummySubmitButton'); 
+		
+		$(function(){
+			
+//			首页选择的产品
+			var productCom = JSON.parse(sessionStorage.getItem('productCom'));
+			var html ='';
+			for (i=0; i<productCom.length; i++) {
+				html += '<tr>'+
+					'<td>'+
+						'<span id="ContentPlaceHolder1_grdView_lblNo_'+ i +'" class="ctlLabel">'+ (i+1) +'</span>'+
+					'</td>'+
+					'<td>'+
+						'<span id="ContentPlaceHolder1_grdView_lblProductName_'+ i +'" class="ctlLabel">'+productCom[i].name+'</span>'+
+					'</td>'+
+					'<td align="right">'+
+						'<span id="ContentPlaceHolder1_grdView_lblSuryo_'+ i +'" class="ctlLabel">'+productCom[i].numSuryo+'</span>'+
+					'</td>'+
+				'</tr>'
+			}
+			$('#ContentPlaceHolder1_grdView tbody').append(html);
+		});
 	</script>
 @stop
