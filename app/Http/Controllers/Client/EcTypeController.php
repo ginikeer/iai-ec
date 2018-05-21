@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Http\Database\Mst_Series;
+use App\Http\Database\Mst_Series_Resemble;
 
 use App\Services\Mst;
 
@@ -48,18 +49,22 @@ class EcTypeController extends Controller {
 		$hz = $request->input('HZ');
 		$vt = $request->input('VT');
 		$load = $request->input('L');
+		$page = $request->input('PAGE');
 		
 		if($hz) $direction = 'horizontal';
 		if($vt) $direction = 'vertical';
 		
-		return view('client/ECSpec', ['idx' => $id, 'direction' => $direction, 'load' => $load]);
+		return view('client/ECSpec', ['idx' => $id, 'direction' => $direction, 'load' => $load, 'page' => $page]);
 	}
 	
 	public function getSpecsub(Request $request)
 	{
-		$data = Mst_Series::getDataById($request->input('idx'), $request->input('direction'), $request->input('load'));
+		if($request->input('page') == 'require')
+			$data = Mst_Series::getDataById($request->input('idx'), $request->input('direction'), $request->input('load'));
+		if($request->input('page') == 'resemble')
+			$data = Mst_Series_Resemble::getDataById($request->input('idx'));
 
-		return view('client/ECSpecSub', ['data' => $data]);
+		return view('client/ECSpecSub', ['data' => $data, 'page' => $request->input('page')]);
 	}
 	
 	public function getPeripheral(Request $request)

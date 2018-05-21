@@ -344,9 +344,9 @@ function SelectionModels(blnFlag,
         },
 
     }).done(function (data) {
-        var cnt;
-        cnt = data.getElementsByTagName("Table").length;
-
+        data = JSON.parse(data); 
+    	var cnt = data.cnt;
+    	
         //必須項目の状態で処理を切り替える
         if (blnFlag || cnt == 0) {
             //divの表示有無設定
@@ -374,22 +374,18 @@ function SelectionModels(blnFlag,
             document.getElementById("h-box").style.display = "block";
 
             //推奨機種
-            document.getElementById("ContentPlaceHolder1_lblRecommendModelName").innerHTML = data.getElementsByTagName("FULL_NAME")['0'].textContent;
-            //標準価格
-            document.getElementById("ContentPlaceHolder1_lblRecommendPrice").innerHTML = "\\" + setComma(parseInt(data.getElementsByTagName("PRICE")['0'].textContent), true, false);
+            document.getElementById("ContentPlaceHolder1_lblRecommendModelName").innerHTML = data.data.FULL_NAME;
             // 画像設定
-            document.getElementById("ContentPlaceHolder1_imgRecommendModel").src = data.getElementsByTagName("IMG_NAME")['0'].textContent;
-
-
+            document.getElementById("ContentPlaceHolder1_imgRecommendModel").src = data.data.IMG_NAME;
 
             //機種選定が行われたタイミングで取得値をセッションに設定
             //CALC～は実装されたら指定
-            sessionStorage.setItem(ssSelectSeries, data.getElementsByTagName("SERIES")['0'].textContent);
-            sessionStorage.setItem(ssSelectType, data.getElementsByTagName("TYPE")['0'].textContent);
-            sessionStorage.setItem(ssSelectStroke, data.getElementsByTagName("STROKE")['0'].textContent);
+            sessionStorage.setItem(ssIdx, data.data.ID);
+            sessionStorage.setItem(ssSelectSeries, data.data.SERIES);
+            sessionStorage.setItem(ssSelectType, data.data.TYPE);
+            sessionStorage.setItem(ssSelectStroke, data.data.STROKE);
             // オプションケーブル長ボタン解除
             document.getElementById("ContentPlaceHolder1_imgbtnOptionCable").disabled = false;
-
         }
 
 
@@ -1026,6 +1022,7 @@ function errorCheckString(own) {
 function createParam() {
 
     var param;
+    var idx;
     var t;
     var p;
     var sd;
@@ -1068,6 +1065,12 @@ function createParam() {
     od = 0;
     sp = 0;
     ac = 0;
+    
+    if (sessionStorage.getItem(ssIdx) != null && $.trim(sessionStorage.getItem(ssIdx)) != '') {
+        idx = sessionStorage.getItem(ssIdx);
+    } else {
+        idx = 0;
+    }
     if (sessionStorage.getItem(ssSelectSeries) != null) {
         ss = sessionStorage.getItem(ssSelectSeries);
     } else {
@@ -1083,9 +1086,21 @@ function createParam() {
     } else {
         ssk = '';
     }
+     if (sessionStorage.getItem(ssHorizontal) != null && $.trim(sessionStorage.getItem(ssHorizontal)) != '') {
+        hz = sessionStorage.getItem(ssHorizontal);
+    } else {
+        hz = 0;
+    }
+    if (sessionStorage.getItem(ssVertical) != null && $.trim(sessionStorage.getItem(ssVertical)) != '') {
+        vt = sessionStorage.getItem(ssVertical);
+    } else {
+        vt = 0;
+    }
 
     // 仕様書に受け渡す値をすべてパラメータに設定
     param = '?RS=1';
+    param += '&PAGE=resemble';
+    param += '&IDX=' + idx;
     param += '&F=' + gcECResembleSelection;
     param += '&T=' + t;
     param += '&P=' + p;

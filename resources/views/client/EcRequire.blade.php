@@ -216,8 +216,8 @@
 						<div id="h-box" style="display: none;">
 							<div>
 								<span id="ContentPlaceHolder1_lblRecommendModel" class="ctlLabel">推荐机种</span>
-								<span id="ContentPlaceHolder1_lblRecommendModelName" class="ctlLabel">EC-RR6M-65</span>
-								<img id="ContentPlaceHolder1_imgRecommendModel" class="imgRecommendModel" src="{{ asset('i/client/EcRequire/EC-RR6M.png') }}">
+								<span id="ContentPlaceHolder1_lblRecommendModelName" class="ctlLabel"></span>
+								<img id="ContentPlaceHolder1_imgRecommendModel" class="imgRecommendModel" src="">
 							</div>
 							<div id="h-box-cycle-head">
 								<span id="ContentPlaceHolder1_lblRecommendCycleTimeHead" class="ctlLabel">周期时间计算</span>

@@ -4,6 +4,10 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\Http\Database\Mst_Series_Resemble;
+
+use App\Services\Mst;
+
 class ECResembleController extends Controller {
 
 	/*
@@ -32,7 +36,7 @@ class ECResembleController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function getIndex()
 	{
 		
 		return view('client/ECResemble');
@@ -40,7 +44,7 @@ class ECResembleController extends Controller {
 	
 	public function getAjaxSelectModel(Request $request)
 	{
-		$data = Mst_Series::getResembleFilterData($request->all());
+		$data = Mst_Series_Resemble::getFilterData($request->all());
 		
 		$result["data"] = $data;
 		$result["cnt"] = count($data);

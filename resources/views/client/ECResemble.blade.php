@@ -6,7 +6,7 @@
 		<div class="container">
 			<div class="header-title"><p>e电缸机种选型（选择和气缸相当的机种）</p></div>
 			<div class="header-btn">
-				<a href="http://iai.eigyo.com.cn/public/index.php"><img src="{{ asset('i/client/home/btnHome.png') }}"></a>
+				<a href="{{ url('/') }}"><img src="{{ asset('i/client/home/btnHome.png') }}"></a>
 				<a href="http://iai.eigyo.com.cn/public/index.php/contact"><img src="{{ asset('i/client/home/btnContact.png') }}"></a>
 			</div>
 		</div>
@@ -105,7 +105,7 @@
 					<div class="require-right">
 						<h3 class="require-result">结果选定</h3>
 						<div class="result-content">
-							<div id="cnt-box" style="display: none;">
+							<div id="cnt-box">
 								<br>
 								<span id="ContentPlaceHolder1_lblDescription" class="ctlLabel">请在左侧1~5项输入产品信息</span>
 								<br>
@@ -118,29 +118,11 @@
 									<span id="ContentPlaceHolder1_lblWarn2" class="WarnMsg"></span>
 								</p>
 							</div>
-							<div id="h-box" style="display: block;">
+							<div id="h-box" style="display: none;">
 								<div>
 									<span id="ContentPlaceHolder1_lblRecommendModel" class="ctlLabel">推荐机种</span>
-									<span id="ContentPlaceHolder1_lblRecommendModelName" class="ctlLabel">EC-RR6M-65</span>
-									<img id="ContentPlaceHolder1_imgRecommendModel" class="imgRecommendModel" src="{{ asset('i/client/EcRequire/EC-RR6M.png') }}">
-								</div>
-								<div id="h-box-cycle-head">
-									<span id="ContentPlaceHolder1_lblRecommendCycleTimeHead" class="ctlLabel">周期时间计算</span>
-								</div>
-								<div id="h-box-cycle">
-									<span id="ContentPlaceHolder1_lblRecommendCycleTime" class="ctlLabel">0 s</span>
-								</div>
-								<div id="h-box-life-head">
-									<span id="ContentPlaceHolder1_lblRecommendLifeHead" class="ctlLabel">预测寿命</span>
-								</div>
-								<div id="h-box-life">
-									<span id="ContentPlaceHolder1_lblRecommendLife" class="ctlLabel">20年以上</span>
-								</div>
-								<div id="h-box-distance-head">
-									<span id="ContentPlaceHolder1_lblRecommendDistanceHead" class="ctlLabel">计算运行寿命</span>
-								</div>
-								<div id="h-box-distance">
-									<span id="ContentPlaceHolder1_lblRecommendDistance" class="ctlLabel">50,000km</span>
+									<span id="ContentPlaceHolder1_lblRecommendModelName" class="ctlLabel"></span>
+									<img id="ContentPlaceHolder1_imgRecommendModel" class="imgRecommendModel" src="">
 								</div>
 								<div id="h-box-errMsg">
 									<span id="ContentPlaceHolder1_lblWarn3" class="WarnMsg"></span>

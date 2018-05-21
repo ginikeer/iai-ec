@@ -2056,6 +2056,7 @@ function RankUpDown() {
 
 function createParam() {
     var param;
+    var idx;
     var t;
     var p;
     var sd;
@@ -2217,6 +2218,7 @@ function createParam() {
 
     // 仕様書に受け渡す値をすべてパラメータに設定
     param = '?RS=1';
+    param += '&PAGE=require';
     param += '&IDX=' + idx;
     param += '&F=' + gcECRequirementSelection;
     param += '&T=' + t;

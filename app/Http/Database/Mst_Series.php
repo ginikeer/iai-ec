@@ -23,7 +23,6 @@ class Mst_Series extends Model {
 	
 	static public $table_name = 'mst_series_lead_stroke as ls';
 	
-	
 	static public function getFilterData ($param) {
 		$direction = '';	//方向
 		if($param["vHorizontal"] > 0) 
@@ -105,7 +104,7 @@ class Mst_Series extends Model {
 				$data->where('t.TYPE_FORM2', "テーブルタイプ");
 		}
 		
-		//位置
+		//方向
 		if($param["vHorizontal"] > 0) 
 			$data->where('t.HORIZONTAL', $param["vHorizontal"]);
 		if($param["vVertical"] > 0) 
@@ -139,12 +138,12 @@ class Mst_Series extends Model {
 	}
 	
 	//获取表中所有的stroke范围，返回数组格式
-	static public function getStrokeRange () {
-		return DB::table("mst_series_lead_stroke")
-				->select(DB::raw('distinct(STROKE) as stroke'))
-				->orderBy('stroke', 'asc')
-				->lists('stroke');
-	}
+//	static public function getStrokeRange () {
+//		return DB::table("mst_series_lead_stroke")
+//				->select(DB::raw('distinct(STROKE) as stroke'))
+//				->orderBy('stroke', 'asc')
+//				->lists('stroke');
+//	}
 	
 	//根据已有筛选条件，获取表中符合要求的stroke范围，返回数组格式
 	static public function getFilterStrokeRange ($param) {
@@ -160,14 +159,14 @@ class Mst_Series extends Model {
 	}
 	
 	//获取表中所有的最大载重范围，返回数组格式
-	static public function getPowerRange ($direction) {
-		$filed = ($direction == 'horizontal') ? 'MAX_POWER_HRZ' : 'MAX_POWER_VTC';
-		
-		return DB::table("mst_series_lead_stroke")
-				->select(DB::raw('distinct(' . $filed . ') as `load`'))
-				->orderBy('load', 'asc')
-				->lists('load');
-	}
+//	static public function getPowerRange ($direction) {
+//		$filed = ($direction == 'horizontal') ? 'MAX_POWER_HRZ' : 'MAX_POWER_VTC';
+//		
+//		return DB::table("mst_series_lead_stroke")
+//				->select(DB::raw('distinct(' . $filed . ') as `load`'))
+//				->orderBy('load', 'asc')
+//				->lists('load');
+//	}
 	
 	//根据已有筛选条件，获取表中符合要求的最大载重范围，返回数组格式
 	static public function getFilterPowerRange ($direction, $param) {

@@ -14,7 +14,7 @@
 Route::get('/', 'Client\MainController@index');
 Route::controller('ECRequire', 'Client\EcRequireController');
 Route::controller('EC', 'Client\EcTypeController');
-Route::get('ECResemble', 'Client\ECResembleController@index');
+Route::controller('ECResemble', 'Client\ECResembleController');
 
 Route::get('home', 'HomeController@index');
 

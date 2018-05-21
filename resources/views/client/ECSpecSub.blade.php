@@ -779,14 +779,25 @@
 				//DefaultDesign();
 				
 				$(function() {
-					$('#ctlSpec_lblConditionBehaviorRange').text(checkEmpty(sessionStorage.getItem(ssStroke)));
-					$('#ctlSpec_lblConditionLoad').text(checkEmpty(sessionStorage.getItem(ssLoad)));
-					$('#ctlSpec_lblConditionWorkLoadingState').text(checkEmpty(sessionStorage.getItem(ssWorkLoadingState)));
-					$('#ctlSpec_lblConditionGravityCenterPosition').text(checkEmpty(sessionStorage.getItem(ssGrvCntrPosition)));
-					$('#ctlSpec_lblConditionDemandCycleTime').text(checkEmpty(sessionStorage.getItem(ssHopeCycleTime)));
-					$('#ctlSpec_lblConditionRoundTimes').text(checkEmpty(sessionStorage.getItem(ssRoundTrip)));
-					$('#ctlSpec_lblConditionOperatingTime').text(checkEmpty(sessionStorage.getItem(ssOperatingTime)));
-					$('#ctlSpec_lblConditionOperatingDays').text(checkEmpty(sessionStorage.getItem(ssOperatingDay)));
+					if("require" == "{{ $page }}") {
+						$('#ctlSpec_lblConditionBehaviorRange').text(checkEmpty(sessionStorage.getItem(ssStroke)));
+						$('#ctlSpec_lblConditionLoad').text(checkEmpty(sessionStorage.getItem(ssLoad)));
+						$('#ctlSpec_lblConditionWorkLoadingState').text(checkEmpty(sessionStorage.getItem(ssWorkLoadingState)));
+						$('#ctlSpec_lblConditionGravityCenterPosition').text(checkEmpty(sessionStorage.getItem(ssGrvCntrPosition)));
+						$('#ctlSpec_lblConditionDemandCycleTime').text(checkEmpty(sessionStorage.getItem(ssHopeCycleTime)));
+						$('#ctlSpec_lblConditionRoundTimes').text(checkEmpty(sessionStorage.getItem(ssRoundTrip)));
+						$('#ctlSpec_lblConditionOperatingTime').text(checkEmpty(sessionStorage.getItem(ssOperatingTime)));
+						$('#ctlSpec_lblConditionOperatingDays').text(checkEmpty(sessionStorage.getItem(ssOperatingDay)));
+					} else {
+						$('#ctlSpec_lblConditionBehaviorRange').text(0);
+						$('#ctlSpec_lblConditionLoad').text(0);
+						$('#ctlSpec_lblConditionWorkLoadingState').text(0);
+						$('#ctlSpec_lblConditionGravityCenterPosition').text(0);
+						$('#ctlSpec_lblConditionDemandCycleTime').text(0);
+						$('#ctlSpec_lblConditionRoundTimes').text(0);
+						$('#ctlSpec_lblConditionOperatingTime').text(0);
+						$('#ctlSpec_lblConditionOperatingDays').text(0);
+					}
 				});
 				
 				function checkEmpty(_val) {

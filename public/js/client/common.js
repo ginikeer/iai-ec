@@ -104,7 +104,7 @@ var gcECRequirementLinearGuideRod       = baseurl + "/ECRequire/rod";
 //5.输入负载 
 var gcECRequirementLoadSlider           = baseurl + "/ECRequire/slider";
 var gcECRequirementLoadRod              = baseurl + "/ECRequire/loadrod";
-var gcECRequirementPressRod             = "ECRequirementPressRod.aspx";
+var gcECRequirementPressRod             = baseurl + "/ECRequire/pressRod";
 //6.输入周期时间 
 var gcECRequirementCycleTimeSlider      = baseurl + "/ECRequire/time";
 var gcECRequirementCycleTimeRod         = baseurl + "/ECRequire/cycletimerod";
@@ -115,7 +115,7 @@ var gcECRequirementRunningTime          = baseurl + "/ECRequire/life";
 var gcECSpec                            = baseurl + "/EC/spec";
 //e电缸在线选型
 var gcECTypeSelection                   = baseurl + "/EC/type";
-var gcECResembleSelection               = "ECResembleSelection.aspx";
+var gcECResembleSelection               = baseurl + "/EC/ECResemble";
 var gcECRequirementSelection            = baseurl + "/ECRequire";
 var gcECRequirementLoadRodLinerGuide    = baseurl + "/ECRequire/loadrodlinerguide";
 //5.输入负载 

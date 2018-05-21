@@ -49,6 +49,29 @@ class Mst {
 		return ($step1 && $step2 && $step3 && $step4 && $step5 && $step6);
 	}
 	
+	static public function checkResembleMust($param)
+	{
+		$step1 = $step2 = $step3 = $step4 = $step5 = false;
+		
+		if($param["vBore1"] > 0 || $param["vBore2"] > 0 || $param["vBore3"] > 0 || $param["vBore4"] > 0 ||
+			$param["vBore5"] > 0 || $param["vBore6"] > 0 || $param["vBore7"] > 0) 
+			$step1 = true;
+			
+		if($param["vAir1"] > 0 || $param["vAir2"] > 0)
+			$step2 = true;
+		
+		if($param["vRodless"] > 0 || $param["vRod"] > 0) 
+			$step3 = true;
+		
+		if($param["vHorizontal"] > 0 || $param["vVertical"] > 0) 
+			$step4 = true;
+		
+		if($param["vStroke"] > 0) 
+			$step5 = true;
+		
+		return ($step1 && $step2 && $step3 && $step4 && $step5);
+	}
+	
 	static public function completeData($data, $vLoad, $vDirection)
 	{
 		if(empty($data)) return array();
@@ -68,6 +91,19 @@ class Mst {
 		$data->CALC_MOMENT = 0;
 		$data->CALC_DISTANCE = 0;
 		$data->CALC_LIFE = 0;
+		
+		return $data;
+	}
+	
+	static public function completeResembleData($data)
+	{
+		if(empty($data)) return array();
+		$series = $data->SERIES;
+		$type = $data->TYPE;
+		$stroke = $data->STROKE;
+		
+		$data->IMG_NAME = self::getImgName(EC_APPEARANCE_IMG_PATH, $series, $type);
+		$data->FULL_NAME = self::getFullName($series, $type, $stroke);
 		
 		return $data;
 	}
