@@ -104,10 +104,6 @@ class Mst_Series_Resemble extends Model {
 		$d->MAX_SPEED_VTC = $temp->MAX_SPEED_VTC;
 		$d->MAX_ACCEL_HRZ = $temp->MAX_ACCEL_HRZ;
 		$d->MAX_ACCEL_VTC = $temp->MAX_ACCEL_VTC;
-//		$d-> = $temp->;
-//		$d-> = $temp->;
-//		$d-> = $temp->;
-		
 		
 		return $d;
 	}

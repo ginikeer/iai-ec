@@ -7,20 +7,24 @@
 	.auto-style7 { height: 2px; } 
 	.auto-style8 { height: 18px; } 
 	.auto-style9 { width: 100px; height: 20px; }
-	input.text { border-color: #FFCC99; border-width: 2px; width: 400px; } 
-	input.number { border-color: #FFCC99; border-width: 2px; width: 400px; } 
+	input.text { border-color: #FFCC99; border-width: 2px; width: 400px; padding: 0 10px; box-sizing: border-box; height: 29px; line-height: 29px;} 
+	input.number { border-color: #FFCC99; border-width: 2px; width: 400px; padding: 0 10px; box-sizing: border-box; } 
 	.lblHyphen { font-size: 18px; } 
 	.lblAtmark { font-size: 18px; } 
 	.lblError { width: 230px !important; } 
 	.ErrorFont { color: red; } 
 	p { font-size: 20px; }
+	.send-btn { width: 117px; margin-left: 13px; height: 25px; line-height: 25px; display: inline-block; border: 2px solid #000; text-align: center; font-size: 14px; cursor: pointer; }
 </style>
 @stop
 
 @extends('master/client')
 @section('content')
-		<!--<form method="post" action="" id="form1" class="h-adr">
-			<input type="hidden" name="_token" value="{{ csrf_token() }}" />-->
+		<!--<form method="post" action="" id="form1" class="h-adr">-->
+			<input type="hidden" name="_token" value="{{ csrf_token() }}" />
+			<input type="hidden" id="url-ajax-send-code" value="{{ url('/EC/send-code') }}" />
+			<input type="hidden" id="url-ajax-customerinfo-submit" value="{{ url('/EC/customerinfo-submit') }}" />
+			
 			<div class="aspNetHidden">
 				<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="">
 				<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
@@ -83,60 +87,84 @@
 						<tbody>
 							<tr>
 								<th>
-									<span id="ContentPlaceHolder1_lblCompanyName" class="ctlLabel">会社名 </span></th>
+									<span id="ContentPlaceHolder1_lblCompanyName" class="ctlLabel">公司名 </span></th>
 								<td>
-									<input name="ctl00$ContentPlaceHolder1$txtCompanyName" type="text" id="ContentPlaceHolder1_txtCompanyName" class="text required-item"></td>
+									<input name="company" type="text" id="company" class="text required-item"></td>
 								<td class="lblError">
-									<span id="ContentPlaceHolder1_lblCompanyError" class="ErrorFont"></span></td>
+									<span id="" class="ErrorFont"></span></td>
 							</tr>
 							<tr>
 								<th>
-									<span id="ContentPlaceHolder1_lblAddress" class="ctlLabel">住所</span></th>
+									<span id="" class="ctlLabel">地址</span></th>
 								<td>
-									<input name="ctl00$ContentPlaceHolder1$txtAddress" type="text" id="ContentPlaceHolder1_txtAddress" class="p-region p-locality p-street-address p-extended-address required-item" style="border-color:#FFCC99;border-width:2px;border-style:Solid;font-size:18px;height:25px;width:400px; font-family:'メイリオ', 'Meiryo', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'ＭＳ Ｐゴシック', sans-serif;">
+									<input name="address" type="text" id="address" class="text required-item">
 								</td>
 								<td class="lblError">
-									<span id="ContentPlaceHolder1_lblAddressError" class="ErrorFont"></span></td>
+									<span id="" class="ErrorFont"></span></td>
 							</tr>
 							<tr>
 								<th>
-									<span id="ContentPlaceHolder1_lblTel" class="ctlLabel">電話番号</span></th>
+									<span id="ContentPlaceHolder1_lblNameKanji" class="ctlLabel">姓名</span></th>
 								<td>
-									<input name="ctl00$ContentPlaceHolder1$txtTelTop" type="text" maxlength="5" id="ContentPlaceHolder1_txtTelTop" class="number required-item" onkeypress="return CheckNum();" style="width:50px;ime-mode:disabled;">
-									<span id="ContentPlaceHolder1_lblHyphen2" class="lblHyphen"> - </span>
-									<input name="ctl00$ContentPlaceHolder1$txtTelMid" type="text" maxlength="5" id="ContentPlaceHolder1_txtTelMid" class="number required-item" onkeypress="return CheckNum();" style="width:50px;ime-mode:disabled;">
-									<span id="ContentPlaceHolder1_lblHyphen3" class="lblHyphen"> - </span>
-									<input name="ctl00$ContentPlaceHolder1$txtTelBtm" type="text" maxlength="5" id="ContentPlaceHolder1_txtTelBtm" class="number required-item" onkeypress="return CheckNum();" style="width:50px;ime-mode:disabled;">
+									<input name="name" type="text" id="name" class="text required-item"></td>
+								<td class="lblError">
+									<span id="" class="ErrorFont"></span></td>
+							</tr>
+							<tr>
+								<th>
+									<span id="ContentPlaceHolder1_lblTel" class="ctlLabel">公司电话</span></th>
+								<td>
+				                    <input name="tel1" type="text" maxlength="5" id="tel1" class="text" onkeypress="return CheckNum();" style="width:121px;">
+				                    <span id="" class="lblHyphen"> - </span>
+				                    <input name="tel2" type="text" maxlength="5" id="tel2" class="text required-item" onkeypress="return CheckNum();" style="width:121px;">
+				                    <span id="" class="lblHyphen"> - </span>
+				                    <input name="tel3" type="text" maxlength="5" id="tel3" class="text required-item" onkeypress="return CheckNum();" style="width:121px;">
+				                </td>
+				                <td class="lblError">
+									<span id="" class="ErrorFont"></span>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									<span id="ContentPlaceHolder1_lblTel" class="ctlLabel">手机</span></th>
+								<td>
+									<input name="mobile" type="text" id="mobile" class="text required-item" onkeypress="return CheckNum();" style="width: 260px;">
+									<div class="send-btn">发送验证码</div>
 								</td>
 								<td class="lblError">
-									<span id="ContentPlaceHolder1_lblTelError" class="ErrorFont"></span></td>
+									<span id="MobileFormatError" class="ErrorFont"></span>
+								</td>
 							</tr>
 							<tr>
 								<th>
-									<span id="ContentPlaceHolder1_lblNameKanji" class="ctlLabel">氏名(漢字)</span></th>
+									<span id="ContentPlaceHolder1_lblTel" class="ctlLabel">验证码</span></th>
 								<td>
-									<input name="ctl00$ContentPlaceHolder1$txtNameKanji" type="text" id="ContentPlaceHolder1_txtNameKanji" class="text required-item"></td>
-								<td class="lblError">
-									<span id="ContentPlaceHolder1_lblNameKanjiError" class="ErrorFont"></span></td>
-							</tr>
-							<tr>
-								<th>
-									<span id="ContentPlaceHolder1_lblMail" class="ctlLabel">メールアドレス</span></th>
-								<td>
-									<input name="ctl00$ContentPlaceHolder1$txtMail" type="text" id="ContentPlaceHolder1_txtMail" class="text required-item" style="ime-mode:disabled;"></td>
-								<td class="lblError">
-									<span id="ContentPlaceHolder1_lblMailError" class="ErrorFont"></span></td>
-							</tr>
-							<tr>
-								<th>
-									<span id="ContentPlaceHolder1_lblMailConfirm" class="ctlLabel">メールアドレス(確認)</span></th>
-								<td>
-									<input name="ctl00$ContentPlaceHolder1$txtMailConfirmTop" type="text" id="ContentPlaceHolder1_txtMailConfirmTop" class="text required-item" style="width:215px;ime-mode:disabled;">
-									<span id="ContentPlaceHolder1_lblat" class="lblAtmark">@</span>
-									<input name="ctl00$ContentPlaceHolder1$txtMailConfirmBtm" type="text" id="ContentPlaceHolder1_txtMailConfirmBtm" class="text required-item" style="width:150px;ime-mode:disabled;">
+									<input name="code" type="text" id="code" class="text required-item" onkeypress="return CheckNum();">
 								</td>
 								<td class="lblError">
-									<span id="ContentPlaceHolder1_lblMailConfirmError" class="ErrorFont"></span>
+								<span id="" class="ErrorFont"></span></td>
+							</tr>
+							<tr>
+								<th>
+									<span id="ContentPlaceHolder1_lblMail" class="ctlLabel">邮箱</span></th>
+								<td>
+									<input name="email" type="text" id="email" class="text required-item"></td>
+								<td class="lblError">
+									<span id="MailFormatError" class="ErrorFont"></span></td>
+							</tr>
+							<tr>
+								<th>
+									<span id="ContentPlaceHolder1_lblMailConfirm" class="ctlLabel">邮箱确认</span></th>
+								<td>
+									<input name="again" type="text" id="again" class="text required-item" style="ime-mode:disabled;">
+								</td>
+								<td class="lblError">
+									<span id="MailConfirmError" class="ErrorFont"></span>
+								</td>
+							</tr>
+							<tr>
+								<td class="lblError" colspan="2">
+									<span id="sendMessage" class="" style="font-size: 14px;"></span>
 								</td>
 							</tr>
 						</tbody>
@@ -147,10 +175,9 @@
 						<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnNext" id="ContentPlaceHolder1_imgbtnNext" class="imgButton" src="{{ asset('i/client/EcRequire/btnNext.png') }}">
 						
 						<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnBack" id="ContentPlaceHolder1_imgbtnBack2" class="imgButton" src="{{ asset('i/client/EcRequire/btnBack.png') }}" style="display: none;">
-						<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnNext" id="ContentPlaceHolder1_imgbtnNext2" class="imgButton" src="{{ asset('i/client/EcRequire/btnNext.png') }}" style="display: none;" onclick="javascript:window.location.href= '{{url("/EC/customerfinish")}}'; ">
+						<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnNext" id="ContentPlaceHolder1_imgbtnNext2" class="imgButton" src="{{ asset('i/client/EcRequire/btnNext.png') }}" style="display: none;" data-href="{{ url('/EC/customerfinish') }}" >
 					</div>
 				</div>
-
 			</div>
 
 		<!--</form>-->

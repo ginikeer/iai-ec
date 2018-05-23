@@ -45,7 +45,17 @@ class Helper {
 		}
 	}
 	
-
+	//随机生成4位数字
+	static public function genCode()
+	{
+		$code = "";
+		
+		for($i = 0; $i < 4; $i++) {
+			$code .= rand(0, 9);
+		}
+		
+		return $code;
+	}
 	
 }
 

@@ -609,7 +609,7 @@ function setModel(blnFlag, data) {
         document.getElementById("h-box").style.display = "none";
 
         //検索件数の表示
-        document.getElementById("ContentPlaceHolder1_lblSearchRecords").innerHTML = "適合製品0件";
+        document.getElementById("ContentPlaceHolder1_lblSearchRecords").innerHTML = "适合产品0件";
 
         document.getElementById("ContentPlaceHolder1_lblWarn1").innerHTML = "※";
         document.getElementById("ContentPlaceHolder1_lblWarn2").innerHTML = "張り出し負荷長過大、重心位置を<br>見直してください";
@@ -622,7 +622,7 @@ function setModel(blnFlag, data) {
         document.getElementById("h-box").style.display = "none";
 
         //検索件数の表示
-        document.getElementById("ContentPlaceHolder1_lblSearchRecords").innerHTML = "適合製品0件";
+        document.getElementById("ContentPlaceHolder1_lblSearchRecords").innerHTML = "适合产品0件";
 
         document.getElementById("ContentPlaceHolder1_lblWarn1").innerHTML = "※";
         document.getElementById("ContentPlaceHolder1_lblWarn2").innerHTML = "モーメント過大、荷重・重心を<br>見直してください";
@@ -1033,7 +1033,7 @@ function SelectModel(own) {
         //ランクダウン使用不可
         document.getElementById("ContentPlaceHolder1_imgBtnRankDown").disabled = true;
 
-        document.getElementById("ContentPlaceHolder1_lblSearchRecords").innerHTML = "適合製品0件";
+        document.getElementById("ContentPlaceHolder1_lblSearchRecords").innerHTML = "适合产品0件";
 
         document.getElementById("ContentPlaceHolder1_lblWarn1").innerHTML = "※";
         document.getElementById("ContentPlaceHolder1_lblWarn2").innerHTML = "ストロークに不正な値が<br>　 入力されました<br>　 再入力を行って下さい";
@@ -1058,7 +1058,7 @@ function SelectModel(own) {
         //ランクダウン使用不可
         document.getElementById("ContentPlaceHolder1_imgBtnRankDown").disabled = true;
 
-        document.getElementById("ContentPlaceHolder1_lblSearchRecords").innerHTML = "適合製品0件";
+        document.getElementById("ContentPlaceHolder1_lblSearchRecords").innerHTML = "适合产品0件";
 
         document.getElementById("ContentPlaceHolder1_lblWarn1").innerHTML = "※";
         document.getElementById("ContentPlaceHolder1_lblWarn2").innerHTML = "ストロークの値に0が<br>　 入力されています<br>　 再入力を行って下さい";
@@ -1084,7 +1084,7 @@ function SelectModel(own) {
         //ランクダウン使用不可
         document.getElementById("ContentPlaceHolder1_imgBtnRankDown").disabled = true;
 
-        document.getElementById("ContentPlaceHolder1_lblSearchRecords").innerHTML = "適合製品0件";
+        document.getElementById("ContentPlaceHolder1_lblSearchRecords").innerHTML = "适合产品0件";
 
         document.getElementById("ContentPlaceHolder1_lblWarn1").innerHTML = "※";
         document.getElementById("ContentPlaceHolder1_lblWarn2").innerHTML = "押付け力に不正な値が<br>　 入力されました<br>　 再入力を行って下さい";

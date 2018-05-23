@@ -62,7 +62,7 @@
 		<div class="container">
 			<div class="header-title"><p>e电缸在线选型</p></div>
 			<div class="header-btn">
-				<a href="http://iai.eigyo.com.cn/public/index.php"><img src="{{ asset('i/client/home/btnHome.png') }}"></a>
+				<a href="{{ url('/') }}"><img src="{{ asset('i/client/home/btnHome.png') }}"></a>
 				<a href="http://iai.eigyo.com.cn/public/index.php/contact"><img src="{{ asset('i/client/home/btnContact.png') }}"></a>
 			</div>
 		</div>
@@ -85,7 +85,7 @@
 		
 		<div id="site-box">
 			<div class="container-button">
-				<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnOption" id="ContentPlaceHolder1_imgbtnOption" tabindex="6" class="imgMenu" src="{{ asset('i/client/EcRequire/btnOption.png') }}" onclick="window.open('ECOptionDiscription.aspx','_blank');return false;">
+				<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnOption" id="ContentPlaceHolder1_imgbtnOption" tabindex="6" class="imgMenu" src="{{ asset('i/client/EcRequire/btnOption.png') }}" onclick="window.open(&quot; {{ url('ECRequire/optiondiscription')}} &quot; ,'_blank');return false;">
 			</div>
 			<div style="padding-left: 20px;">
 				<span id="ContentPlaceHolder1_lblWord" class="ctlLabel">请选择使用的型号。</span>
@@ -408,51 +408,51 @@
 				var ctrDdlSeries = document.getElementById("ContentPlaceHolder1_ddlSeries");
 				var intSIndex = ctrDdlSeries.selectedIndex;
 		
-				$.ajax({
-					type: "get",
-					datatype: "xml",
-					contentType: "text/xml; charset=utf-8",
-					url: ECMS_HOST_URL + "/WCF/srvECSelection.svc/GetTypeOfSeries",
-					data: {
-						ddlSeries: ctrDdlSeries[intSIndex].text
-					},
-				}).done(function(data) {
-		
-					var ndCol2 = data.getElementsByTagName("TYPE");
-		
-					//オプション要素をクリア
-					var ctrDdlType = document.getElementById("ContentPlaceHolder1_ddlType");
-		
-					if(ctrDdlType.hasChildNodes()) {
-						while(ctrDdlType.childNodes.length > 0) {
-							ctrDdlType.removeChild(ctrDdlType.firstChild)
-						}
-					}
-					for(r = 0; r < ndCol2.length; r++) {
-						//オプション要素の定義
-						var option = document.createElement('option');
-		
-						//Valueに対して値をセット
-						option.setAttribute('value', r)
-						//要素に入れる文字列をセット
-						option.innerHTML = ndCol2[r].firstChild.nodeValue
-						//コントロールに追加
-						ctrDdlType.appendChild(option)
-					}
-		
-					ctrDdlType = document.getElementById("ContentPlaceHolder1_ddlType")
-					typeIdx = ctrDdlType.selectedIndex;
-					typeText = ctrDdlType.options[typeIdx].text;
-					document.getElementById("ContentPlaceHolder1_txtIndexType").value = typeText;
-					setModel();
-		
-					return false;
-		
-				}).fail(function(data, textStatus, errorThrown) {
-					// エラー時   
-					alert("false")
-		
-				});
+//				$.ajax({
+//					type: "get",
+//					datatype: "xml",
+//					contentType: "text/xml; charset=utf-8",
+//					url: ECMS_HOST_URL + "/WCF/srvECSelection.svc/GetTypeOfSeries",
+//					data: {
+//						ddlSeries: ctrDdlSeries[intSIndex].text
+//					},
+//				}).done(function(data) {
+//		
+//					var ndCol2 = data.getElementsByTagName("TYPE");
+//		
+//					//オプション要素をクリア
+//					var ctrDdlType = document.getElementById("ContentPlaceHolder1_ddlType");
+//		
+//					if(ctrDdlType.hasChildNodes()) {
+//						while(ctrDdlType.childNodes.length > 0) {
+//							ctrDdlType.removeChild(ctrDdlType.firstChild)
+//						}
+//					}
+//					for(r = 0; r < ndCol2.length; r++) {
+//						//オプション要素の定義
+//						var option = document.createElement('option');
+//		
+//						//Valueに対して値をセット
+//						option.setAttribute('value', r)
+//						//要素に入れる文字列をセット
+//						option.innerHTML = ndCol2[r].firstChild.nodeValue
+//						//コントロールに追加
+//						ctrDdlType.appendChild(option)
+//					}
+//		
+//					ctrDdlType = document.getElementById("ContentPlaceHolder1_ddlType")
+//					typeIdx = ctrDdlType.selectedIndex;
+//					typeText = ctrDdlType.options[typeIdx].text;
+//					document.getElementById("ContentPlaceHolder1_txtIndexType").value = typeText;
+//					setModel();
+//		
+//					return false;
+//		
+//				}).fail(function(data, textStatus, errorThrown) {
+//					// エラー時   
+//					alert("false")
+//		
+//				});
 		
 			}
 		
@@ -463,55 +463,55 @@
 				var ctrDdlType = document.getElementById("ContentPlaceHolder1_ddlType");
 				var intIndex = ctrDdlType.selectedIndex;
 		
-				$.ajax({
-					type: "get",
-					datatype: "xml",
-					//datatype: "json",
-					//contentType: "application/json; charset=utf-8",
-					contentType: "text/xml; charset=utf-8",
-					url: ECMS_HOST_URL + "/WCF/srvECSelection.svc/GetStroke",
-					//data: { ddlSelect: ctrDdlType[intIndex].text },
-					data: {
-						ddlSeries: ctrDdlSeries[intSIndex].text,
-						ddlType: ctrDdlType[intIndex].text
-					},
-				}).done(function(data) {
-		
-					//var ndCol1 = data.getElementsByTagName("PRICE");
-					var ndCol2 = data.getElementsByTagName("STROKE");
-		
-					//オプション要素をクリア
-					var ctrDdlStroke = document.getElementById("ContentPlaceHolder1_ddlStroke");
-		
-					if(ctrDdlStroke.hasChildNodes()) {
-						while(ctrDdlStroke.childNodes.length > 0) {
-							ctrDdlStroke.removeChild(ctrDdlStroke.firstChild)
-						}
-					}
-					for(r = 0; r < ndCol2.length; r++) {
-						//オプション要素の定義
-						var option = document.createElement('option');
-		
-						//Valueに対して値をセット
-						option.setAttribute('value', r)
-						//要素に入れる文字列をセット
-						option.innerHTML = ndCol2[r].firstChild.nodeValue
-						//コントロールに追加
-						ctrDdlStroke.appendChild(option)
-					}
-		
-					ctrDdlStroke = document.getElementById("ContentPlaceHolder1_ddlStroke")
-					strokeIdx = ctrDdlStroke.selectedIndex;
-					strokeText = ctrDdlStroke.options[strokeIdx].text;
-					document.getElementById("ContentPlaceHolder1_txtIndexStroke").value = strokeText;
-		
-					return false;
-		
-				}).fail(function(data, textStatus, errorThrown) {
-					// エラー時   
-					alert("false")
-		
-				});
+//				$.ajax({
+//					type: "get",
+//					datatype: "xml",
+//					//datatype: "json",
+//					//contentType: "application/json; charset=utf-8",
+//					contentType: "text/xml; charset=utf-8",
+//					url: ECMS_HOST_URL + "/WCF/srvECSelection.svc/GetStroke",
+//					//data: { ddlSelect: ctrDdlType[intIndex].text },
+//					data: {
+//						ddlSeries: ctrDdlSeries[intSIndex].text,
+//						ddlType: ctrDdlType[intIndex].text
+//					},
+//				}).done(function(data) {
+//		
+//					//var ndCol1 = data.getElementsByTagName("PRICE");
+//					var ndCol2 = data.getElementsByTagName("STROKE");
+//		
+//					//オプション要素をクリア
+//					var ctrDdlStroke = document.getElementById("ContentPlaceHolder1_ddlStroke");
+//		
+//					if(ctrDdlStroke.hasChildNodes()) {
+//						while(ctrDdlStroke.childNodes.length > 0) {
+//							ctrDdlStroke.removeChild(ctrDdlStroke.firstChild)
+//						}
+//					}
+//					for(r = 0; r < ndCol2.length; r++) {
+//						//オプション要素の定義
+//						var option = document.createElement('option');
+//		
+//						//Valueに対して値をセット
+//						option.setAttribute('value', r)
+//						//要素に入れる文字列をセット
+//						option.innerHTML = ndCol2[r].firstChild.nodeValue
+//						//コントロールに追加
+//						ctrDdlStroke.appendChild(option)
+//					}
+//		
+//					ctrDdlStroke = document.getElementById("ContentPlaceHolder1_ddlStroke")
+//					strokeIdx = ctrDdlStroke.selectedIndex;
+//					strokeText = ctrDdlStroke.options[strokeIdx].text;
+//					document.getElementById("ContentPlaceHolder1_txtIndexStroke").value = strokeText;
+//		
+//					return false;
+//		
+//				}).fail(function(data, textStatus, errorThrown) {
+//					// エラー時   
+//					alert("false")
+//		
+//				});
 			}
 		
 			function setCable() {
@@ -521,55 +521,55 @@
 				var ctrDdlType = document.getElementById("ContentPlaceHolder1_ddlType");
 				var intIndex = ctrDdlType.selectedIndex;
 		
-				$.ajax({
-					type: "get",
-					datatype: "xml",
-					//datatype: "json",
-					//contentType: "application/json; charset=utf-8",
-					contentType: "text/xml; charset=utf-8",
-					url: ECMS_HOST_URL + "/WCF/srvECSelection.svc/GetCable",
-					//data: { ddlSelect: ctrDdlType[intIndex].text },
-					data: {
-						ddlSeries: ctrDdlSeries[intSIndex].text,
-						ddlType: ctrDdlType[intIndex].text
-					},
-				}).done(function(data) {
-		
-					//var ndCol1 = data.getElementsByTagName("PRICE");
-					var ndCol2 = data.getElementsByTagName("CABLE");
-		
-					//オプション要素をクリア
-					var ctrDdlCable = document.getElementById("ContentPlaceHolder1_ddlCable");
-		
-					if(ctrDdlCable.hasChildNodes()) {
-						while(ctrDdlCable.childNodes.length > 0) {
-							ctrDdlCable.removeChild(ctrDdlCable.firstChild)
-						}
-					}
-					for(r = 0; r < ndCol2.length; r++) {
-						//オプション要素の定義
-						var option = document.createElement('option');
-		
-						//Valueに対して値をセット
-						option.setAttribute('value', r)
-						//要素に入れる文字列をセット
-						option.innerHTML = ndCol2[r].firstChild.nodeValue
-						//コントロールに追加
-						ctrDdlCable.appendChild(option)
-					}
-		
-					ctrDdlCable = document.getElementById("ContentPlaceHolder1_ddlCable")
-					cableIdx = ctrDdlCable.selectedIndex;
-					cableText = ctrDdlCable.options[cableIdx].text;
-					document.getElementById("ContentPlaceHolder1_txtIndexCable").value = cableText;
-		
-					return false;
-		
-				}).fail(function(data, textStatus, errorThrown) {
-					// エラー時   
-					alert("false")
-		
-				});
+//				$.ajax({
+//					type: "get",
+//					datatype: "xml",
+//					//datatype: "json",
+//					//contentType: "application/json; charset=utf-8",
+//					contentType: "text/xml; charset=utf-8",
+//					url: ECMS_HOST_URL + "/WCF/srvECSelection.svc/GetCable",
+//					//data: { ddlSelect: ctrDdlType[intIndex].text },
+//					data: {
+//						ddlSeries: ctrDdlSeries[intSIndex].text,
+//						ddlType: ctrDdlType[intIndex].text
+//					},
+//				}).done(function(data) {
+//		
+//					//var ndCol1 = data.getElementsByTagName("PRICE");
+//					var ndCol2 = data.getElementsByTagName("CABLE");
+//		
+//					//オプション要素をクリア
+//					var ctrDdlCable = document.getElementById("ContentPlaceHolder1_ddlCable");
+//		
+//					if(ctrDdlCable.hasChildNodes()) {
+//						while(ctrDdlCable.childNodes.length > 0) {
+//							ctrDdlCable.removeChild(ctrDdlCable.firstChild)
+//						}
+//					}
+//					for(r = 0; r < ndCol2.length; r++) {
+//						//オプション要素の定義
+//						var option = document.createElement('option');
+//		
+//						//Valueに対して値をセット
+//						option.setAttribute('value', r)
+//						//要素に入れる文字列をセット
+//						option.innerHTML = ndCol2[r].firstChild.nodeValue
+//						//コントロールに追加
+//						ctrDdlCable.appendChild(option)
+//					}
+//		
+//					ctrDdlCable = document.getElementById("ContentPlaceHolder1_ddlCable")
+//					cableIdx = ctrDdlCable.selectedIndex;
+//					cableText = ctrDdlCable.options[cableIdx].text;
+//					document.getElementById("ContentPlaceHolder1_txtIndexCable").value = cableText;
+//		
+//					return false;
+//		
+//				}).fail(function(data, textStatus, errorThrown) {
+//					// エラー時   
+//					alert("false")
+//		
+//				});
 			}
 		
 			function setOption() {
@@ -579,60 +579,60 @@
 				var ctrDdlType = document.getElementById("ContentPlaceHolder1_ddlType");
 				var intIndex = ctrDdlType.selectedIndex;
 		
-				$.ajax({
-					type: "get",
-					datatype: "xml",
-					//datatype: "json",
-					//contentType: "application/json; charset=utf-8",
-					contentType: "text/xml; charset=utf-8",
-					url: ECMS_HOST_URL + "/WCF/srvECSelection.svc/GetOptionType",
-					//data: { ddlSelect: ctrDdlType[intIndex].text },
-					data: {
-						ddlSeries: ctrDdlSeries[intSIndex].text,
-						ddlType: ctrDdlType[intIndex].text
-					},
-				}).done(function(data) {
-		
-					//var ndCol1 = data.getElementsByTagName("PRICE");
-					var ndCol2 = data.getElementsByTagName("OPTION_TYPE");
-		
-					//オプション要素をクリア
-					var ctrDdlOption = document.getElementById("ContentPlaceHolder1_lstBoxOption");
-		
-					if(ctrDdlOption.hasChildNodes()) {
-						while(ctrDdlOption.childNodes.length > 0) {
-							ctrDdlOption.removeChild(ctrDdlOption.firstChild)
-						}
-					}
-		
-					//空白行追加
-					//var option_space = document.createElement('option')
-					//option_space.setAttribute('value', 0)
-					//option_space.innerHTML = ""
-					//ctrDdlOption.appendChild(option_space)
-		
-					for(r = 0; r < ndCol2.length; r++) {
-						//オプション要素の定義
-						var option = document.createElement('option');
-		
-						//Valueに対して値をセット
-						option.setAttribute('value', r + 1)
-						//要素に入れる文字列をセット
-						option.innerHTML = ndCol2[r].firstChild.nodeValue
-						//コントロールに追加
-						ctrDdlOption.appendChild(option)
-					}
-					//ctrDdlOption.Height = 28 * ndCol2.length;
-		
-					document.getElementById("ContentPlaceHolder1_txtIndexOption").value = "";
-		
-					return false;
-		
-				}).fail(function(data, textStatus, errorThrown) {
-					// エラー時   
-					alert("false")
-		
-				});
+//				$.ajax({
+//					type: "get",
+//					datatype: "xml",
+//					//datatype: "json",
+//					//contentType: "application/json; charset=utf-8",
+//					contentType: "text/xml; charset=utf-8",
+//					url: ECMS_HOST_URL + "/WCF/srvECSelection.svc/GetOptionType",
+//					//data: { ddlSelect: ctrDdlType[intIndex].text },
+//					data: {
+//						ddlSeries: ctrDdlSeries[intSIndex].text,
+//						ddlType: ctrDdlType[intIndex].text
+//					},
+//				}).done(function(data) {
+//		
+//					//var ndCol1 = data.getElementsByTagName("PRICE");
+//					var ndCol2 = data.getElementsByTagName("OPTION_TYPE");
+//		
+//					//オプション要素をクリア
+//					var ctrDdlOption = document.getElementById("ContentPlaceHolder1_lstBoxOption");
+//		
+//					if(ctrDdlOption.hasChildNodes()) {
+//						while(ctrDdlOption.childNodes.length > 0) {
+//							ctrDdlOption.removeChild(ctrDdlOption.firstChild)
+//						}
+//					}
+//		
+//					//空白行追加
+//					//var option_space = document.createElement('option')
+//					//option_space.setAttribute('value', 0)
+//					//option_space.innerHTML = ""
+//					//ctrDdlOption.appendChild(option_space)
+//		
+//					for(r = 0; r < ndCol2.length; r++) {
+//						//オプション要素の定義
+//						var option = document.createElement('option');
+//		
+//						//Valueに対して値をセット
+//						option.setAttribute('value', r + 1)
+//						//要素に入れる文字列をセット
+//						option.innerHTML = ndCol2[r].firstChild.nodeValue
+//						//コントロールに追加
+//						ctrDdlOption.appendChild(option)
+//					}
+//					//ctrDdlOption.Height = 28 * ndCol2.length;
+//		
+//					document.getElementById("ContentPlaceHolder1_txtIndexOption").value = "";
+//		
+//					return false;
+//		
+//				}).fail(function(data, textStatus, errorThrown) {
+//					// エラー時   
+//					alert("false")
+//		
+//				});
 			}
 			
 			function CreateList() {

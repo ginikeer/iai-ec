@@ -354,7 +354,7 @@ function SelectionModels(blnFlag,
             document.getElementById("h-box").style.display = "none";
 
             //検索件数の表示
-            document.getElementById("ContentPlaceHolder1_lblSearchRecords").innerHTML = "適合製品" + cnt + "件";
+            document.getElementById("ContentPlaceHolder1_lblSearchRecords").innerHTML = "适合产品" + cnt + "件";
 
             // 件数が0件
             if (cnt == 0) {
@@ -384,6 +384,7 @@ function SelectionModels(blnFlag,
             sessionStorage.setItem(ssSelectSeries, data.data.SERIES);
             sessionStorage.setItem(ssSelectType, data.data.TYPE);
             sessionStorage.setItem(ssSelectStroke, data.data.STROKE);
+            sessionStorage.setItem(ssFullName, data.data.FULL_NAME);
             // オプションケーブル長ボタン解除
             document.getElementById("ContentPlaceHolder1_imgbtnOptionCable").disabled = false;
         }
@@ -654,7 +655,7 @@ function SelectModel(own) {
         document.getElementById("h-box").style.display = "none";
 
         //検索件数の表示
-        document.getElementById("ContentPlaceHolder1_lblSearchRecords").innerHTML = "適合製品" + 0 + "件";
+        document.getElementById("ContentPlaceHolder1_lblSearchRecords").innerHTML = "适合产品" + 0 + "件";
 
         document.getElementById("ContentPlaceHolder1_lblWarn1").innerHTML = "※";
         document.getElementById("ContentPlaceHolder1_lblWarn2").innerHTML = "ストロークに不正な値が<br>　 入力されました<br>　 再入力を行って下さい";
@@ -678,7 +679,7 @@ function SelectModel(own) {
             document.getElementById("h-box").style.display = "none";
 
             //検索件数の表示
-            document.getElementById("ContentPlaceHolder1_lblSearchRecords").innerHTML = "適合製品" + 0 + "件";
+            document.getElementById("ContentPlaceHolder1_lblSearchRecords").innerHTML = "适合产品" + 0 + "件";
 
             document.getElementById("ContentPlaceHolder1_lblWarn1").innerHTML = "※";
             document.getElementById("ContentPlaceHolder1_lblWarn2").innerHTML = "ストロークに不正な値が<br>　 入力されました<br>　 再入力を行って下さい";
