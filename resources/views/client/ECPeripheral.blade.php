@@ -34,7 +34,7 @@
 					<div>
 						<div class="header-title"><p>e电缸在线选型</p></div>
 						<div class="header-btn">
-							<a href="http://iai.eigyo.com.cn/public/index.php"><img src="{{ asset('i/client/home/btnHome.png') }}"></a>
+							<a href="{{ url('/') }}"><img src="{{ asset('i/client/home/btnHome.png') }}"></a>
 							<a href="http://iai.eigyo.com.cn/public/index.php/contact"><img src="{{ asset('i/client/home/btnContact.png') }}"></a>
 						</div>
 					</div>
@@ -60,7 +60,7 @@
 
 				<div class="divCenter">
 					<br>
-					<span id="ContentPlaceHolder1_lblSelectType" class="ctlLabel">選択された型式</span>
+					<span id="ContentPlaceHolder1_lblSelectType" class="ctlLabel">选择的型号</span>
 					<div>
 						<table class="Grid" cellspacing="0" rules="all" border="1" id="ContentPlaceHolder1_grdType" style="width:100%;border-collapse:collapse;">
 							<tbody>
@@ -87,7 +87,7 @@
 
 				<div class="divCenter">
 					<br>
-					<span id="ContentPlaceHolder1_lblSelect" class="ctlLabel">必要な周辺機器を選択してください。</span>
+					<span id="ContentPlaceHolder1_lblSelect" class="ctlLabel">请选择所需的周边机器。</span>
 
 					<table class="Peripheral">
 						<tbody>
