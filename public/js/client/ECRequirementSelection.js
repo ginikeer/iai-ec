@@ -594,7 +594,7 @@ function setModel(blnFlag, data) {
         // 件数が0件
         if(cnt == 0){
             document.getElementById("ContentPlaceHolder1_lblWarn1").innerHTML = "※";
-            document.getElementById("ContentPlaceHolder1_lblWarn2").innerHTML = "お客様の条件に適合する製品<br>がございません<br>入力条件の見直しもしくは機種変更<br>のためお問い合わせください";
+            document.getElementById("ContentPlaceHolder1_lblWarn2").innerHTML = "1.没有合适的产品，<br>建议更改所输入的条件<br>或者来电咨询";
         } else {
             document.getElementById("ContentPlaceHolder1_lblWarn1").innerHTML = "";
             document.getElementById("ContentPlaceHolder1_lblWarn2").innerHTML = "";
@@ -612,7 +612,7 @@ function setModel(blnFlag, data) {
         document.getElementById("ContentPlaceHolder1_lblSearchRecords").innerHTML = "适合产品0件";
 
         document.getElementById("ContentPlaceHolder1_lblWarn1").innerHTML = "※";
-        document.getElementById("ContentPlaceHolder1_lblWarn2").innerHTML = "張り出し負荷長過大、重心位置を<br>見直してください";
+        document.getElementById("ContentPlaceHolder1_lblWarn2").innerHTML = "负载伸出长过大，<br>请重新修改重心位置";
 
         //} else if (data.getElementsByTagName("CALC_DISTANCE")['0'].textContent <= gcDistanceLimit && document.getElementById("ContentPlaceHolder1_txtHdnSlider").value == "1") {
     } else if (0 /*data.getElementsByTagName("ERROR_KBN")['0'].textContent == enmERROR_KBN_DISTANCE */) {
@@ -625,9 +625,9 @@ function setModel(blnFlag, data) {
         document.getElementById("ContentPlaceHolder1_lblSearchRecords").innerHTML = "适合产品0件";
 
         document.getElementById("ContentPlaceHolder1_lblWarn1").innerHTML = "※";
-        document.getElementById("ContentPlaceHolder1_lblWarn2").innerHTML = "モーメント過大、荷重・重心を<br>見直してください";
+        document.getElementById("ContentPlaceHolder1_lblWarn2").innerHTML = "扭矩过大，请重新修改负载重量<br>和重心位置";
 
-        //モーメント
+        //扭矩
         document.getElementById("ContentPlaceHolder1_lblMoment").value = data.getElementsByTagName("CALC_MOMENT")['0'].textContent;
     } else {
         //divの表示有無設定
@@ -1019,7 +1019,7 @@ function SelectModel(own) {
     blnCheckStroke = errorCheckString(ctrStroke)
 
     if (blnCheckStroke == false) {
-        alert('ストロークに不正な値が入力されています。\n半角数字で入力して下さい');
+        alert('输入的行程有误，\n请输入半角数字');
         ctrStroke.value = '';
         sessionStorage.setItem(ssStroke, '');
         ctrStroke.focus();
@@ -1036,7 +1036,7 @@ function SelectModel(own) {
         document.getElementById("ContentPlaceHolder1_lblSearchRecords").innerHTML = "适合产品0件";
 
         document.getElementById("ContentPlaceHolder1_lblWarn1").innerHTML = "※";
-        document.getElementById("ContentPlaceHolder1_lblWarn2").innerHTML = "ストロークに不正な値が<br>　 入力されました<br>　 再入力を行って下さい";
+        document.getElementById("ContentPlaceHolder1_lblWarn2").innerHTML = "输入的行程有误，<br>　 请重新输入";
         
         return false;
     }
@@ -1044,7 +1044,7 @@ function SelectModel(own) {
 
         if (ctrStroke.value == 0) {
 
-        alert('ストロークは0より大きい値を入力して下さい。')
+        alert('行程应该大于0，请重新输入')
         ctrStroke.value = '';
         sessionStorage.setItem(ssStroke, '');
         ctrStroke.focus();
@@ -1061,7 +1061,7 @@ function SelectModel(own) {
         document.getElementById("ContentPlaceHolder1_lblSearchRecords").innerHTML = "适合产品0件";
 
         document.getElementById("ContentPlaceHolder1_lblWarn1").innerHTML = "※";
-        document.getElementById("ContentPlaceHolder1_lblWarn2").innerHTML = "ストロークの値に0が<br>　 入力されています<br>　 再入力を行って下さい";
+        document.getElementById("ContentPlaceHolder1_lblWarn2").innerHTML = "行程应该大于0，<br>　 请重新输入";
 
         return false;
         }
@@ -1070,7 +1070,7 @@ function SelectModel(own) {
     blnCheckPressing = errorCheckString(ctrPressingForce)
 
     if (blnCheckPressing == false) {
-        alert('押付け力に不正な値が入力されています。\n半角数字で入力して下さい');
+        alert('推压力输入有误，\n请输入半角数字');
         ctrPressingForce.value = '';
         sessionStorage.setItem(ssPressingForce, '');
         ctrPressingForce.focus();
@@ -1087,7 +1087,7 @@ function SelectModel(own) {
         document.getElementById("ContentPlaceHolder1_lblSearchRecords").innerHTML = "适合产品0件";
 
         document.getElementById("ContentPlaceHolder1_lblWarn1").innerHTML = "※";
-        document.getElementById("ContentPlaceHolder1_lblWarn2").innerHTML = "押付け力に不正な値が<br>　 入力されました<br>　 再入力を行って下さい";
+        document.getElementById("ContentPlaceHolder1_lblWarn2").innerHTML = "推压力输入有误，<br>　请重新输入";
 
         return false;
     }
@@ -2258,28 +2258,28 @@ function GetLinearGuide() {
 
     //ロッドのリニアガイドを確認する
     if (sessionStorage.getItem(ssLinearGuideRod) == 1) {
-        vResult = 'ロッド　標準タイプ'
+        vResult = '推杆　标准型'
     } else if (sessionStorage.getItem(ssLinearGuideRod) == 2) {
-        vResult = 'ロッド　ラジアルシリンダー'
+        vResult = '推杆　径向拉杆型'
     } else if (sessionStorage.getItem(ssLinearGuideRod) == 3) {
-        vResult = 'ロッド　防水型'
+        vResult = '推杆　防水型'
     };
 
     //細小型のリニアガイドを確認する
     if (sessionStorage.getItem(ssLinearGuideSmall) == 1) {
-        vResult = 'ロッド　標準タイプ'
+        vResult = '推杆　标准型'
     } else if (sessionStorage.getItem(ssLinearGuideSmall) == 2) {
-        vResult = 'ロッド　ボールプッシュシングルガイド'
+        vResult = '推杆　球推单向导'
     } else if (sessionStorage.getItem(ssLinearGuideSmall) == 3) {
-        vResult = 'ロッド　ボールプッシュダブルガイド'
+        vResult = '推杆　双击球'
     } else if (sessionStorage.getItem(ssLinearGuideSmall) == 4) {
-        vResult = 'TCテーブル　2列リニアガイド'
+        vResult = '非TC表    2列线性向导'
     } else if (sessionStorage.getItem(ssLinearGuideSmall) == 5) {
-        vResult = 'TWテーブル　2列リニアガイド'
+        vResult = 'TW表2列线性向导'
     };
 
     if (vResult == '') {
-        vResult = 'なし'
+        vResult = '无'
     }
 
     return vResult

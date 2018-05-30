@@ -19,7 +19,7 @@ function txtChange(own) {
     }
 
     if (ctrLoadRod.value.match(/[^0-9,.]+/i) != null) {
-        alert('荷重に不正な値が入力されました。\n再度入力して下さい。')
+        alert('输入的负载有误，\n请重新输入')
         ctrLoadRod.value = '';
         ctrLoadRod.focus();
     }

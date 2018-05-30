@@ -21,7 +21,7 @@ function calc(own) {
         var num = GridView1.rows[rowNum].cells[3].children[0].value;
 
         if (num.match(/[^0-9]+/i) != null) {
-            alert('「数量」には半角で整数値を入力して下さい\n数量を再度入力して下さい')
+            alert('“数量”中请输入半角整数值\n请再次输入数量。')
             GridView1.rows[rowNum].cells[3].children[0].value = '';
             GridView1.rows[rowNum].cells[4].children[0].value = '';
             GridView1.rows[rowNum].cells[3].children[0].focus();

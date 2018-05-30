@@ -66,7 +66,7 @@
 						<tbody>
 							<tr>
 								<td>
-									<span id="ContentPlaceHolder1_lblWord" class="ctlLabel">選択された型式の必要数量を入力してください。</span>
+									<span id="ContentPlaceHolder1_lblWord" class="ctlLabel">请输入所选型号的数量。</span>
 								</td>
 							</tr>
 						</tbody>

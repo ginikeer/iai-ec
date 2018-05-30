@@ -153,9 +153,9 @@ var stateLGNon = -1;   //選択無し
 var stateLG1   = 1;    //ロッド								
 var stateLG2   = 2;    //ラジアルシリンダー								
 var stateLG3   = 3;    //防塵防滴		
-var stringLG1  = "標準型を選択中";          //ロッド								
-var stringLG2 = "ラジアルシリンダーを選択中";    //ラジアルシリンダー								
-var stringLG3 = "防水型を選択中";              //防塵防滴		
+var stringLG1  = "标准型";          //ロッド								
+var stringLG2 = " 径向拉杆型";    //ラジアルシリンダー								
+var stringLG3 = "防水型";              //防塵防滴		
 
 
 // ガイド方式区分名称
@@ -961,7 +961,7 @@ function CalcLife(calcKbn           // 計算区分
             o10 = (oLife) * 1000000 / i19 / 2 / i17 / 60 / i16;
             wkYear = o10 / i18;                             // 年
             wkMonth = (o10 % i8) / 30                       // 月
-            o101 = wkYear + "年" + wkMonth + "ヵ月";
+            o101 = wkYear + "年" + wkMonth + "月";
 
             rtn = o101;
         } else {

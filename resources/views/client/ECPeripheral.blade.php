@@ -95,15 +95,15 @@
 								<th>
 									<span id="ContentPlaceHolder1_lblNameHd" class="ctlLabel">名称</span></th>
 								<td style=" width:970px;">
-									<span id="ContentPlaceHolder1_lblNameDt1" class="ctlLabel">タッチパネルティーチングボックス/<br>データ設定器</span></td>
+									<span id="ContentPlaceHolder1_lblNameDt1" class="ctlLabel">触摸屏示教器/<br>示教器</span></td>
 								<td style=" width:590px;">
-									<span id="ContentPlaceHolder1_lblNameDt2" class="ctlLabel">パソコン対応ソフト</span></td>
+									<span id="ContentPlaceHolder1_lblNameDt2" class="ctlLabel">PC软件</span></td>
 								<td style=" width:730px;">
-									<span id="ContentPlaceHolder1_lblNameDt3" class="ctlLabel">DC24V電源</span></td>
+									<span id="ContentPlaceHolder1_lblNameDt3" class="ctlLabel">DC24V电源</span></td>
 							</tr>
 							<tr>
 								<th>
-									<span id="ContentPlaceHolder1_lblAppearanceHd" class="ctlLabel">外観</span></th>
+									<span id="ContentPlaceHolder1_lblAppearanceHd" class="ctlLabel">外观</span></th>
 								<td class="Align">
 									<img id="ContentPlaceHolder1_imgAppearanceDt1" class="imgPeripheral" src="{{ asset('i/client/EcRequire/TB-03-C.png') }}"></td>
 								<td class="Align">
@@ -113,33 +113,33 @@
 							</tr>
 							<tr>
 								<th>
-									<span id="ContentPlaceHolder1_lblTypeHd" class="ctlLabel">型式</span></th>
+									<span id="ContentPlaceHolder1_lblTypeHd" class="ctlLabel">型号</span></th>
 								<td style="text-align: left;">
-									<input id="ContentPlaceHolder1_chkTypeDt1" type="checkbox" name="ctl00$ContentPlaceHolder1$chkTypeDt1"><label for="ContentPlaceHolder1_chkTypeDt1">TB-02-C(有線通信対応のみ)</label>
+									<input id="ContentPlaceHolder1_chkTypeDt1" type="checkbox" name="ctl00$ContentPlaceHolder1$chkTypeDt1"><label for="ContentPlaceHolder1_chkTypeDt1">TB-02-C(仅支持有线连接)</label>
 									<br>
-									<input id="ContentPlaceHolder1_chkTypeDt2" type="checkbox" name="ctl00$ContentPlaceHolder1$chkTypeDt2"><label for="ContentPlaceHolder1_chkTypeDt2">TB-03-C(無線通信/有線通信対応版)</label>
+									<input id="ContentPlaceHolder1_chkTypeDt2" type="checkbox" name="ctl00$ContentPlaceHolder1$chkTypeDt2"><label for="ContentPlaceHolder1_chkTypeDt2">TB-03-C(无线连接/有线连接支持版)</label>
 								</td>
 								<td style="text-align: left;">
-									<input id="ContentPlaceHolder1_chkTypeDt3" type="checkbox" name="ctl00$ContentPlaceHolder1$chkTypeDt3"><label for="ContentPlaceHolder1_chkTypeDt3">RCM-101-MW(RS232接続版)</label>
+									<input id="ContentPlaceHolder1_chkTypeDt3" type="checkbox" name="ctl00$ContentPlaceHolder1$chkTypeDt3"><label for="ContentPlaceHolder1_chkTypeDt3">RCM-101-MW(RS232连接版)</label>
 									<br>
-									<input id="ContentPlaceHolder1_chkTypeDt4" type="checkbox" name="ctl00$ContentPlaceHolder1$chkTypeDt4"><label for="ContentPlaceHolder1_chkTypeDt4">RCM-101-USB(USB接続版)</label>
+									<input id="ContentPlaceHolder1_chkTypeDt4" type="checkbox" name="ctl00$ContentPlaceHolder1$chkTypeDt4"><label for="ContentPlaceHolder1_chkTypeDt4">RCM-101-USB(USB连接版)</label>
 
 								</td>
 								<td>
-									<input id="ContentPlaceHolder1_chkTypeDt5" type="checkbox" name="ctl00$ContentPlaceHolder1$chkTypeDt5"><label for="ContentPlaceHolder1_chkTypeDt5">PS-241(100V入力)</label>
+									<input id="ContentPlaceHolder1_chkTypeDt5" type="checkbox" name="ctl00$ContentPlaceHolder1$chkTypeDt5"><label for="ContentPlaceHolder1_chkTypeDt5">PS-241(100V输入)</label>
 									<br>
-									<input id="ContentPlaceHolder1_chkTypeDt6" type="checkbox" name="ctl00$ContentPlaceHolder1$chkTypeDt6"><label for="ContentPlaceHolder1_chkTypeDt6">PS-242(200V入力)</label>
+									<input id="ContentPlaceHolder1_chkTypeDt6" type="checkbox" name="ctl00$ContentPlaceHolder1$chkTypeDt6"><label for="ContentPlaceHolder1_chkTypeDt6">PS-242(200V输入)</label>
 								</td>
 							</tr>
 							<tr>
 								<th>
 									<span id="ContentPlaceHolder1_lblNoteHd" class="ctlLabel">概要</span></th>
 								<td style="text-align: left;">
-									<span id="ContentPlaceHolder1_lblNoteDt1" class="Align">TB-02-C<br> 始点、終点、AVDの入力、試運転、<br> モニタ等の機能を備えた表示装置です。<br>TB-03-C<br> 無線通信に対応したデータ設定器です。<br> 始点、終点、AVDの入力が無線通信で<br> 可能です。</span></td>
+									<span id="ContentPlaceHolder1_lblNoteDt1" class="Align">TB-02-C<br> 配备起点、终点、AVD的输入、试运行、<br/> 显示等功能的示教器。<br>TB-03-C<br> 支持无线连接的示教器。<br> 起点、终点、AVD的输入，可通过无线<br> 连接实现。</span></td>
 								<td style="text-align: left;">
-									<span id="ContentPlaceHolder1_lblNoteDt2" class="Align"> PCから始点、終点、AVDの<br> 入力、試運転、モニタ等を<br> 行う事ができるソフトです。<br> PC側の接続がRS232C版と<br> USB版の両方を準備しています。</span></td>
+									<span id="ContentPlaceHolder1_lblNoteDt2" class="Align"> 可使用PC执行起点、终点、AVD <br> 的输入、试运行、显示等的软件。<br> PC侧连接备有RS232C版和USB<br> 版。</span></td>
 								<td style="text-align: left;">
-									<span id="ContentPlaceHolder1_lblNoteDt3" class="Align"> 瞬間最大17Aに出力可能な<br> DC24V電源です。<br> 入力電圧AC200V仕様と、<br> AC100V仕様があります。</span></td>
+									<span id="ContentPlaceHolder1_lblNoteDt3" class="Align"> 瞬间最大输入可达17A的<br> DC24V电源。<br> 输入电压规格有AC200V<br> 和AC100V两种。</span></td>
 							</tr>
 
 						</tbody>
