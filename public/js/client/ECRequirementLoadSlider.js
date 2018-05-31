@@ -165,13 +165,13 @@ function calc() {
     GrvCntrPosition = ctrGrvCntrPosition.value;
 
     if (Load.match(/[^0-9,.]+/i) != null) {
-        alert('荷重に不正な値が入力されました。\n再度入力して下さい。')
+        alert('输入的负载有误，\n请重新输入')
         ctrLoad.value = '';
         ctrLoad.focus();
     }
 
     if (GrvCntrPosition.match(/[^0-9]+/i) != null) {
-        alert('重心位置は整数値で入力して下さい。\n再度入力して下さい。')
+        alert('请按整数值输入重心位置。\n请再次输入。')
         ctrGrvCntrPosition.value = '';
         ctrGrvCntrPosition.focus();
     }

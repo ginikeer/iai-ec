@@ -1,4 +1,4 @@
-@section('title') 製品見積額確認 @stop
+@section('title') 型号、数量确认 @stop
 
 @extends('master/client')
 @section('content')
@@ -21,7 +21,7 @@
 					<div>
 						<div class="header-title"><p>e电缸在线选型</p></div>
 						<div class="header-btn">
-							<a href="http://iai.eigyo.com.cn/public/index.php"><img src="{{ asset('i/client/home/btnHome.png') }}"></a>
+							<a href="{{ url('/') }}"><img src="{{ asset('i/client/home/btnHome.png') }}"></a>
 							<a href="http://iai.eigyo.com.cn/public/index.php/contact"><img src="{{ asset('i/client/home/btnContact.png') }}"></a>
 						</div>
 					</div>
@@ -49,7 +49,7 @@
 						<tbody>
 							<tr>
 								<td>
-									<span id="ContentPlaceHolder1_lblWord" class="ctlLabel">購入型式・数量をご確認ください。</span>
+									<span id="ContentPlaceHolder1_lblWord" class="ctlLabel">请确认型号、数量。</span>
 								</td>
 							</tr>
 						</tbody>
@@ -61,7 +61,7 @@
 							<tbody>
 								<tr>
 									<th scope="col" style="width:100px;">ＮＯ</th>
-									<th scope="col">型式</th>
+									<th scope="col">型号</th>
 									<th align="right" scope="col" style="width:150px;">数量</th>
 								</tr>
 								<!--<tr>

@@ -38,7 +38,7 @@
 					<div>
 						<div class="header-title"><p>e电缸在线选型</p></div>
 						<div class="header-btn">
-							<a href="http://iai.eigyo.com.cn/public/index.php"><img src="{{ asset('i/client/home/btnHome.png') }}"></a>
+							<a href="{{ url('/') }}"><img src="{{ asset('i/client/home/btnHome.png') }}"></a>
 							<a href="http://iai.eigyo.com.cn/public/index.php/contact"><img src="{{ asset('i/client/home/btnContact.png') }}"></a>
 						</div>
 					</div>
@@ -66,7 +66,7 @@
 						<tbody>
 							<tr>
 								<td>
-									<span id="ContentPlaceHolder1_lblWord" class="ctlLabel">選択された型式の必要数量を入力してください。</span>
+									<span id="ContentPlaceHolder1_lblWord" class="ctlLabel">请输入所选型号的数量。</span>
 								</td>
 							</tr>
 						</tbody>

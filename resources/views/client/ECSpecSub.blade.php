@@ -99,7 +99,7 @@
 										</tr>
 										<tr>
 											<td style="color: rgb(0,112,192)">
-												<span id="ctlSpec_lblSelectProductTitle" class="ctlLabel">選択製品</span>
+												<span id="ctlSpec_lblSelectProductTitle" class="ctlLabel">选择的产品</span>
 											</td>
 										</tr>
 										<tr>

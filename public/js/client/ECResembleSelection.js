@@ -359,7 +359,7 @@ function SelectionModels(blnFlag,
             // 件数が0件
             if (cnt == 0) {
                 document.getElementById("ContentPlaceHolder1_lblWarn1").innerHTML = "※";
-                document.getElementById("ContentPlaceHolder1_lblWarn2").innerHTML = "お客様の条件に適合する製品<br>がございません<br>入力条件の見直しもしくは機種変更<br>のためお問い合わせください";
+                document.getElementById("ContentPlaceHolder1_lblWarn2").innerHTML = "没有合适的产品，建议更改<br>所输入的条件或者来电咨询";
             } else {
                 document.getElementById("ContentPlaceHolder1_lblWarn1").innerHTML = "";
                 document.getElementById("ContentPlaceHolder1_lblWarn2").innerHTML = "";
@@ -646,7 +646,7 @@ function SelectModel(own) {
     blnCheckStroke = errorCheckString(ctrStroke)
 
     if (blnCheckStroke == false) {
-        alert('ストロークに不正な値が入力されています。\n半角数字で入力して下さい');
+        alert('输入的行程有误，\n 请输入半角数字');
         ctrStroke.value = '';
         sessionStorage.setItem(ssResemble_Stroke, '');
         ctrStroke.focus();
@@ -659,7 +659,7 @@ function SelectModel(own) {
         document.getElementById("ContentPlaceHolder1_lblSearchRecords").innerHTML = "适合产品" + 0 + "件";
 
         document.getElementById("ContentPlaceHolder1_lblWarn1").innerHTML = "※";
-        document.getElementById("ContentPlaceHolder1_lblWarn2").innerHTML = "ストロークに不正な値が<br>　 入力されました<br>　 再入力を行って下さい";
+        document.getElementById("ContentPlaceHolder1_lblWarn2").innerHTML = "输入的行程有误，<br>　请重新输入";
 
         // オプションケーブル長ボタン使用不可
         document.getElementById("ContentPlaceHolder1_imgbtnOptionCable").disabled = true;
@@ -670,7 +670,7 @@ function SelectModel(own) {
 
         if (ctrStroke.value == 0) {
 
-            alert('ストロークは0より大きい値を入力して下さい。')
+            alert('5.行程应该大于0，请重新输入')
             ctrStroke.value = '';
             sessionStorage.setItem(ssResemble_Stroke, '');
             ctrStroke.focus();
@@ -683,7 +683,7 @@ function SelectModel(own) {
             document.getElementById("ContentPlaceHolder1_lblSearchRecords").innerHTML = "适合产品" + 0 + "件";
 
             document.getElementById("ContentPlaceHolder1_lblWarn1").innerHTML = "※";
-            document.getElementById("ContentPlaceHolder1_lblWarn2").innerHTML = "ストロークに不正な値が<br>　 入力されました<br>　 再入力を行って下さい";
+            document.getElementById("ContentPlaceHolder1_lblWarn2").innerHTML = "输入的行程有误，<br>　请重新输入";
 
             // オプションケーブル長ボタン使用不可
             document.getElementById("ContentPlaceHolder1_imgbtnOptionCable").disabled = true;

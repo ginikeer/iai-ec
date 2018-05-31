@@ -22,7 +22,7 @@ function txtChange(own) {
 	}
 
 	if(ctrHopeCycleTime.value.match(/[^0-9,.]+/i) != null) {
-		alert('サイクルタイムに不正な値が入力されました。\n再度入力して下さい。')
+		alert('周期时间中输入了不正当的值，\n请再次输入。')
 		ctrHopeCycleTime.value = '';
 		ctrHopeCycleTime.focus();
 	}

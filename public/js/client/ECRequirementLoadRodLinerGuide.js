@@ -45,7 +45,7 @@ function txtChange(own) {
 
     if (own.id == ctrLoadRod.id) {
         if (ctrLoadRod.value.match(/[^0-9,.]+/i) != null) {
-            alert('荷重に不正な値が入力されました。\n再度入力して下さい。')
+            alert('输入的负载有误，\n请重新输入')
             ctrLoadRod.value = '';
             ctrLoadRod.focus();
         }
@@ -62,7 +62,7 @@ function txtChange(own) {
 
     } else if (own.id == ctrOffSet.id) {
         if (ctrOffSet.value.match(/[^0-9,.]+/i) != null) {
-            alert('オフセット距離に不正な値が入力されました。\n再度入力して下さい。')
+            alert('输入的偏置距离有误，\n请重新输入')
             ctrOffSet.value = '';
             ctrOffSet.focus();
         }
@@ -86,7 +86,7 @@ function txtChange(own) {
         return false;
     } else if (own.id == Overhang.id) {
         if (Overhang.value.match(/[^0-9,.]+/i) != null) {
-            alert('張出し距離に不正な値が入力されました。\n再度入力して下さい。')
+            alert('输入的伸出距离有误，\n请重新输入')
             Overhang.value = '';
             Overhang.focus();
         }

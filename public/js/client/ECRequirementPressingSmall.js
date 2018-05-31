@@ -103,7 +103,7 @@ function calc() {
     Press = ctrPress.value;
 
     if (Press.match(/[^0-9,.]+/i) != null) {
-        alert('押付け力に不正な値が入力されました。\n再度入力して下さい。')
+        alert('推压力输入有误，\n请输入半角数字')
         ctrPress.value = '';
         ctrPress.focus();
     } else if (Press != "" && ( Press < 15 || Press > 90) ){

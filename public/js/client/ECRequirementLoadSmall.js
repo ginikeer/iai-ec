@@ -300,14 +300,14 @@ function calc() {
     GrvCntrZPosition = ctrGrvCntrZPosition.value;
 
     if (Load.match(/[^0-9,.]+/i) != null) {
-        alert('荷重に不正な値が入力されました。\n再度入力して下さい。')
+        alert('输入的负载有误，\n请重新输入')
         ctrLoad.value = '';
         ctrLoad.focus();
     }
 
     //XYZ重心位置
     if (ctrGrvCntrXPosition.value != '' && (parseInt(ctrGrvCntrXPosition.value.replace(/,/g, "")) < 0 || parseInt(ctrGrvCntrXPosition.value.replace(/,/g, "")) > 100)) {
-        ctlError.innerHTML = "100mm以下にしてください";
+        ctlError.innerHTML = "100mm以下";
         parentbtn.disabled = true;
     } else {
         if (parseInt(ctrGrvCntrXPosition.value.replace(/,/g, "")) <= 100 && parseInt(ctrGrvCntrYPosition.value.replace(/,/g, "")) <= 100 && parseInt(ctrGrvCntrZPosition.value.replace(/,/g, "")) <= 100) {
@@ -318,7 +318,7 @@ function calc() {
    
 
     if (ctrGrvCntrYPosition.value != '' && (parseInt(ctrGrvCntrYPosition.value.replace(/,/g, "")) < 0 || parseInt(ctrGrvCntrYPosition.value.replace(/,/g, "")) > 100)) {
-        ctlError.innerHTML = "100mm以下にしてください";
+        ctlError.innerHTML = "100mm以下";
         parentbtn.disabled = true;
     } else {
         if (parseInt(ctrGrvCntrXPosition.value.replace(/,/g, "")) <= 100 && parseInt(ctrGrvCntrYPosition.value.replace(/,/g, "")) <= 100 && parseInt(ctrGrvCntrZPosition.value.replace(/,/g, "")) <= 100) {
@@ -328,7 +328,7 @@ function calc() {
     }
 
     if (ctrGrvCntrZPosition.value != '' && (parseInt(ctrGrvCntrZPosition.value.replace(/,/g, "")) < 0 || parseInt(ctrGrvCntrZPosition.value.replace(/,/g, "")) > 100)) {
-        document.getElementById("ContentPlaceHolder1_lblError").innerHTML = "100mm以下にしてください";
+        document.getElementById("ContentPlaceHolder1_lblError").innerHTML = "100mm以下";
         parentbtn.disabled = true;       
     } else {
         if (parseInt(ctrGrvCntrXPosition.value.replace(/,/g, "")) <= 100 && parseInt(ctrGrvCntrYPosition.value.replace(/,/g, "")) <= 100 && parseInt(ctrGrvCntrZPosition.value.replace(/,/g, "")) <= 100) {
@@ -340,15 +340,15 @@ function calc() {
     // 重心位置のチェックは2列リニアガードの場合のみ行う
     if (LinearGuideSmall == stateST_TC || LinearGuideSmall == stateST_TW) {
         if (GrvCntrXPosition.match(/[^0-9]+/i) != null) {
-            alert('重心位置は整数値で入力して下さい。\n再度入力して下さい。')
+            alert('请按整数值输入重心位置。\n请再次输入。')
             ctrGrvCntrXPosition.value = '';
             ctrGrvCntrXPosition.focus();
         } else if (GrvCntrYPosition.match(/[^0-9]+/i) != null) {
-            alert('重心位置は整数値で入力して下さい。\n再度入力して下さい。')
+            alert('请按整数值输入重心位置。\n请再次输入。')
             ctrGrvCntrYPosition.value = '';
             ctrGrvCntrYPosition.focus();
         } else if (GrvCntrZPosition.match(/[^0-9]+/i) != null) {
-            alert('重心位置は整数値で入力して下さい。\n再度入力して下さい。')
+            alert('请按整数值输入重心位置。\n请再次输入。')
             ctrGrvCntrZPosition.value = '';
             ctrGrvCntrZPosition.focus();
         }

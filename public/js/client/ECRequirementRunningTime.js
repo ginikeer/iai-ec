@@ -79,7 +79,7 @@ function InputCheck(own) {
 
         if (own.id == ctrRoundTrip.id) {
             if (own.value.match(/[^0-9,.]+/i) != null) {
-                alert('往復回数に不正な値が入力されました。\n再度入力して下さい。')
+                alert('输入的往返次数有误，\n请重新输入。')
                 own.value = '';
                 own.focus();
             }
@@ -88,7 +88,7 @@ function InputCheck(own) {
         // 稼働時間
         if (own.id == ctrOperatingTime.id) {
             if (ctrOperatingTime.value != "" && (parseInt(ctrOperatingTime.value) <= 0 || parseInt(ctrOperatingTime.value) > 24)) {
-                getElementById("ContentPlaceHolder1_lblOperatingTimeError").innerHTML = "稼働時間は24時間以内を入力してください";
+                getElementById("ContentPlaceHolder1_lblOperatingTimeError").innerHTML = "设备运行时间在24小时以内";
                 ret = false;
             }
             else {
@@ -96,7 +96,7 @@ function InputCheck(own) {
             }
 
             if (own.value.match(/[^0-9]+/i) != null) {
-                alert('稼働時間は整数値で入力して下さい。\n再度入力して下さい。')
+                alert('输入的设备运行时间有误，\n请重新输入。')
                 own.value = '';
                 own.focus();
             }
@@ -107,13 +107,13 @@ function InputCheck(own) {
         // 稼働日数
         if (own.id == ctrOperatingDay.id) {
             if (ctrOperatingDay.value != '' && (parseInt(ctrOperatingDay.value) <= 0 || parseInt(ctrOperatingDay.value) > 365)) {
-                getElementById("ContentPlaceHolder1_lblOperatingDayError").innerHTML = "稼働日数は365日以内を入力してください";
+                getElementById("ContentPlaceHolder1_lblOperatingDayError").innerHTML = "设备运行天数在365天以内";
                 ret = false;
             } else {
                 getElementById("ContentPlaceHolder1_lblOperatingDayError").innerHTML = "";
             }
             if (own.value.match(/[^0-9]+/i) != null) {
-                alert('稼働日数は整数値で入力して下さい。\n再度入力して下さい。')
+                alert('输入的设备运行天数有误，\n请重新输入。')
                 own.value = '';
                 own.focus();
             }
