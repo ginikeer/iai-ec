@@ -727,7 +727,7 @@ function setModel(blnFlag, data) {
 //      };
 
         if (data.data.ERROR_KBN == enmERROR_KBN_RRCHANGE) {
-            document.getElementById("ContentPlaceHolder1_lblWarn3").innerHTML = "モーメント過大のため、ロッド<br>タイプに外付けガイド併用にて<br>検討をお願いします";
+            document.getElementById("ContentPlaceHolder1_lblWarn3").innerHTML = "扭矩过大，请重新修改负载重量<br>和重心位置";
         } else {
             document.getElementById("ContentPlaceHolder1_lblWarn3").innerHTML = "";
         }

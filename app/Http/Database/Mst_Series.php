@@ -74,34 +74,34 @@ class Mst_Series extends Model {
 			
 		//形状
 		if($param["vSlider"] > 0) 
-			$data->where('t.TYPE_FORM', "スライダ");
+			$data->where('t.TYPE_FORM', "滑块型");
 		if($param["vRod"] > 0) 
-			$data->where('t.TYPE_FORM', "ロッド");
+			$data->where('t.TYPE_FORM', "拉杆型");
 		if($param["vSmall"] > 0) 
-			$data->where('t.TYPE_FORM', "細小型");
+			$data->where('t.TYPE_FORM', "细小型");
 		
 		//形状2
 		if($param["vLinearGuideRod"] > 0) {
 			if($param["vLinearGuideRod"] == 1) 
-				$data->where('t.TYPE_FORM2', "標準タイプ");
+				$data->where('t.TYPE_FORM2', "标准型");
 			if($param["vLinearGuideRod"] == 2) 
-				$data->where('t.TYPE_FORM2', "ラジアルシリンダー");
+				$data->where('t.TYPE_FORM2', "径向拉杆型");
 			if($param["vLinearGuideRod"] == 3) 
-				$data->where('t.TYPE_FORM2', "防塵・防滴タイプ");
+				$data->where('t.TYPE_FORM2', "防尘防滴型");
 		}
 		
 		//形状2
 		if($param["vLinearGuideSmall"] > 0) {
 			if($param["vLinearGuideSmall"] == 1) 
-				$data->where('t.TYPE_FORM2', "標準タイプ");
+				$data->where('t.TYPE_FORM2', "标准型");
 			if($param["vLinearGuideSmall"] == 2) 
-				$data->where('t.TYPE_FORM2', "シングルガイドタイプ");
+				$data->where('t.TYPE_FORM2', "单导轨型");
 			if($param["vLinearGuideSmall"] == 3) 
-				$data->where('t.TYPE_FORM2', "ダブルガイドタイプ");
+				$data->where('t.TYPE_FORM2', "双导轨型");
 			if($param["vLinearGuideSmall"] == 4) 
-				$data->where('t.TYPE_FORM2', "テーブルタイプ");
+				$data->where('t.TYPE_FORM2', "桌上型");
 			if($param["vLinearGuideSmall"] == 5) 
-				$data->where('t.TYPE_FORM2', "テーブルタイプ");
+				$data->where('t.TYPE_FORM2', "桌上型");
 		}
 		
 		//方向

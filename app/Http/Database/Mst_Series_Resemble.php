@@ -64,9 +64,9 @@ class Mst_Series_Resemble extends Model {
 		
 		//形状
 		if($param["vRodless"] > 0) 
-			$data->where('a.TYPE_FORM', "ロッドレス");
+			$data->where('a.TYPE_FORM', "无杆");
 		if($param["vRod"] > 0) 
-			$data->where('a.TYPE_FORM', "ロッド");
+			$data->where('a.TYPE_FORM', "推杆");
 		
 		//方向
 		if($param["vHorizontal"] > 0) {
