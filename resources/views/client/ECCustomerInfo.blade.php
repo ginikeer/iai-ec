@@ -14,7 +14,7 @@
 	.lblError { width: 230px !important; } 
 	.ErrorFont { color: red; } 
 	p { font-size: 20px; }
-	.send-btn { width: 117px; margin-left: 13px; height: 25px; line-height: 25px; display: inline-block; border: 2px solid #000; text-align: center; font-size: 14px; cursor: pointer; }
+	.send-btn { width: 117px; margin-left: 13px; height: 25px; line-height: 25px; display: inline-block; border: 2px solid #FFCC99; text-align: center; font-size: 14px; cursor: pointer; background: #FFCC99; }
 </style>
 @stop
 
@@ -114,11 +114,11 @@
 								<th>
 									<span id="ContentPlaceHolder1_lblTel" class="ctlLabel">公司电话</span></th>
 								<td>
-				                    <input name="tel1" type="text" maxlength="5" id="tel1" class="text" onkeypress="return CheckNum();" style="width:121px;">
+				                    <input name="tel1" type="text" maxlength="6" id="tel1" class="text" onkeypress="return CheckNum();" style="width:121px;">
 				                    <span id="" class="lblHyphen"> - </span>
-				                    <input name="tel2" type="text" maxlength="5" id="tel2" class="text required-item" onkeypress="return CheckNum();" style="width:121px;">
+				                    <input name="tel2" type="text" maxlength="8" id="tel2" class="text required-item" onkeypress="return CheckNum();" style="width:121px;">
 				                    <span id="" class="lblHyphen"> - </span>
-				                    <input name="tel3" type="text" maxlength="5" id="tel3" class="text required-item" onkeypress="return CheckNum();" style="width:121px;">
+				                    <input name="tel3" type="text" maxlength="6" id="tel3" class="text" onkeypress="return CheckNum();" style="width:121px;">
 				                </td>
 				                <td class="lblError">
 									<span id="" class="ErrorFont"></span>

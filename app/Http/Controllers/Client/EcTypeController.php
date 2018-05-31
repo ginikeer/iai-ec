@@ -56,6 +56,7 @@ class EcTypeController extends Controller {
 		$load = $request->input('L');
 		$page = $request->input('PAGE');
 		
+		$direction = 'horizontal';
 		if($hz) $direction = 'horizontal';
 		if($vt) $direction = 'vertical';
 		

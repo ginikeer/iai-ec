@@ -385,6 +385,7 @@ function SelectionModels(blnFlag,
             sessionStorage.setItem(ssSelectType, data.data.TYPE);
             sessionStorage.setItem(ssSelectStroke, data.data.STROKE);
             sessionStorage.setItem(ssFullName, data.data.FULL_NAME);
+            
             // オプションケーブル長ボタン解除
             document.getElementById("ContentPlaceHolder1_imgbtnOptionCable").disabled = false;
         }
