@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Database\Mst_Series;
 use App\Http\Database\Mst_Series_Resemble;
+use App\Http\Database\Customer_info;
 
 use App\Services\Mst;
 use App\Services\Helper;
@@ -151,17 +152,24 @@ class EcTypeController extends Controller {
 		$param = $request->all();
 		
 		//先检查验证码是否通过
-//		if( !(Cookie::has("iaiec_code") && Cookie::get('iaiec_expired_at') > date('Y-m-d H:i:s') && $param['code'] == Cookie::get('iaiec_code')) ) 
-//			return json_encode(array('code' => 0, 'msg' => '验证码错误或已失效！'));
+		if( !(Cookie::has("iaiec_code") && Cookie::get('iaiec_expired_at') > date('Y-m-d H:i:s') && $param['code'] == Cookie::get('iaiec_code')) ) 
+			return json_encode(array('code' => 0, 'msg' => '验证码错误或已失效！'));
 		
 		//发送邮件
 		Mail::send('emails.customerinfo', ['param' => $param], function($message) use ($email) {
 		    $message->to($email)->subject('【IAI-EC选型】用户咨询');
 		});
 		
+		$param['product'] = "";
+		foreach($param['productCom'] as $p) {
+			$param['product'] .= $p['name'] . '：' . $p['numSuryo'] . '件；';
+		}
+		
+		unset($param['code']);
+		unset($param['productCom']);
 		
 		//记录至数据库中
-		
+		Helper::tableSave(new Customer_info, $param);
 		
 		return json_encode(array('code' => 1, 'msg' => '邮件发送成功！'));
 	}
