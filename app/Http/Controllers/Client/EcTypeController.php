@@ -136,7 +136,7 @@ class EcTypeController extends Controller {
 		    ""
 		);
 		
-		if(1) {	//正确发送验证码
+		if($response->Code == 'OK') {	//正确发送验证码
 			Cookie::queue('iaiec_mobile', $mobile, 30);
 			Cookie::queue('iaiec_code', $code, 30);
 			Cookie::queue('iaiec_expired_at', $expired_at, 30);

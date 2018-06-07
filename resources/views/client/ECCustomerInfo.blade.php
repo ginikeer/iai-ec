@@ -114,11 +114,11 @@
 								<th>
 									<span id="ContentPlaceHolder1_lblTel" class="ctlLabel">公司电话</span></th>
 								<td>
-				                    <input name="tel1" type="text" maxlength="6" id="tel1" class="text" onkeypress="return CheckNum();" style="width:121px;">
+				                    <input name="tel1" type="text" maxlength="6" id="tel1" class="text" onkeypress="return CheckNum();" style="width:121px;" placeholder="区号">
 				                    <span id="" class="lblHyphen"> - </span>
-				                    <input name="tel2" type="text" maxlength="8" id="tel2" class="text required-item" onkeypress="return CheckNum();" style="width:121px;">
+				                    <input name="tel2" type="text" maxlength="8" id="tel2" class="text required-item" onkeypress="return CheckNum();" style="width:121px;" placeholder="电话号码">
 				                    <span id="" class="lblHyphen"> - </span>
-				                    <input name="tel3" type="text" maxlength="6" id="tel3" class="text" onkeypress="return CheckNum();" style="width:121px;">
+				                    <input name="tel3" type="text" maxlength="6" id="tel3" class="text" onkeypress="return CheckNum();" style="width:121px;" placeholder="分机号">
 				                </td>
 				                <td class="lblError">
 									<span id="" class="ErrorFont"></span>
