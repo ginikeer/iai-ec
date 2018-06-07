@@ -383,7 +383,9 @@ select {
     clear:both;
     padding-top: 30px;
 }
-
+#h-box-btn-area input{
+	margin-bottom: 10px;
+}
 #h-box-distance-head{
     float:left;
     clear:both;

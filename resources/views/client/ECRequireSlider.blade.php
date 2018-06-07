@@ -76,7 +76,7 @@
                 </div>                                        
                 <div id="dvConditionLoadEntry2">
                     <img id="ContentPlaceHolder1_imgConditionLoadEntry2Content" src="{{ asset('i/client/EcRequire/LoadSlider_content4.png') }}" style="max-width:300px;">
-                    <!--<img id="ContentPlaceHolder1_imgConditionGravityCenterPositionItem" class="imgSize" src="{{ asset('i/client/EcRequire/LoadSlider_GrvCntrPositionItem.png') }}">-->
+                    <img id="ContentPlaceHolder1_imgConditionGravityCenterPositionItem" class="imgSize" src="{{ asset('i/client/EcRequire/LoadSlider_GrvCntrPositionItem.png') }}">
                     <input name="ctl00$ContentPlaceHolder1$numConditionGravityCenterPosition" type="text" maxlength="3" id="ContentPlaceHolder1_numConditionGravityCenterPosition" class="number" onchange="calc()" onkeypress="return CheckNum();" style="ime-mode:disabled; vertical-align: bottom;">
                     <img id="ContentPlaceHolder1_imgConditionGravityCenterPositionUnit" src="{{ asset('i/client/EcRequire/LoadSlider_GrvCntrPositionUnit.png') }}">
                     <div>
