@@ -1,4 +1,4 @@
-@section('title') お客様情報 @stop
+@section('title') 用户信息 @stop
 @section('style')
 <style type="text/css">
 	.auto-style2 { height: 20px; } 
@@ -68,17 +68,17 @@
 							<tr>
 								<td colspan="4">
 									<img id="ContentPlaceHolder1_imgBreadCrumbs1" class="imgBuyingFlow" src="{{ asset('i/client/EcRequire/breadcrumbs1.png') }}">
-									<img id="ContentPlaceHolder1_imgBreadCrumbs5" class="imgBuyingFlow" src="{{ asset('i/client/EcRequire/breadcrumbs5.png') }}" style="display: none;">
+									<img id="ContentPlaceHolder1_imgBreadCrumbs2" class="imgBuyingFlow" src="{{ asset('i/client/EcRequire/breadcrumbs2.png') }}" style="display: none;">
 								</td>
 							</tr>
 						</tbody>
 					</table>
 					<br>
-					<table id="tblInfo" style="margin-left: 85px;">
+					<table id="tblInfo" style="margin-left: 135px;">
 						<tbody>
 							<tr>
 								<td>
-									<span id="ContentPlaceHolder1_lblSentence13" class="paragraph">お客様情報をご入力ください。</span>
+									<span id="ContentPlaceHolder1_lblSentence13" class="paragraph">请输入联系信息</span>
 								</td>
 							</tr>
 						</tbody>

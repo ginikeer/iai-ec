@@ -54,7 +54,7 @@
 							</tr>
 							<tr>
 								<td colspan="4">
-									<img id="ContentPlaceHolder1_imgBreadCrumbs1" class="imgBuyingFlow" src="{{ asset('i/client/EcRequire/breadcrumbs6.png') }}">
+									<img id="ContentPlaceHolder1_imgBreadCrumbs1" class="imgBuyingFlow" src="{{ asset('i/client/EcRequire/breadcrumbs3.png') }}">
 								</td>
 							</tr>
 						</tbody>

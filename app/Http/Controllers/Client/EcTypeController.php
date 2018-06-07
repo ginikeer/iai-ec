@@ -142,6 +142,9 @@ class EcTypeController extends Controller {
 			Cookie::queue('iaiec_expired_at', $expired_at, 30);
 		}
 		
+		if($response->Message == 'OK') 
+			$response->Message = '验证码已发送，请注意查收！';
+		
 		echo json_encode($response);
 	}
 	
