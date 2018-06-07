@@ -42,9 +42,9 @@
 			<div id="dvLinearGuideRodDescription" style="float:left">
 				<img id="ContentPlaceHolder1_imgLinearGuideRodContent1" class="imgSize" src="{{ asset('i/client/EcRequire/LoadSmallTypeContent1.png') }}">
 			</div>
-			<div>
+			<!--<div>
 				<input type="image" name="ctl00$ContentPlaceHolder1$ImageButton1" id="ContentPlaceHolder1_ImageButton1" class="ImgLinearGuide" onclick="return dummyFunc();">
-			</div>
+			</div>-->
 
 			<div id="dvLinearGuideRodEntry">
 				<div style="float:left;">
