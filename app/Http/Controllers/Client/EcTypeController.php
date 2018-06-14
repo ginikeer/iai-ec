@@ -45,7 +45,6 @@ class EcTypeController extends Controller {
 	 */
 	public function getType(Request $request)
 	{
-		
 		return view('client/ECTypeSelection');
 	}
 	

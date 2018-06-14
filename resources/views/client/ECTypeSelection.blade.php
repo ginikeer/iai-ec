@@ -173,7 +173,7 @@
 					<span id="ContentPlaceHolder1_lblType" class="Series" style="display:inline-block;width:150px;display:inline;"></span>
 					<input name="ctl00$ContentPlaceHolder1$txtIndexType" type="text" value="RR6M" id="ContentPlaceHolder1_txtIndexType" tabindex="-1" class="text" style="display: none">
 					<div style="margin-top: 20px;">
-						<img id="ContentPlaceHolder1_imgCableOption" src="{{ asset('i/client/EcRequire/cableoption_RD_RR.png') }}" align="left">
+						<img id="ContentPlaceHolder1_imgCableOption" src="" align="left">
 					</div>
 				</div>
 				<div class="box-size50">
@@ -253,6 +253,8 @@
 		<script src="{{ asset('js/client/common.js') }}"></script>
 		<script src="{{ asset('js/client/ECRequirementSelection.js') }}"></script>
 		<script type="text/javascript">
+			setImgCableOption();
+			
 			function setSelectIndex(own) {
 				// 選択した位置の退避
 		
@@ -402,7 +404,58 @@
 				setOption();
 		
 			}
-		
+			
+			function setImgCableOption() {
+				var imgCableOption = document.getElementById("ContentPlaceHolder1_imgCableOption");
+				
+				var path = "{{ asset('i/client/EcRequire/cableoption_') }}";
+				var prefix = "";
+				var suffix = "";
+				var png = ".png";
+				
+				//前半部分
+				if (sessionStorage.getItem(ssRod) == 1) {
+					prefix = 'RD';
+					//后半部分
+					if (sessionStorage.getItem(ssLinearGuideRod) == 1) {
+				        suffix = '_ST';
+				    } else if (sessionStorage.getItem(ssLinearGuideRod) == 2) {
+				        suffix = '_RR';
+				    } else if (sessionStorage.getItem(ssLinearGuideRod) == 3) {
+				        suffix = '_WP';
+				    }
+				} else if(sessionStorage.getItem(ssSlider) == 1) {
+					prefix = 'SD';
+					suffix = '_ST';
+				} else if(sessionStorage.getItem(ssSmallType) == 1) {
+					prefix = 'ST';
+					if (sessionStorage.getItem(ssLinearGuideSmall) == 1) {
+			       		suffix = '_RP';
+				    } else if (sessionStorage.getItem(ssLinearGuideSmall) == 2) {
+				        suffix = '_GS';
+				    } else if (sessionStorage.getItem(ssLinearGuideSmall) == 3) {
+				        suffix = '_GD';
+				    } else if (sessionStorage.getItem(ssLinearGuideSmall) == 4) {
+				        suffix = '_TC';
+				    } else if (sessionStorage.getItem(ssLinearGuideSmall) == 5) {
+				        suffix = '_TW';
+				    }
+				} else if(sessionStorage.getItem(ssResemble_Rod) == 1) {
+					prefix = 'RD';
+					suffix = '_ST';
+				} else if(sessionStorage.getItem(ssResemble_Rodless) == 1) {
+					prefix = 'SD';
+					suffix = '_ST';
+				}
+				
+				if(prefix == "") prefix = 'SD';
+				if(suffix == "") prefix = '_ST';
+				
+				var _src = path + prefix + suffix + png;
+				imgCableOption.src = _src;
+			}
+			
+			
 			function setType() {
 		
 				var ctrDdlSeries = document.getElementById("ContentPlaceHolder1_ddlSeries");
