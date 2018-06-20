@@ -86,8 +86,12 @@ class Mst {
 		$data->IMG_NAME = self::getImgName(EC_APPEARANCE_IMG_PATH, $series, $type);
 		$data->FULL_NAME = self::getFullName($series, $type, $stroke);
 		
+		$calc_cycle_time = null;
+		CalcCycleTime(10, $temp->SPEED, $temp->ACCELERATION, $temp->ACCELERATION, 0.1, 1, 0, 40, 0, 0, $calc_cycle_time);
+		$calc_cycle_time = $calc_cycle_time;
+		
 		$data->ERROR_KBN = 0;
-		$data->CALC_CYCLE_TIME = 0;
+		$data->CALC_CYCLE_TIME = $calc_cycle_time;
 		$data->CALC_MOMENT = 0;
 		$data->CALC_DISTANCE = 0;
 		$data->CALC_LIFE = 0;
