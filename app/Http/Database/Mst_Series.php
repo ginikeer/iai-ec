@@ -56,7 +56,7 @@ class Mst_Series extends Model {
 		$must = Mst::checkMust($param);
 		if($must) {
 			$data = $data->first();
-			$data = Mst::completeData($data, $param["vLoad"], $direction);
+			$data = Mst::completeData($data, $param, $direction);
 		} else {	//否的话取多条数据
 			$data = $data->get();
 		}
@@ -137,14 +137,6 @@ class Mst_Series extends Model {
 		return $d;
 	}
 	
-	//获取表中所有的stroke范围，返回数组格式
-//	static public function getStrokeRange () {
-//		return DB::table("mst_series_lead_stroke")
-//				->select(DB::raw('distinct(STROKE) as stroke'))
-//				->orderBy('stroke', 'asc')
-//				->lists('stroke');
-//	}
-	
 	//根据已有筛选条件，获取表中符合要求的stroke范围，返回数组格式
 	static public function getFilterStrokeRange ($param) {
 		$base = self::baseFilter(DB::table(self::$table_name), $param);
@@ -157,16 +149,6 @@ class Mst_Series extends Model {
 		
 		return $base;
 	}
-	
-	//获取表中所有的最大载重范围，返回数组格式
-//	static public function getPowerRange ($direction) {
-//		$filed = ($direction == 'horizontal') ? 'MAX_POWER_HRZ' : 'MAX_POWER_VTC';
-//		
-//		return DB::table("mst_series_lead_stroke")
-//				->select(DB::raw('distinct(' . $filed . ') as `load`'))
-//				->orderBy('load', 'asc')
-//				->lists('load');
-//	}
 	
 	//根据已有筛选条件，获取表中符合要求的最大载重范围，返回数组格式
 	static public function getFilterPowerRange ($direction, $param) {
@@ -199,9 +181,19 @@ class Mst_Series extends Model {
 		$load = Mst::largeThanClosest($loadRange, $vLoad);
 		
 		$data = $data->where('LOAD', $load)
-					 ->select('SPEED', 'ACCELERATION')
+					 ->select('SPEED', 'ACCELERATION', 'SCREW_LIFE', 'BEARING_LIFE')
 					 ->first();
 			 
 		return $data;
 	}
+	
+	static public function get_mst_series_type($type) {
+		return DB::table('mst_series_type')
+				->where('type', $type)
+				->select('MA_MOMENT', 'MB_MOMENT', 'MC_MOMENT', 'MA', 'MA_OVERHANG_ABOVE', 
+						'DYNAMIC_RADIAL_LOAD', 'DYNAMIC_TORQUE', 'EQUIVALENT_COEFFICIENT_Ka', 
+						'EQUIVALENT_COEFFICIENT_Kb', 'EQUIVALENT_COEFFICIENT_Kc', 'DYNAMIC_EQUIVALENT_LOAD')
+				->first();
+	}
+	
 }

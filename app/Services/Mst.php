@@ -2,7 +2,9 @@
 
 use Cookie, Storage;
 
+use App\Services\CalcLife;
 use App\Http\Database\Mst_Series;
+
 
 //Mst工具类
 class Mst {
@@ -72,14 +74,14 @@ class Mst {
 		return ($step1 && $step2 && $step3 && $step4 && $step5);
 	}
 	
-	static public function completeData($data, $vLoad, $vDirection)
+	static public function completeData($data, $param, $vDirection)
 	{
 		if(empty($data)) return array();
 		$series = $data->SERIES;
 		$type = $data->TYPE;
 		$set_direction = ($vDirection == 'horizontal') ? '水平' : '垂直';
 		$stroke = $data->STROKE;
-		$temp = Mst_Series::getSpeedAndAcceleration($series, $type, $set_direction, $stroke, $vLoad);
+		$temp = Mst_Series::getSpeedAndAcceleration($series, $type, $set_direction, $stroke, $param["vLoad"]);
 		
 		$data->SPEED = $temp->SPEED;
 		$data->ACCELERATION = $temp->ACCELERATION;
@@ -87,14 +89,41 @@ class Mst {
 		$data->FULL_NAME = self::getFullName($series, $type, $stroke);
 		
 		$calc_cycle_time = null;
-		CalcCycleTime(10, $temp->SPEED, $temp->ACCELERATION, $temp->ACCELERATION, 0.1, 1, 0, 40, 0, 0, $calc_cycle_time);
-		$calc_cycle_time = $calc_cycle_time;
+		CalcCycleTime($param["vStroke"], $temp->SPEED, $temp->ACCELERATION, $temp->ACCELERATION, 0.1, 1, 0, 40, 0, 0, $calc_cycle_time);
+		$calc_cycle_time = $calc_cycle_time / 1000;
 		
-		$data->ERROR_KBN = 0;
+		$CalcLife = new CalcLife;
+		$distanceRes = $CalcLife->calcDistance($data, $param);
+		if(is_array($distanceRes)) {
+			$calcDistance = $distanceRes["CALC_DISTANCE"];
+			$calcMoment = $distanceRes["CALC_MOMENT"];
+			$calcError = $distanceRes["ERROR_KBN"];
+		} else {
+			$calcDistance = $distanceRes;
+			$calcMoment = 0;
+			$calcError = 0;
+		}
+		
+		if($calcDistance != 0) {
+			//取最小值
+			$calcDistance = ($temp->SCREW_LIFE > 0 && $temp->SCREW_LIFE < $calcDistance) ? $temp->SCREW_LIFE : $calcDistance;
+			$calcDistance = ($temp->BEARING_LIFE > 0 && $temp->BEARING_LIFE < $calcDistance) ? $temp->BEARING_LIFE : $calcDistance;
+		} else {
+			//取非0最小值
+			if($temp->BEARING_LIFE > 0 && $temp->SCREW_LIFE > 0) {
+				$calcDistance = ($temp->BEARING_LIFE < $temp->SCREW_LIFE) ? $temp->SCREW_LIFE : $temp->BEARING_LIFE;
+			} else if($temp->BEARING_LIFE > 0) {
+				$calcDistance = $temp->BEARING_LIFE;
+			} else {
+				$calcDistance = $temp->SCREW_LIFE;
+			}
+		}
+		
 		$data->CALC_CYCLE_TIME = $calc_cycle_time;
-		$data->CALC_MOMENT = 0;
-		$data->CALC_DISTANCE = 0;
-		$data->CALC_LIFE = 0;
+		$data->CALC_DISTANCE = $calcDistance;
+		$data->CALC_MOMENT = $calcMoment;
+		$data->ERROR_KBN = $calcError;
+		$data->CALC_LIFE = $CalcLife->calcLife();
 		
 		return $data;
 	}
