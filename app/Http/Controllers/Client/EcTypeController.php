@@ -69,7 +69,7 @@ class EcTypeController extends Controller {
 			$data = Mst_Series::getDataById($request->input('idx'), $request->input('direction'), $request->input('load'));
 		if($request->input('page') == 'resemble')
 			$data = Mst_Series_Resemble::getDataById($request->input('idx'));
-
+		
 		return view('client/ECSpecSub', ['data' => $data, 'page' => $request->input('page')]);
 	}
 	

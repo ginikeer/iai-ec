@@ -788,6 +788,9 @@
 						$('#ctlSpec_lblConditionRoundTimes').text(checkEmpty(sessionStorage.getItem(ssRoundTrip)));
 						$('#ctlSpec_lblConditionOperatingTime').text(checkEmpty(sessionStorage.getItem(ssOperatingTime)));
 						$('#ctlSpec_lblConditionOperatingDays').text(checkEmpty(sessionStorage.getItem(ssOperatingDay)));
+						$('#ctlSpec_lblCalcCycleTimeUnit').text(checkEmpty(sessionStorage.getItem(ssCalcCycleTime)) + "s");
+						$('#ctlSpec_lblTravelingLifeDistanceUnit').text(checkEmpty(sessionStorage.getItem(ssCalcDistance)) + "km");
+						$('#ctlSpec_lblTravelingLifeSpanUnit').text(checkEmpty(sessionStorage.getItem(ssCalcLife)));
 					} else {
 						$('#ctlSpec_lblConditionBehaviorRange').text(0);
 						$('#ctlSpec_lblConditionLoad').text(0);
@@ -797,6 +800,9 @@
 						$('#ctlSpec_lblConditionRoundTimes').text(0);
 						$('#ctlSpec_lblConditionOperatingTime').text(0);
 						$('#ctlSpec_lblConditionOperatingDays').text(0);
+						$('#ctlSpec_lblCalcCycleTimeUnit').text('0s');
+						$('#ctlSpec_lblTravelingLifeDistanceUnit').text('0km');
+						$('#ctlSpec_lblTravelingLifeSpanUnit').text('');
 					}
 				});
 				

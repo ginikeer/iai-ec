@@ -13,10 +13,6 @@ class CalcLife {
 	public $acceleration;		//加速度
 	public $guide_rod;			//拉杆类型
 	
-	public function calcLife() {
-		
-	}
-	
 	public function calcDistance($data, $param) {
 		$this->standard_life 		= $data->STANDARD_LIFE;
 		$this->acceleration 		= $data->ACCELERATION;
@@ -25,10 +21,14 @@ class CalcLife {
 		$this->gravity 				= $param["vGravityOfCenter"];
 		$this->work_state 			= $param["vWorkLoadingState"];
 		$this->guide_rod			= $param["vLinearGuideRod"];
+		$this->guid_small			= $param["vLinearGuideSmall"];
 		$this->horizontal			= $param["vHorizontal"];
-		$this->offset_distance		= $param["vOffSetDistance"];
 		$this->stroke				= $param["vStroke"];
-		$this->overhang_distance 	= $param["vOverhangDistance"];
+		$this->gravity_x			= $param["vGravityOfCenterX"];
+		$this->gravity_y			= $param["vGravityOfCenterY"];
+		$this->gravity_z			= $param["vGravityOfCenterZ"];
+		$this->offset_distance		= isset($param["vOffSetDistance"]) ? $param["vOffSetDistance"] : 0;
+		$this->overhang_distance 	= isset($param["vOverhangDistance"]) ? $param["vOverhangDistance"] : 0;
 		
 		if($param["vPressing"] > 0)
 			return 0;
@@ -40,7 +40,11 @@ class CalcLife {
 			return $this->rodHandel($data);
 		} else 
 		if($param["vSmall"] > 0) {	//细小型
-			
+			if($this->guid_small == 4 || $this->guid_small == 5) {
+				return $this->smallHandel($data);
+			} else {
+				return 0;
+			}
 		}
 	}
 	
@@ -108,6 +112,61 @@ class CalcLife {
 		$result["CALC_DISTANCE"] = $oDistance;
 		$result["CALC_MOMENT"] = 0;
 		$result["ERROR_KBN"] = $oError;
+	}
+	
+	private function smallHandel($data) {
+		$_s						= $this->guid_small;
+		$_w 					= $this->work_state;
+		$_st					= $this->stroke;
+		$_l 					= $this->load;
+		$_x						= $this->gravity_x;			
+		$_y						= $this->gravity_y;			
+		$_z						= $this->gravity_z;
+		$_a						= $this->acceleration;		
+		$tc4h					= Mst_Series::get_mst_series_type('TC4H');
+		$tw4h					= Mst_Series::get_mst_series_type('TW4H');
+		
+		if($_w == 1 || $_w == 4) {
+			if($_s == 4) {
+				$tcma = round( ( pow(($tc4h->MA_MOMENT / (($_st + $_x + 39.5) * $_l * 9.8 / 1000 + ($_z + 10.5) * $_l * 9.8 * $_a / 1000)), 3) ) * $tc4h->STANDARD_LIFE );
+				$tcmb = round( ( pow(($tc4h->MB_MOMENT / ($_y * $_l * 9.8 / 1000 * $_a)), 3) ) * $tc4h->STANDARD_LIFE );
+				$tcmc = round( ( pow(($tc4h->MC_MOMENT / ($_y * $_l * 9.8 / 1000)), 3) ) * $tc4h->STANDARD_LIFE );
+			} else {
+				$twma = round( ( pow(($tw4h->MA_MOMENT / (($_st + $_x + 38.5) * $_l * 9.8 / 1000 + ($_z + 10.5) * $_l * 9.8 * $_a / 1000)), 3) ) * $tw4h->STANDARD_LIFE );
+				$twmb = round( ( pow(($tw4h->MB_MOMENT / ($_y * $_l * 9.8 / 1000 * $_a)), 3) ) * $tw4h->STANDARD_LIFE );
+				$twmc = round( ( pow(($tw4h->MC_MOMENT / ($_y * $_l * 9.8 / 1000)), 3) ) * $tw4h->STANDARD_LIFE);
+			}
+		} else if($_w == 2) {
+			if($_s == 4) {
+				$tcma = round( ( pow(($tc4h->MA_MOMENT / (($_z + 10.5) * $_l * 9.8 / 1000 * (1 + $_a))), 3) ) * $tc4h->STANDARD_LIFE );
+				$tcmb = round( ( pow(($tc4h->MB_MOMENT / ($_y * $_l * 9.8 / 1000 * (1 + $_a))), 3) ) * $tc4h->STANDARD_LIFE );
+				$tcmc = -1;
+			} else {
+				$twma = round( ( pow(($tw4h->MA_MOMENT / (($_z + 10.5) * $_l * 9.8 / 1000 * (1 + $_a))), 3) ) * $tw4h->STANDARD_LIFE );
+				$twmb = round( ( pow(($tw4h->MB_MOMENT / ($_y * $_l * 9.8 / 1000 * (1 + $_a))), 3) ) * $tw4h->STANDARD_LIFE );
+				$twmc = -1;
+			}
+		} else if($_w == 3) {
+			if($_s == 4) {
+				$tcma = round( ( pow(($tc4h->MA_MOMENT / (($_z + 10.5) * $_l * 9.8 / 1000 * $_a)), 3) ) * $tc4h->STANDARD_LIFE );
+				$tcmb = round( ( pow(($tc4h->MB_MOMENT / (($_y * $_l * 9.8 / 1000 * $_a) + ($_st + $_x + 39.5) * $_l * 9.8 / 1000)), 3) ) * $tc4h->STANDARD_LIFE );
+				$tcmc = round( ( pow(($tc4h->MC_MOMENT / (($_z + 10.5) * $_l * 9.8 / 1000)), 3) ) * $tc4h->STANDARD_LIFE );
+			} else {
+				$twma = round( ( pow(($tw4h->MA_MOMENT / (($_z + 10.5) * $_l * 9.8 / 1000 * $_a)), 3) ) * $tw4h->STANDARD_LIFE );
+				$twmb = round( ( pow(($tw4h->MB_MOMENT / (($_y * $_l * 9.8 / 1000 * $_a) + ($_st + $_x + 38.5) * $_l * 9.8 / 1000)), 3) ) * $tw4h->STANDARD_LIFE );
+				$twmc = round( ( pow(($tw4h->MC_MOMENT / (($_z + 10.5) * $_l * 9.8 / 1000)), 3) ) * $tw4h->STANDARD_LIFE );
+			}
+		}
+		
+		if($_s == 4) {
+			$oDistance = ($tcma < $tcmb) ? $tcma : $tcmb;
+			$oDistance = ($tcmc > 0 && $tcmc < $oDistance) ? $tcmc : $oDistance;
+		} else {
+			$oDistance = $twma < $twmb ? $twma : $twmb;
+			$oDistance = ($twmc > 0 && $twmc < $oDistance) ? $twmc : $oDistance;
+		}
+		
+		return $oDistance;
 	}
 	
 	private function sliderWorkLoadingState($ma_moment, $mb_moment, $mc_moment, $ma, $above) {

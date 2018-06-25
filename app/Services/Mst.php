@@ -119,11 +119,29 @@ class Mst {
 			}
 		}
 		
+		$calcLife = "";
+		if($param["vUptime1"] > 0 && $param["vUptime2"] > 0 && $param["vUptime3"] > 0) {
+			$oLife = $calcDistance * 1000000 / $param["vStroke"] / 2 / $param["vUptime2"] / 60 / $param["vUptime1"];
+			$oYear = $oLife / $param["vUptime3"];
+			$oMod = $oLife % $param["vUptime3"];
+			
+			if($oMod != 0) {
+				$oMonth = floor($oMod / 30);
+			} else {
+				$oMonth = 0;
+			}
+			if($oYear > 20) {
+				$calcLife = "20年以上";
+			} else {
+				$calcLife = floor($oYear) . "年" . $oMonth . "个月";
+			}
+		}
+		
 		$data->CALC_CYCLE_TIME = $calc_cycle_time;
 		$data->CALC_DISTANCE = $calcDistance;
 		$data->CALC_MOMENT = $calcMoment;
 		$data->ERROR_KBN = $calcError;
-		$data->CALC_LIFE = $CalcLife->calcLife();
+		$data->CALC_LIFE = $calcLife;
 		
 		return $data;
 	}
