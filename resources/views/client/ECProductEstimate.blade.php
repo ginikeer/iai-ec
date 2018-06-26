@@ -101,7 +101,7 @@
 
 				<div class="imgButtonPosition">
 					<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnBack" id="ContentPlaceHolder1_imgbtnBack" class="imgButton" src="{{ asset('i/client/EcRequire/btnBack.png') }}" onclick="javaScript:history.go(-1);">
-					<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnSpec" id="ContentPlaceHolder1_imgbtnSpec" class="imgButton" src="{{ asset('i/client/EcRequire/btnSpec.png') }}" onclick="javascript:window.location.href= '{{url("EC/spec")}}' ">
+					<!--<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnSpec" id="ContentPlaceHolder1_imgbtnSpec" class="imgButton" src="{{ asset('i/client/EcRequire/btnSpec.png') }}" onclick="javascript:window.location.href= '{{url("EC/spec")}}' ">-->
 					<input type="image" name="ctl00$ContentPlaceHolder1$imgbtnNext" id="ContentPlaceHolder1_imgbtnNext" class="imgButton" src="{{ asset('i/client/EcRequire/btnNext.png') }}" >
 					<input type="hidden" id="next-link" value="{{url("EC/productestimateconfirm")}}" />
 				</div>

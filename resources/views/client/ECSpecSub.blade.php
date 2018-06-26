@@ -498,7 +498,7 @@
 																<span id="ctlSpec_lblInOutSignalFormTitle" class="ctlLabel">输入输出信号形态</span>
 															</td>
 															<td class="alignRight">
-																<span id="ctlSpec_lblInOutSignalForm" class="ctlLabel"></span>
+																<span id="ctlSpec_lblInOutSignalForm" class="ctlLabel">NPN规格</span>
 															</td>
 															<td class="alignLeft"></td>
 														</tr>
