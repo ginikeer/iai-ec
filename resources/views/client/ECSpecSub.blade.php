@@ -678,7 +678,7 @@
 																<span id="ctlSpec_lblCalcDecisionTitle" class="ctlLabel">计算条件（ADV)</span>
 															</td>
 															<td class="spec-tbl-td2-nclr" style="border-right:none">
-																<span id="ctlSpec_lblAcceleration" class="ctlLabel">加速度（A）{{ $data->ACCELERATION }}</span>
+																<span id="ctlSpec_lblAcceleration" class="ctlLabel"></span>
 															</td>
 															<td class="spec-tbl-td3-nclr" style="border-left:none">
 																<span id="ctlSpec_lblAccelerationUnit" class="ctlLabel">G</span>
@@ -687,7 +687,7 @@
 														<tr>
 
 															<td class="spec-tbl-td2-nclr" style="border-right:none">
-																<span id="ctlSpec_lblSpeed" class="ctlLabel">速度（V）{{ $data->SPEED }}</span>
+																<span id="ctlSpec_lblSpeed" class="ctlLabel"></span>
 															</td>
 															<td class="spec-tbl-td3-nclr" style="border-left:none">
 																<span id="ctlSpec_lblSpeedUnit" class="ctlLabel">mm/s</span>
@@ -696,7 +696,7 @@
 														<tr>
 
 															<td class="spec-tbl-td2-nclr" style="border-right:none">
-																<span id="ctlSpec_lblDeceleration" class="ctlLabel">減速度（D）{{ $data->ACCELERATION }}</span>
+																<span id="ctlSpec_lblDeceleration" class="ctlLabel"></span>
 															</td>
 															<td class="spec-tbl-td3-nclr" style="border-left:none">
 																<span id="ctlSpec_lblDecelerationUnit" class="ctlLabel">G</span>
@@ -789,6 +789,9 @@
 						$('#ctlSpec_lblConditionOperatingTime').text(checkEmpty(sessionStorage.getItem(ssOperatingTime)));
 						$('#ctlSpec_lblConditionOperatingDays').text(checkEmpty(sessionStorage.getItem(ssOperatingDay)));
 						$('#ctlSpec_lblCalcCycleTimeUnit').text(checkEmpty(sessionStorage.getItem(ssCalcCycleTime)) + "s");
+						$('#ctlSpec_lblSpeed').text("速度（V）" + checkEmpty(sessionStorage.getItem(ssSpeed)));
+						$('#ctlSpec_lblAcceleration').text("加速度（A）" + checkEmpty(sessionStorage.getItem(ssAcceleration)));
+						$('#ctlSpec_lblDeceleration').text("減速度（D）" + checkEmpty(sessionStorage.getItem(ssAcceleration)));
 						$('#ctlSpec_lblTravelingLifeDistanceUnit').text(checkEmpty(sessionStorage.getItem(ssCalcDistance)) + "km");
 						$('#ctlSpec_lblTravelingLifeSpanUnit').text(checkEmpty(sessionStorage.getItem(ssCalcLife)));
 					} else {
@@ -801,6 +804,9 @@
 						$('#ctlSpec_lblConditionOperatingTime').text(0);
 						$('#ctlSpec_lblConditionOperatingDays').text(0);
 						$('#ctlSpec_lblCalcCycleTimeUnit').text('0s');
+						$('#ctlSpec_lblSpeed').text("速度（V）" + 0);
+						$('#ctlSpec_lblAcceleration').text("加速度（A）" + 0);
+						$('#ctlSpec_lblDeceleration').text("減速度（D）" + 0);
 						$('#ctlSpec_lblTravelingLifeDistanceUnit').text('0km');
 						$('#ctlSpec_lblTravelingLifeSpanUnit').text('');
 					}

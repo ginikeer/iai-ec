@@ -142,11 +142,6 @@ class Mst_Series extends Model {
 		$d->PURPOSE = $d->TRANSPORT == 1 ? '搬运定位' : '推压压入';
 		$d->DIRECTION = ($direction == 'horizontal') ? '水平安装' : '垂直安装';
 		
-		$set_direction = ($direction == 'horizontal') ? '水平' : '垂直';
-		$temp = self::getSpeedAndAcceleration($d->SERIES, $d->TYPE, $set_direction, $d->STROKE, $load);
-		$d->SPEED = $temp->SPEED;
-		$d->ACCELERATION = $temp->ACCELERATION;
-		
 		return $d;
 	}
 	
