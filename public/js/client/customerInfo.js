@@ -22,10 +22,6 @@ $(function(){
 	        }
 		}
 		
-		$('#MailConfirmError').text('两次输入邮箱不一致');
-		if( !checkSame($('#email').val(), $('#again').val(), '#MailConfirmError') )
-			return false;
-			
 		$('.required-item').prop("readonly",true);
 		$('#ContentPlaceHolder1_imgbtnBack').hide();
 		$('#ContentPlaceHolder1_imgbtnNext').hide();

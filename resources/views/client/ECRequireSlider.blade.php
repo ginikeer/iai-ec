@@ -107,24 +107,24 @@
 	        if ((WorkLoadingState == null || WorkLoadingState != null) || (ctrLoad.value.length == 0 || ctrLoad.value == 0) || (GrvCntrPosition.length == 0 || GrvCntrPosition.value == 0)) {
 	
 	            if (WorkLoadingState == null) {
-	                document.getElementById("ContentPlaceHolder1_lblError1").innerHTML = "ワーク積載状態を選択してください。";
+	                document.getElementById("ContentPlaceHolder1_lblError1").innerHTML = "请选择工件的装载状态。";
 	                cntCheck ++;
 	            }
 	            if (ctrLoad.value.length == 0) {
-	                document.getElementById("ContentPlaceHolder1_lblError2").innerHTML = "荷重を入力してください。";
+	                document.getElementById("ContentPlaceHolder1_lblError2").innerHTML = "请输入负载。";
 	                cntCheck++;
 	            }
 	            if (Load == '0') {
-	                document.getElementById("ContentPlaceHolder1_lblError2").innerHTML = "荷重は0kgより大きい値を入力してください";
+	                document.getElementById("ContentPlaceHolder1_lblError2").innerHTML = "负载必须大于0。";
 	                cntCheck++;
 	            }
 	
 	            if (GrvCntrPosition.length == 0) {
-	                document.getElementById("ContentPlaceHolder1_lblError3").innerHTML = "重心位置を入力してください。";
+	                document.getElementById("ContentPlaceHolder1_lblError3").innerHTML = "请输入重心位置。";
 	                cntCheck++;
 	            }
 	            if (GrvCntrPosition == '0') {
-	                document.getElementById("ContentPlaceHolder1_lblError3").innerHTML = "重心位置は0㎜より大きい値を入力してください";
+	                document.getElementById("ContentPlaceHolder1_lblError3").innerHTML = "重心位置必须大于0。";
 	                cntCheck++;
 	            }
 	

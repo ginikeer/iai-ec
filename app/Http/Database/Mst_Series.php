@@ -17,18 +17,23 @@ class Mst_Series extends Model {
 //vPressingForce: 100
 
 //vHopeCycleTime: -1
-//vUptime1: -1
-//vUptime2: -1
-//vUptime3: -1
+
 	
 	static public $table_name = 'mst_series_lead_stroke as ls';
 	
 	static public function getFilterData ($param) {
 		$direction = '';	//方向
-		if($param["vHorizontal"] > 0) 
+		$set_direction = '';
+		if($param["vHorizontal"] > 0) {
 			$direction = 'horizontal';
-		if($param["vVertical"] > 0) 	
+			$set_direction = '水平';
+		}
+		if($param["vVertical"] > 0) {
 			$direction = 'vertical';
+			$set_direction = '垂直';
+		}
+		
+//		DB::connection()->enableQueryLog();  // 开启QueryLog
 		
 		//完整的条件筛选
 		$data = self::baseFilter(DB::table(self::$table_name), $param);
@@ -41,17 +46,22 @@ class Mst_Series extends Model {
 		
 		//载重范围
 		if($param["vLoad"] > 0 && !empty($direction)) {
-			$filed = ($direction == 'horizontal') ? 'ls.MAX_POWER_HRZ' : 'ls.MAX_POWER_VTC';
 			$load_range_arr = self::getFilterPowerRange($direction, $param);
-			$data->where($filed, Mst::largeThanClosest($load_range_arr, $param["vLoad"]));
+			$data->where('a.load', Mst::largeThanClosest($load_range_arr, $param["vLoad"]));
 		}
 
 		$data = $data->leftJoin('mst_series_type as t', function($join) {
 					$join->on('t.SERIES', '=', 'ls.SERIES')->on('ls.TYPE', '=', 't.TYPE');
 				})
+				->leftJoin('mst_acceleration as a', function($join) {
+					$join->on('a.SERIES', '=', 'ls.SERIES')->on('ls.TYPE', '=', 'a.TYPE')->on('a.STROKE', '=', 'ls.STROKE');
+				})
+				->where('a.SET_DIRECTION', $set_direction)
 				->select('ls.ID', 'ls.SERIES', 'ls.TYPE', 'ls.STROKE', 't.LIST_ORDER', 't.TYPE_NAME', 't.TYPE_FORM', 
-						't.TRANSPORT', 't.PRESSING', 't.HORIZONTAL', 't.VERTICAL', 't.STANDARD_LIFE', 't.MA_OVERHANG_ABOVE')
-				->orderBy('LIST_ORDER');
+						't.TRANSPORT', 't.PRESSING', 't.HORIZONTAL', 't.VERTICAL', 't.STANDARD_LIFE', 't.MA_OVERHANG_ABOVE', 
+						'a.SPEED', 'a.ACCELERATION', 'a.SCREW_LIFE', 'a.BEARING_LIFE')
+				->orderBy('t.LIST_ORDER')
+				->orderBy('a.ACCELERATION');
 		
 		//检查必填项是否都有数据，是的话多条数据则只取第一项
 		$must = Mst::checkMust($param);
@@ -61,6 +71,8 @@ class Mst_Series extends Model {
 		} else {	//否的话取多条数据
 			$data = $data->get();
 		}
+		
+//		dump(DB::getQueryLog());	//打印sql语句
 		
 		return $data;
 	}
@@ -150,42 +162,30 @@ class Mst_Series extends Model {
 		
 		return $base;
 	}
-	
+		
 	//根据已有筛选条件，获取表中符合要求的最大载重范围，返回数组格式
 	static public function getFilterPowerRange ($direction, $param) {
-		$filed = ($direction == 'horizontal') ? 'MAX_POWER_HRZ' : 'MAX_POWER_VTC';
+		$direction = ($direction == 'horizontal') ? '水平' : '垂直';
 		
 		$base = self::baseFilter(DB::table(self::$table_name), $param);
 		$base = $base->leftJoin('mst_series_type as t', function($join) {
 					$join->on('t.SERIES', '=', 'ls.SERIES')->on('ls.TYPE', '=', 't.TYPE');
+				})->leftJoin('mst_acceleration as a', function($join) {
+					$join->on('a.SERIES', '=', 'ls.SERIES')->on('ls.TYPE', '=', 'a.TYPE');
 				})
-				->select(DB::raw('distinct(' . $filed . ') as `load`'))
+				->select(DB::raw('distinct(`LOAD`) as `load`'))
+				->where('SET_DIRECTION', $direction)
 				->orderBy('load', 'asc')
 				->lists('load');
 		
 		return $base;
 	}
 	
-	static public function getSpeedAndAcceleration($series, $type, $set_direction, $stroke, $vLoad) {
-		$data = DB::table('mst_acceleration')
-						->where('SERIES', $series)
-						->where('TYPE', $type)
-						->where('SET_DIRECTION', $set_direction)
-						->where('STROKE', $stroke);
-		
-		$loadRange = $data;
-		
-		$loadRange = $loadRange->select(DB::raw('distinct(`LOAD`) as `load`'))
-							   ->orderBy('load', 'asc')
-							   ->lists('load');
-		
-		$load = Mst::largeThanClosest($loadRange, $vLoad);
-		
-		$data = $data->where('LOAD', $load)
-					 ->select('SPEED', 'ACCELERATION', 'SCREW_LIFE', 'BEARING_LIFE')
-					 ->first();
-			 
-		return $data;
+	
+	static public function getOptionByType($type) {
+		return  DB::table('mst_series_option')
+					->where('TYPE', $type)
+					->lists('ACT_OPTION');
 	}
 	
 	static public function get_mst_series_type($type) {
@@ -196,5 +196,4 @@ class Mst_Series extends Model {
 						'EQUIVALENT_COEFFICIENT_Kb', 'EQUIVALENT_COEFFICIENT_Kc', 'DYNAMIC_EQUIVALENT_LOAD', 'STANDARD_LIFE')
 				->first();
 	}
-	
 }

@@ -215,19 +215,25 @@
 				</div>
 				<div class="box-size">
 					<select size="4" name="ctl00$ContentPlaceHolder1$lstBoxOption" multiple="multiple" id="ContentPlaceHolder1_lstBoxOption" tabindex="4" onclick="ChangeOption(this)" style="height:170px;width:150px;">
-						<option value="1">B</option>
-						<option value="2">FFA</option>
-						<option value="3">FL</option>
-						<option value="4">FT</option>
-						<option value="5">NFA</option>
-						<option value="6">NJ</option>
-						<option value="7">NJPB</option>
-						<option value="8">NM</option>
-						<option value="9">PN</option>
-						<option value="10">QR</option>
-						<option value="11">QRPB</option>
-						<option value="12">WA</option>
-						<option value="13">WL</option>
+						@if(count($option) > 0)
+							@foreach($option as $op)
+							<option value="{{ $op }}">{{ $op }}</option>	
+							@endforeach
+						@else
+							<option value="B">B</option>
+							<option value="FFA">FFA</option>
+							<option value="FL">FL</option>
+							<option value="FT">FT</option>
+							<option value="NFA">NFA</option>
+							<option value="NJ">NJ</option>
+							<option value="NJPB">NJPB</option>
+							<option value="NM">NM</option>
+							<option value="PN">PN</option>
+							<option value="QR">QR</option>
+							<option value="QRPB">QRPB</option>
+							<option value="WA">WA</option>
+							<option value="WL">WL</option>
+						@endif
 					</select>
 					<input name="ctl00$ContentPlaceHolder1$txtIndexOption" type="text" id="ContentPlaceHolder1_txtIndexOption" tabindex="-1" class="text" style="display: none">
 				</div>

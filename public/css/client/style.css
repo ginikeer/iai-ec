@@ -802,3 +802,7 @@ table.Address td {
     width: 80px;
     text-align: right;
 }
+.WarnMsg {
+	font-size: 17px;
+    color: red;
+}

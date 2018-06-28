@@ -45,7 +45,7 @@ class Mst {
 		if($param["vStroke"] > 0) 
 			$step5 = true;
 		
-		if($param["vLoad"] > 0) 
+		if(($param["vTransport"] > 0 && $param["vLoad"] > 0) || ($param["vPressing"] > 0 && $param["vPressingForce"] > 0)) 
 			$step6 = true;
 		
 		return ($step1 && $step2 && $step3 && $step4 && $step5 && $step6);
@@ -81,15 +81,12 @@ class Mst {
 		$type = $data->TYPE;
 		$set_direction = ($vDirection == 'horizontal') ? '水平' : '垂直';
 		$stroke = $data->STROKE;
-		$temp = Mst_Series::getSpeedAndAcceleration($series, $type, $set_direction, $stroke, $param["vLoad"]);
 		
-		$data->SPEED = $temp->SPEED;
-		$data->ACCELERATION = $temp->ACCELERATION;
 		$data->IMG_NAME = self::getImgName(EC_APPEARANCE_IMG_PATH, $series, $type);
 		$data->FULL_NAME = self::getFullName($series, $type, $stroke);
 		
 		$calc_cycle_time = null;
-		CalcCycleTime($param["vStroke"], $temp->SPEED, $temp->ACCELERATION, $temp->ACCELERATION, 0.1, 1, 0, 40, 0, 0, $calc_cycle_time);
+		CalcCycleTime($param["vStroke"], $data->SPEED, $data->ACCELERATION, $data->ACCELERATION, 0.1, 1, 0, 40, 0, 0, $calc_cycle_time);
 		$calc_cycle_time = $calc_cycle_time / 1000;
 		
 		$CalcLife = new CalcLife;
@@ -106,16 +103,16 @@ class Mst {
 		
 		if($calcDistance != 0) {
 			//取最小值
-			$calcDistance = ($temp->SCREW_LIFE > 0 && $temp->SCREW_LIFE < $calcDistance) ? $temp->SCREW_LIFE : $calcDistance;
-			$calcDistance = ($temp->BEARING_LIFE > 0 && $temp->BEARING_LIFE < $calcDistance) ? $temp->BEARING_LIFE : $calcDistance;
+			$calcDistance = ($data->SCREW_LIFE > 0 && $data->SCREW_LIFE < $calcDistance) ? $data->SCREW_LIFE : $calcDistance;
+			$calcDistance = ($data->BEARING_LIFE > 0 && $data->BEARING_LIFE < $calcDistance) ? $data->BEARING_LIFE : $calcDistance;
 		} else {
 			//取非0最小值
-			if($temp->BEARING_LIFE > 0 && $temp->SCREW_LIFE > 0) {
-				$calcDistance = ($temp->BEARING_LIFE < $temp->SCREW_LIFE) ? $temp->SCREW_LIFE : $temp->BEARING_LIFE;
-			} else if($temp->BEARING_LIFE > 0) {
-				$calcDistance = $temp->BEARING_LIFE;
+			if($data->BEARING_LIFE > 0 && $data->SCREW_LIFE > 0) {
+				$calcDistance = ($data->BEARING_LIFE < $data->SCREW_LIFE) ? $data->SCREW_LIFE : $data->BEARING_LIFE;
+			} else if($data->BEARING_LIFE > 0) {
+				$calcDistance = $data->BEARING_LIFE;
 			} else {
-				$calcDistance = $temp->SCREW_LIFE;
+				$calcDistance = $data->SCREW_LIFE;
 			}
 		}
 		

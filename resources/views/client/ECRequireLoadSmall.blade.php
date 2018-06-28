@@ -161,7 +161,7 @@
 		function procCheckLoadSmall(LinearGuideSmall) {
 			var ctrLoad = document.getElementById("ContentPlaceHolder1_numConditionLoad")
 			if(ctrLoad.value == '0' || ctrLoad.value == '') {
-				document.getElementById("ContentPlaceHolder1_lblErrorLoad").innerHTML = "荷重は0kgより大きい値を入力してください";
+				document.getElementById("ContentPlaceHolder1_lblErrorLoad").innerHTML = "负载必须大于0。";
 				return false;
 			};
 
@@ -171,7 +171,7 @@
 				var ctrGrvCntrZPosition = document.getElementById("ContentPlaceHolder1_numConditionGravityCenterZPosition");
 
 				if((ctrGrvCntrXPosition.value == '' || ctrGrvCntrXPosition.value == 0) && (ctrGrvCntrYPosition.value == '' || ctrGrvCntrYPosition.value == 0) && (ctrGrvCntrZPosition.value == '' || ctrGrvCntrZPosition.value == 0)) {
-					document.getElementById("ContentPlaceHolder1_lblError").innerHTML = "いずれかの重心位置を入力して下さい。";
+					document.getElementById("ContentPlaceHolder1_lblError").innerHTML = "请输出重心位置。";
 					return false;
 				}
 			}

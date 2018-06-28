@@ -48,12 +48,12 @@
 			var Overhang = document.getElementById("ContentPlaceHolder1_txtOverhangDistance");
 	
 			if((ctrOffSet.value == '' || ctrOffSet.value == 0) && (Overhang.value == '' || Overhang.value == 0)) {
-				document.getElementById("ContentPlaceHolder1_lblOverhangDistanceError").innerHTML = "張出し距離またはオフセット距離を入力して下さい。";
+				document.getElementById("ContentPlaceHolder1_lblOverhangDistanceError").innerHTML = "请输入伸出距离或偏置距离。";
 				return false;
 			}
 	
 			if(ctrLoadRod.value == '' || ctrLoadRod.value == 0) {
-				document.getElementById("ContentPlaceHolder1_lblOverhangDistanceError").innerHTML = "荷重は0kgより大きい値を入力してください。";
+				document.getElementById("ContentPlaceHolder1_lblOverhangDistanceError").innerHTML = "负载必须大于0。";
 				return false;
 			}
 			return true;

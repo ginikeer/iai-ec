@@ -153,16 +153,6 @@
 									<span id="MailFormatError" class="ErrorFont"></span></td>
 							</tr>
 							<tr>
-								<th>
-									<span id="ContentPlaceHolder1_lblMailConfirm" class="ctlLabel">邮箱确认</span></th>
-								<td>
-									<input name="again" type="text" id="again" class="text required-item" style="ime-mode:disabled;">
-								</td>
-								<td class="lblError">
-									<span id="MailConfirmError" class="ErrorFont"></span>
-								</td>
-							</tr>
-							<tr>
 								<td class="lblError" colspan="2">
 									<span id="sendMessage" class="" style="font-size: 14px;"></span>
 								</td>

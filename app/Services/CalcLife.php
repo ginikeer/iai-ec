@@ -91,6 +91,8 @@ class CalcLife {
 		$sp						= $this->speed;
 		$rr6s					= Mst_Series::get_mst_series_type('RR6S');
 		$rr7s					= Mst_Series::get_mst_series_type('RR7S');
+		$oDistance				= 0;
+		$oError 				= 0;
 		
 		if($_r == 2 && $_h == 1) {
 			if( ($_l * 9.8) <= $rr6s->DYNAMIC_RADIAL_LOAD && ($_l * 9.8 * $_o / 1000) <= $rr6s->DYNAMIC_TORQUE ) {
@@ -106,7 +108,6 @@ class CalcLife {
 			}
 		} else {
 			$oDistance = 0;
-			$oError = 0;
 		}
 		
 		$result["CALC_DISTANCE"] = $oDistance;

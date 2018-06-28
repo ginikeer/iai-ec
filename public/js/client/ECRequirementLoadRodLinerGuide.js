@@ -72,7 +72,7 @@ function txtChange(own) {
 
         if (ctrOffSet.value != '' && (parseInt(ctrOffSet.value.replace(/,/g, "")) < 0 || parseInt(ctrOffSet.value.replace(/,/g, "")) > 100)) {
            
-            document.getElementById("ContentPlaceHolder1_lblOverhangDistanceError").innerHTML = "100mm以内にするか、ロッドタイプ＋外付けガイドで検討してください";
+            document.getElementById("ContentPlaceHolder1_lblOverhangDistanceError").innerHTML = "请限制在100mm以内使用，或使用拉杆型+辅助导轨的方式";
             parentbtn.disabled = true;
         } else {
             if (Overhang.value == '' || (parseInt(Overhang.value.replace(/,/g, "")) > 0 && parseInt(Overhang.value.replace(/,/g, "")) <= 100)) {
@@ -95,7 +95,7 @@ function txtChange(own) {
         Overhang.onblur()
 
         if (Overhang.value != '' && (parseInt(Overhang.value.replace(/,/g, "")) < 0 || parseInt(Overhang.value.replace(/,/g, "")) > 100)) {
-            document.getElementById("ContentPlaceHolder1_lblOverhangDistanceError").innerHTML = "100mm以内にするか、ロッドタイプ＋外付けガイドで検討してください";
+            document.getElementById("ContentPlaceHolder1_lblOverhangDistanceError").innerHTML = "请限制在100mm以内使用，或使用拉杆型+辅助导轨的方式";
             parentbtn.disabled = true;
         } else {
             if (ctrOffSet.value == '' || (parseInt(ctrOffSet.value.replace(/,/g, "")) > 0 && parseInt(ctrOffSet.value.replace(/,/g, "")) <= 100)) {

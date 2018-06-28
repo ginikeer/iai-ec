@@ -45,7 +45,10 @@ class EcTypeController extends Controller {
 	 */
 	public function getType(Request $request)
 	{
-		return view('client/ECTypeSelection');
+		$type = $request->input('ST');
+		$option = Mst_Series::getOptionByType($type);
+		
+		return view('client/ECTypeSelection', ['option' => $option]);
 	}
 	
 	public function getSpec(Request $request)
